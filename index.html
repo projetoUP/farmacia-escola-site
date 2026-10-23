@@ -60,6 +60,8 @@ body.high-contrast {
   --line: #000000;
 }
 body.font-large { --font-scale: 1.14; }
+body.font-small { --font-scale: .92; }
+
 body.reduce-motion *, body.reduce-motion *::before, body.reduce-motion *::after {
   animation-duration: .01ms !important;
   animation-iteration-count: 1 !important;
@@ -108,7 +110,7 @@ button { cursor: pointer; }
 h1, h2, h3 { line-height: 1.1; letter-spacing: -.035em; }
 h1 { margin: 0; font-size: clamp(3.2rem, 6.5vw, 6.5rem); max-width: 830px; }
 h1 .hero-title-green { color: var(--primary); }
-h1 .hero-title-white { color: #fff; text-shadow: 0 4px 22px rgba(0,0,0,.28); }
+h1 .hero-title-white { display:inline-block; color:#fff; padding:.035em .13em .09em; margin-left:-.13em; border-radius:12px 22px 12px 22px; background:linear-gradient(110deg,#0a3d33,#126b58); box-shadow:0 10px 24px rgba(7,54,43,.20); text-shadow:0 2px 8px rgba(0,0,0,.22); box-decoration-break:clone; -webkit-box-decoration-break:clone; }
 h2 { margin: 0; font-size: clamp(2.2rem, 4.2vw, 4rem); }
 h3 { margin: 0 0 8px; font-size: 1.18rem; }
 p { margin-top: 0; }
@@ -836,6 +838,47 @@ body.modal-open{overflow:hidden}
 body.reduce-motion .image-lightbox,body.reduce-motion .image-expand-btn{transition:none}
 body.reduce-motion .image-expand-btn{transform:none !important}
 
+
+/* === Camada de melhorias: galeria, passaporte, visita guiada, glossário e desafios === */
+.hero-title-green{background:linear-gradient(100deg,#16856f 0%,#16856f 35%,#8df0d5 49%,#16856f 62%,#16856f 100%);background-size:240% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:titleSweep 8s ease-in-out infinite}
+@keyframes titleSweep{0%,55%,100%{background-position:100% 0}25%{background-position:0 0}}
+.hero-card{min-height:510px;padding:22px 18px 20px;display:flex;flex-direction:column;justify-content:flex-start}
+.hero-card::before{z-index:0}
+.hero-gallery-heading{position:relative;z-index:4;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:2px 4px 14px;color:#f3fffb}
+.hero-gallery-kicker{font-size:.72rem;font-weight:950;letter-spacing:.18em}
+.hero-gallery-hint{font-size:.74rem;color:rgba(237,255,249,.7)}
+.team-carousel{position:relative;z-index:3;flex:1;min-height:0;width:100%;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scroll-behavior:smooth;overscroll-behavior-x:contain;scrollbar-width:none;cursor:grab;touch-action:pan-x;outline-offset:4px}
+.team-carousel::-webkit-scrollbar{display:none}.team-carousel:active{cursor:grabbing}.team-track{display:flex;gap:15px;align-items:center;height:100%;padding:10px 5px 15px;width:max-content;min-width:100%}
+.team-photo-card{flex:0 0 clamp(190px,46%,245px);height:100%;min-height:300px;max-height:355px;display:grid;place-items:center;scroll-snap-align:center;padding:10px;border-radius:28px;background:rgba(3,17,15,.48);border:1px solid rgba(225,255,246,.18);box-shadow:0 22px 48px rgba(0,0,0,.18);transform:translateY(var(--float-offset,0));animation:portraitFloat 5.6s ease-in-out infinite;animation-delay:var(--portrait-delay,0ms)}
+.team-photo-frame{width:100%;height:100%;min-height:275px;overflow:hidden;border-radius:19px;background:#050505;display:grid;place-items:center;border:1px solid rgba(255,255,255,.12)}
+.team-photo-frame img{width:100%;height:100%;object-fit:contain;object-position:center;background:#050505;display:block;max-width:100%;max-height:100%;user-select:none;-webkit-user-drag:none}
+@keyframes portraitFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+.hero-orb-field{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:1}
+.hero-orb-field i,.hero-bubble-dock i{position:absolute;display:block;border-radius:50%;border:1px solid rgba(194,255,240,.35);background:radial-gradient(circle at 32% 28%,rgba(255,255,255,.30),rgba(91,221,190,.07) 40%,rgba(255,255,255,.015) 75%);box-shadow:inset 0 0 15px rgba(207,255,246,.12),0 0 24px rgba(84,213,181,.08);animation:bubbleDrift 8s ease-in-out infinite}
+.hero-orb-field i:nth-child(1){width:28px;height:28px;left:6%;top:25%}.hero-orb-field i:nth-child(2){width:15px;height:15px;left:19%;top:63%;animation-delay:-2s}.hero-orb-field i:nth-child(3){width:40px;height:40px;right:7%;top:18%;animation-delay:-3s}.hero-orb-field i:nth-child(4){width:20px;height:20px;right:17%;top:73%;animation-delay:-1s}.hero-orb-field i:nth-child(5){width:11px;height:11px;left:45%;top:12%;animation-delay:-4s}.hero-orb-field i:nth-child(6){width:32px;height:32px;left:5%;bottom:10%;animation-delay:-2.8s}.hero-orb-field i:nth-child(7){width:17px;height:17px;right:5%;bottom:30%;animation-delay:-5s}.hero-orb-field i:nth-child(8){width:12px;height:12px;left:65%;bottom:8%;animation-delay:-2.2s}.hero-orb-field i:nth-child(9){width:23px;height:23px;right:38%;top:8%;animation-delay:-3.6s}
+.hero-bubble-dock{position:absolute;left:10%;right:10%;bottom:5px;height:34px;z-index:1;pointer-events:none}.hero-bubble-dock i{width:22px;height:22px;bottom:0}.hero-bubble-dock i:nth-child(1){left:3%;animation-delay:-1s}.hero-bubble-dock i:nth-child(2){left:18%;width:12px;height:12px;animation-delay:-3s}.hero-bubble-dock i:nth-child(3){left:35%;width:29px;height:29px;animation-delay:-2s}.hero-bubble-dock i:nth-child(4){left:52%;width:15px;height:15px;animation-delay:-4s}.hero-bubble-dock i:nth-child(5){left:69%;width:25px;height:25px;animation-delay:-2.8s}.hero-bubble-dock i:nth-child(6){left:88%;width:13px;height:13px;animation-delay:-5s}.hero-bubble-dock i:nth-child(7){right:-2%;width:18px;height:18px;animation-delay:-1.5s}
+@keyframes bubbleDrift{0%,100%{transform:translateY(0) scale(.92);opacity:.54}50%{transform:translateY(-13px) scale(1.06);opacity:1}}
+.team-carousel-controls{position:relative;z-index:4;display:flex;align-items:center;justify-content:center;gap:18px;padding-top:9px;color:rgba(239,255,250,.79);font-size:.75rem;font-weight:800}
+.team-carousel-btn{width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,.24);background:rgba(1,24,19,.48);color:#fff;font-size:1.2rem;display:grid;place-items:center;transition:transform .2s ease,background .2s ease}
+.team-carousel-btn:hover,.team-carousel-btn:focus-visible{background:rgba(132,244,216,.20);transform:scale(1.07);outline:2px solid rgba(180,255,239,.6);outline-offset:2px}
+.visitor-passport{margin-top:18px;padding:15px 16px;border:1px solid var(--line);border-radius:18px;background:var(--surface);box-shadow:0 10px 28px rgba(14,63,53,.06);max-width:700px}
+.passport-head,.passport-bottom{display:flex;align-items:center;justify-content:space-between;gap:12px}.passport-head>div{display:grid;gap:2px}.passport-kicker{font-size:.64rem;font-weight:950;letter-spacing:.14em;color:var(--primary)}.passport-head strong{font-size:.96rem}.passport-head>span{font-size:.82rem;font-weight:900;color:var(--primary)}
+.passport-progress{height:7px;margin:11px 0 9px;border-radius:999px;background:var(--surface-2);overflow:hidden}.passport-progress span{display:block;width:8.333%;height:100%;border-radius:inherit;background:linear-gradient(90deg,var(--primary),#80dbc4);transition:width .55s cubic-bezier(.2,.8,.2,1)}
+.passport-bottom{font-size:.78rem;color:var(--muted)}.passport-bottom button{border:0;background:transparent;color:var(--primary-dark);font-weight:900;text-decoration:underline;text-underline-offset:3px;white-space:nowrap}
+.passport-details{margin-top:13px;padding-top:11px;border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px 12px}.passport-details[hidden]{display:none}.passport-stop{display:flex;align-items:center;gap:8px;color:var(--muted);font-size:.78rem;padding:5px 0}.passport-stop::before{content:'';width:9px;height:9px;border:1.5px solid var(--line);border-radius:50%;flex:0 0 auto}.passport-stop.done{color:var(--primary-dark);font-weight:800}.passport-stop.done::before{border-color:var(--primary);background:var(--primary);box-shadow:inset 0 0 0 2px var(--surface)}
+.guided-tour-card{position:fixed;z-index:150;top:92px;right:20px;width:min(370px,calc(100vw - 28px));padding:19px;border:1px solid rgba(133,223,202,.35);border-radius:21px;background:color-mix(in srgb,#0d3028 94%,transparent);color:#effff9;box-shadow:0 28px 80px rgba(0,0,0,.28);backdrop-filter:blur(16px);opacity:0;visibility:hidden;transform:translateY(-8px) scale(.985);transition:opacity .25s ease,transform .25s ease,visibility .25s}.guided-tour-card.open{opacity:1;visibility:visible;transform:none}.guided-tour-card[aria-hidden="true"]{pointer-events:none}.guided-tour-top{display:flex;justify-content:space-between;align-items:center;gap:10px;color:#8debd3;font-size:.68rem;font-weight:950;letter-spacing:.1em}.guided-tour-top button{border:1px solid rgba(255,255,255,.2);border-radius:9px;background:rgba(255,255,255,.08);color:white;width:32px;height:32px;font-size:1.3rem}.guided-tour-card h3{font-size:1.3rem;margin:12px 0 8px;color:white}.guided-tour-card p{font-size:.9rem;color:rgba(239,255,249,.78);margin:0}.guided-tour-actions{display:flex;justify-content:space-between;gap:10px;margin-top:16px}.guided-tour-actions .btn.ghost{color:#effff9;border-color:rgba(255,255,255,.22)}.tour-highlight{outline:4px solid rgba(66,182,158,.8)!important;outline-offset:-4px;box-shadow:0 0 0 10px rgba(66,182,158,.08)!important;transition:outline-color .2s ease,box-shadow .2s ease;scroll-margin-top:92px;position:relative;z-index:2}
+.main-nav>a.nav-active{position:relative;background:var(--secondary);color:var(--primary-dark)}.main-nav>a.nav-active::after{content:'';position:absolute;left:10px;right:10px;bottom:3px;height:2px;border-radius:99px;background:var(--primary);animation:navIndicator .28s ease both}@keyframes navIndicator{from{transform:scaleX(.2);opacity:.3}to{transform:scaleX(1);opacity:1}}
+.glossary-panel{display:grid;grid-template-columns:minmax(0,1fr) minmax(250px,.8fr);gap:12px 28px;margin-top:34px;padding:26px;border:1px solid var(--line);border-radius:24px;background:var(--surface);box-shadow:var(--shadow)}.glossary-intro{grid-row:span 2}.glossary-intro .eyebrow{font-size:.65rem}.glossary-intro h3{font-size:1.55rem;margin:2px 0 7px}.glossary-intro p{color:var(--muted);max-width:440px;margin:0}.glossary-search-label{align-self:end;font-weight:850;font-size:.82rem}.glossary-search-wrap{display:flex;align-items:center;gap:9px;border:1px solid var(--line);border-radius:13px;background:var(--bg);padding:0 13px}.glossary-search-wrap svg{width:19px;height:19px;fill:none;stroke:var(--muted);stroke-width:2;flex:0 0 auto}.glossary-search-wrap input{width:100%;min-width:0;border:0;outline:none;background:transparent;color:var(--text);padding:12px 0}.glossary-results{grid-column:1/-1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin-top:8px}.glossary-result{border:1px solid var(--line);border-radius:13px;background:var(--surface-2);padding:13px 14px}.glossary-result summary{cursor:pointer;font-weight:900;color:var(--text)}.glossary-result p{margin:7px 0 0;color:var(--muted);font-size:.9rem}.glossary-empty{grid-column:1/-1;color:var(--muted);padding:9px 0}
+.med-detective-toggle{display:flex;align-items:center;justify-content:space-between;gap:10px;width:100%;margin-top:13px;padding:10px 12px;border:1px solid var(--line);border-radius:12px;background:var(--surface-2);color:var(--primary-dark);font-size:.83rem;font-weight:900;text-align:left;transition:background .2s ease,transform .2s ease}.med-detective-toggle:hover{transform:translateY(-1px);background:var(--secondary)}.med-detective-toggle span{font-size:1.1rem}.med-detective-details{margin-top:10px;padding:12px 13px;border-radius:13px;border:1px solid var(--line);background:var(--surface-2);animation:sectionReveal .28s ease both}.med-detective-details[hidden]{display:none}.med-detective-details p{font-size:.85rem;color:var(--muted);margin:0 0 9px}.med-detective-details p:last-child{margin-bottom:0}.med-detective-details strong{color:var(--text)}
+.waste-challenge{margin-top:32px;padding:clamp(18px,3vw,28px);border:1px solid var(--line);border-radius:25px;background:linear-gradient(140deg,var(--surface),var(--surface-2));box-shadow:var(--shadow)}.waste-challenge-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;margin-bottom:18px}.waste-challenge-heading h3{font-size:1.7rem;margin:2px 0 8px}.waste-challenge-heading p{max-width:710px;color:var(--muted);margin:0}.waste-score{flex:0 0 auto;padding:9px 13px;border:1px solid var(--line);background:var(--surface);color:var(--primary-dark);font-weight:950;border-radius:12px;font-variant-numeric:tabular-nums}.waste-round{display:grid;grid-template-columns:minmax(180px,.65fr) minmax(0,1.35fr);gap:18px;align-items:stretch}.waste-round-photo{min-height:230px;border-radius:18px;overflow:hidden;background:#fff;border:1px solid var(--line)}.waste-round-photo img{width:100%;height:100%;min-height:230px;object-fit:contain;background:#fff}.waste-round-copy{border:1px solid var(--line);background:var(--surface);border-radius:18px;padding:19px}.waste-round-kicker{font-size:.7rem;color:var(--primary);font-weight:950;letter-spacing:.11em}.waste-round-copy h4{font-size:1.25rem;margin:7px 0}.waste-round-copy p{color:var(--muted);margin:0 0 14px}.waste-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.waste-option{min-height:48px;border:1px solid var(--line);border-radius:12px;background:var(--surface-2);color:var(--text);font-weight:800;text-align:left;padding:10px 12px;transition:transform .16s ease,border-color .16s ease,background .16s ease}.waste-option:hover:not(:disabled){transform:translateY(-2px);border-color:var(--primary)}.waste-option.correct{border-color:#228656;background:#dff6e9;color:#145334}.waste-option.incorrect{border-color:#c75b52;background:#ffebe8;color:#762e28}.waste-feedback{margin:12px 0 0;padding:10px 12px;border-radius:11px;background:var(--surface-2);color:var(--text);font-size:.88rem}.waste-controls{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:13px}.waste-controls p{margin:0;color:var(--muted);font-size:.82rem}.waste-finish{text-align:center;padding:22px}.waste-finish-score{font-size:3.2rem;font-weight:950;color:var(--primary);line-height:1.1}.waste-finish h4{font-size:1.45rem;margin:12px 0 7px}.waste-finish p{color:var(--muted)}
+.routine-timeline{display:flex;align-items:center;gap:8px;margin:13px 0 3px}.routine-phase-btn{min-width:0;flex:1;display:grid;grid-template-columns:28px 1fr;align-items:center;gap:6px;text-align:left;padding:8px;border:1px solid rgba(255,255,255,.10);border-radius:12px;background:rgba(255,255,255,.045);color:#cde5dd;font-size:.72rem}.routine-phase-btn span{width:26px;height:26px;display:grid;place-items:center;border-radius:50%;background:rgba(255,255,255,.09);font-weight:950}.routine-phase-btn strong{font-size:.69rem;line-height:1.1}.routine-phase-btn.active{background:rgba(70,202,172,.14);border-color:rgba(117,235,209,.42);color:#fff}.routine-phase-btn.active span{background:#43b99d;color:#082d24}.routine-phase-connector{width:8px;height:1px;background:rgba(160,235,215,.35);flex:0 0 auto}.routine-scanline,.routine-corner{display:none!important}
+.section-head.view-animate,.notice.view-animate,.visitor-passport.view-animate,.glossary-panel.view-animate,.waste-challenge.view-animate{opacity:0;transform:translateY(18px);filter:blur(2px);transition:opacity .65s ease,transform .65s cubic-bezier(.2,.8,.2,1),filter .65s ease;transition-delay:var(--reveal-delay,0ms)}.section-head.view-animate.in-view,.notice.view-animate.in-view,.visitor-passport.view-animate.in-view,.glossary-panel.view-animate.in-view,.waste-challenge.view-animate.in-view{opacity:1;transform:none;filter:none}
+body.dark .waste-option.correct{background:#173d2b;color:#c8f9d9}body.dark .waste-option.incorrect{background:#492421;color:#ffe0dc}body.dark .glossary-result{background:#142923}
+@media(max-width:860px){.hero-card{min-height:465px}.team-photo-card{flex-basis:clamp(190px,49vw,245px)}.glossary-panel{grid-template-columns:1fr}.glossary-intro{grid-row:auto}.glossary-results{grid-template-columns:1fr 1fr}.waste-round{grid-template-columns:minmax(140px,.7fr) minmax(0,1.3fr)}}
+@media(max-width:620px){.hero-card{min-height:410px;padding:17px 12px 14px}.team-track{gap:10px}.team-photo-card{flex-basis:75vw;min-height:260px;max-height:285px;padding:8px}.team-photo-frame{min-height:240px}.hero-gallery-heading{padding:0 5px 8px}.hero-gallery-kicker{font-size:.65rem}.hero-gallery-hint{font-size:.68rem}.team-carousel-controls{gap:13px;font-size:.71rem}.team-carousel-btn{width:33px;height:33px}.visitor-passport{padding:13px}.passport-bottom{align-items:flex-start}.passport-details{grid-template-columns:1fr}.guided-tour-card{top:auto;right:10px;bottom:10px;width:calc(100vw - 20px);padding:16px}.guided-tour-card h3{font-size:1.16rem}.glossary-panel{padding:18px}.glossary-results{grid-template-columns:1fr}.waste-challenge-heading{display:block}.waste-score{display:inline-flex;margin-top:12px}.waste-round{grid-template-columns:1fr}.waste-round-photo{min-height:190px}.waste-round-photo img{min-height:190px;max-height:250px}.waste-options{grid-template-columns:1fr}.waste-controls{align-items:stretch;flex-direction:column}.routine-timeline{gap:4px}.routine-phase-btn{grid-template-columns:1fr;justify-items:center;text-align:center;padding:7px 3px}.routine-phase-btn strong{font-size:.62rem}.routine-phase-connector{width:4px}.hero-actions .btn{width:100%}}
+@media(prefers-reduced-motion:reduce){.hero-title-green,.hero-orb-field i,.hero-bubble-dock i,.team-photo-card,.scan-beam,.guided-tour-card{animation:none!important;transition:none!important}.team-carousel{scroll-behavior:auto}}
+
+@media(min-width:861px){h1{font-size:clamp(2.9rem,3.7vw,4.1rem)}}
 </style>
 </head>
 <body>
@@ -869,6 +912,7 @@ body.reduce-motion .image-expand-btn{transform:none !important}
         <div class="menu-tools" aria-label="Preferências de acessibilidade e aparência">
           <span class="menu-tools-title">Preferências</span>
           <button type="button" class="tool-btn" id="increaseText" aria-pressed="false">Aa+ <span>Aumentar</span></button>
+          <button type="button" class="tool-btn" id="decreaseText" aria-pressed="false">Aa− <span>Diminuir</span></button>
           <button type="button" class="tool-btn" id="highContrast" aria-pressed="false">◐ <span>Contraste</span></button>
           <button type="button" class="tool-btn" id="toggleTheme" aria-pressed="false">☼ <span>Modo escuro</span></button>
           <button type="button" class="tool-btn" id="reduceMotion" aria-pressed="false">≈ <span>Menos animação</span></button>
@@ -893,21 +937,37 @@ body.reduce-motion .image-expand-btn{transform:none !important}
           <div class="hero-actions">
             <a class="btn primary" href="#farmacia">Explorar a farmácia</a>
             <a class="btn secondary" href="#quiz">Fazer o quiz</a>
+            <button class="btn ghost" id="launchTour" type="button">Iniciar visita guiada</button>
           </div>
 
           <div class="notice" role="note">
             <strong>Como usar:</strong> explore os setores, abra os conteúdos, observe as formas farmacêuticas e termine testando o que aprendeu. O conteúdo é educativo e não substitui a orientação de um profissional de saúde.
           </div>
+          <div class="visitor-passport" id="visitorPassport" aria-labelledby="passportTitle">
+            <div class="passport-head"><div><span class="passport-kicker">SEU PERCURSO</span><strong id="passportTitle">Passaporte do visitante</strong></div><span id="passportCount">1 de 12</span></div>
+            <div class="passport-progress" role="progressbar" aria-label="Progresso de exploração do site" aria-valuemin="0" aria-valuemax="12" aria-valuenow="1"><span id="passportProgressFill"></span></div>
+            <div class="passport-bottom"><span id="passportMessage">Explore as seções para completar sua visita.</span><button id="togglePassportDetails" type="button" aria-expanded="false">Ver percurso</button></div>
+            <div class="passport-details" id="passportDetails" hidden></div>
+          </div>
         </div>
 
-        <div class="hero-card reveal" aria-label="Painel visual da Farmácia-Escola">
+        <div class="hero-card reveal" aria-label="Galeria de fotos dos integrantes do projeto">
           <div class="hero-glow" aria-hidden="true"></div>
-          <div class="cross-big" aria-hidden="true">✚</div>
           <div class="scan-beam" aria-hidden="true"></div>
-          <div class="floating-card card-1"><span>📦</span> Armazenamento</div>
-          <div class="floating-card card-2"><span>💊</span> Medicamentos</div>
-          <div class="floating-card card-3"><span>♿</span> Acessibilidade</div>
-          <div class="floating-card card-4"><span>♻️</span> Sustentabilidade</div>
+          <div class="hero-gallery-heading">
+            <span class="hero-gallery-kicker">NOSSA EQUIPE</span>
+            <span class="hero-gallery-hint">Arraste para explorar</span>
+          </div>
+          <div class="hero-orb-field" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <div class="team-carousel" id="teamCarousel" tabindex="0" aria-label="Galeria horizontal de fotos dos integrantes do projeto">
+            <div class="team-track" id="teamTrack"></div>
+          </div>
+          <div class="team-carousel-controls">
+            <button class="team-carousel-btn" id="teamPrev" type="button" aria-label="Ver fotos anteriores">←</button>
+            <span id="teamCounter" aria-live="polite">Fotos do projeto</span>
+            <button class="team-carousel-btn" id="teamNext" type="button" aria-label="Ver próximas fotos">→</button>
+          </div>
+          <div class="hero-bubble-dock" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
         </div>
       </div>
     </section>
@@ -978,6 +1038,12 @@ body.reduce-motion .image-expand-btn{transform:none !important}
           <p>Entenda, em linguagem simples, como alguns medicamentos são agrupados por efeito e finalidade.</p>
         </div>
         <div class="cards-grid" id="classCards"></div>
+        <div class="glossary-panel view-animate" id="glossario">
+          <div class="glossary-intro"><span class="eyebrow">CONSULTA RÁPIDA</span><h3>Glossário farmacêutico</h3><p>Pesquise um termo para entender seu significado em linguagem simples.</p></div>
+          <label class="glossary-search-label" for="glossarySearch">Buscar um termo</label>
+          <div class="glossary-search-wrap"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"></circle><path d="m16 16 5 5"></path></svg><input id="glossarySearch" type="search" placeholder="Ex.: concentração, princípio ativo…" autocomplete="off" /></div>
+          <div class="glossary-results" id="glossaryResults" aria-live="polite"></div>
+        </div>
       </div>
     </section>
 
@@ -1129,11 +1195,17 @@ body.reduce-motion .image-expand-btn{transform:none !important}
 
           <div class="routine-window">
             <div class="routine-window-top"><span id="routinePhase">FASE 1 · ATENDIMENTO</span><span id="routineCounter">01/06</span></div>
+            <div class="routine-timeline" aria-label="Navegação das três fases da rotina">
+              <button type="button" class="routine-phase-btn active" data-phase-start="0"><span>01</span><strong>Atendimento</strong></button>
+              <span class="routine-phase-connector" aria-hidden="true"></span>
+              <button type="button" class="routine-phase-btn" data-phase-start="3"><span>02</span><strong>Armazenamento</strong></button>
+              <span class="routine-phase-connector" aria-hidden="true"></span>
+              <button type="button" class="routine-phase-btn" data-phase-start="5"><span>03</span><strong>Caixa</strong></button>
+            </div>
             <div class="routine-image-frame">
               <div class="routine-image-bg"></div>
               <img id="routineImage" src="assets/rotina_01.jpg" alt="Atendente acolhendo uma pessoa no balcão da farmácia" />
-              <div class="routine-scanline" aria-hidden="true"></div>
-              <div class="routine-corner routine-corner-a"></div><div class="routine-corner routine-corner-b"></div>
+
             </div>
             <div class="routine-copy">
               <div class="routine-action" id="routineAction">Escuta e acolhimento</div>
@@ -1194,6 +1266,10 @@ body.reduce-motion .image-expand-btn{transform:none !important}
           <article><img src="assets/sust_04.jpg" alt="Caixas e embalagens de papelão em recipiente de reciclagem" loading="lazy" /><div class="waste-tag">RECICLÁVEL</div><h3>Papel e papelão</h3><p>Caixas e papéis limpos e secos podem seguir a coleta seletiva quando aceita pelo serviço local.</p></article>
           <article><img src="assets/sust_05.jpg" alt="Resíduo comum sendo colocado em lixeira apropriada" loading="lazy" /><div class="waste-tag">COMUM</div><h3>Resíduo comum</h3><p>Materiais sem possibilidade de reciclagem devem receber a destinação indicada pela coleta.</p></article>
           <article><img src="assets/sust_06.jpg" alt="Maquete de farmácia construída com papelão e materiais reaproveitados" loading="lazy" /><div class="waste-tag">REAPROVEITAMENTO</div><h3>Reutilização</h3><p>Reaproveitar papelão, embalagens e outros materiais ajuda a reduzir desperdícios e custos.</p></article>
+        </div>
+        <div class="waste-challenge view-animate" id="wasteChallenge">
+          <div class="waste-challenge-heading"><div><span class="eyebrow">DESAFIO INTERATIVO</span><h3>Destino correto</h3><p>Leia a situação e escolha a destinação mais adequada. É uma atividade educativa; siga também as orientações da coleta local.</p></div><div class="waste-score" id="wasteScoreBadge">0 / 5</div></div>
+          <div class="waste-challenge-body" id="wasteChallengeBody" aria-live="polite"></div>
         </div>
       </div>
     </section>
@@ -1280,7 +1356,7 @@ body.reduce-motion .image-expand-btn{transform:none !important}
           <p><strong>Projeto:</strong> Extensão digital da Farmácia-Escola</p>
           <hr />
           <p class="credit-small"><strong>Imagem do medicamento interativo:</strong> Referência visual de embalagem e frasco fornecida para esta versão educativa; a apresentação líquida consultada é 200 mg/mL em frasco de 15 mL.</p>
-          <p class="credit-small"><strong>Fotos dos medicamentos:</strong> referências visuais vinculadas a páginas de produtos e bulas de fabricantes/drogarias consultadas para conferir concentração, apresentação e forma farmacêutica. A versão do site usa carregamento remoto dessas fotos e mantém ilustrações locais como fallback.</p><p class="credit-small"><strong>Outras imagens educativas:</strong> Wikimedia Commons — <em>Comprimidos.jpg</em> (Abinoam Jr., CC BY-SA 3.0); <em>Capsule medicine.png</em> (Joseph Hemê, CC BY-SA 4.0); <em>Cough medicine.jpg</em> (Mysid, domínio público); <em>Tube of hydrocortisone cream.jpg</em> (Father Goose, CC BY-SA 4.0); <em>Diprosalic ointment tube.jpeg</em> (Cnbrb, CC BY-SA 4.0); <em>Eye Drops - eye lubricant.jpg</em> (Dineshkumar Nallaveerappan, CC BY-SA 4.0).</p>
+          <p class="credit-small"><strong>Fotos dos medicamentos:</strong> referências visuais vinculadas a páginas de produtos e bulas de fabricantes/drogarias consultadas para conferir concentração, apresentação e forma farmacêutica. A versão do site usa carregamento remoto dessas fotos e mantém ilustrações locais como fallback.</p><p class="credit-small"><strong>Referências específicas de apresentação:</strong> <a href="https://www.kenvuebrands.com/br/reactine/antialergico-reactine" target="_blank" rel="noopener noreferrer">Reactine 10 mg — Kenvue Brasil</a>; <a href="https://www.extrafarma.com.br/ibuprofeno-100mg-gotas-20ml-generico-neoquimica/p" target="_blank" rel="noopener noreferrer">Ibuprofeno gotas 100 mg/mL — Extrafarma</a>; <a href="https://www.paguemenos.com.br/maleato-de-dexclorfeniramina-0-4mg-solucao-oral-100ml-generico-prati-donaduzzi/p" target="_blank" rel="noopener noreferrer">Dexclorfeniramina solução oral 0,4 mg/mL — Pague Menos</a>; <a href="https://www.ablbrasil.com.br/cefalexina-monoidratada-suspensao/" target="_blank" rel="noopener noreferrer">Cefalexina suspensão 250 mg/5 mL — ABL Brasil</a>. As embalagens podem variar entre fabricantes e lotes.</p><p class="credit-small"><strong>Outras imagens educativas:</strong> Wikimedia Commons — <em>Comprimidos.jpg</em> (Abinoam Jr., CC BY-SA 3.0); <em>Capsule medicine.png</em> (Joseph Hemê, CC BY-SA 4.0); <em>Cough medicine.jpg</em> (Mysid, domínio público); <em>Tube of hydrocortisone cream.jpg</em> (Father Goose, CC BY-SA 4.0); <em>Diprosalic ointment tube.jpeg</em> (Cnbrb, CC BY-SA 4.0); <em>Eye Drops - eye lubricant.jpg</em> (Dineshkumar Nallaveerappan, CC BY-SA 4.0).</p>
         </div>
       </div>
     </section>
@@ -1292,6 +1368,13 @@ body.reduce-motion .image-expand-btn{transform:none !important}
       <p>Projeto educativo da Farmácia-Escola</p>
     </div>
   </footer>
+
+  <div class="guided-tour-card" id="guidedTourCard" role="dialog" aria-modal="false" aria-labelledby="guidedTourTitle" aria-hidden="true">
+    <div class="guided-tour-top"><span id="guidedTourCounter">VISITA GUIADA · 1/12</span><button type="button" id="guidedTourClose" aria-label="Encerrar visita guiada">×</button></div>
+    <h3 id="guidedTourTitle">Bem-vindo à Farmácia-Escola</h3>
+    <p id="guidedTourText">Vamos explorar os pontos principais do projeto.</p>
+    <div class="guided-tour-actions"><button type="button" id="guidedTourPrev" class="btn ghost small">Voltar</button><button type="button" id="guidedTourNext" class="btn primary small">Próxima etapa</button></div>
+  </div>
 
   <div class="image-lightbox" id="imageLightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="imageLightboxTitle">
     <button class="image-lightbox-close" id="imageLightboxClose" type="button" aria-label="Fechar imagem ampliada">
@@ -1351,41 +1434,41 @@ const sectors = [
 ];
 
 const medications = [
-  { title:'Paracetamol', category:'dor', strength:'750 mg', form:'Comprimido revestido · caixa com 20 comprimidos', kind:'tablet', image:'https://drogariasp.vteximg.com.br/arquivos/ids/578264-1000-1000/138835---paracetamol-750mg-generico-neo-quimica-20-comprimidos.jpg?v=637835534369900000', desc:'Exemplo educativo de analgésico e antitérmico. A embalagem apresentada mostra 750 mg e 20 comprimidos.' },
-  { title:'Dipirona', category:'dor', strength:'500 mg/mL', form:'Solução oral (gotas) · frasco com 10 mL', kind:'liquid', image:'https://drogariasp.vteximg.com.br/arquivos/ids/529488-1000-1000/768952---dipirona-sodica-500mgml-neo-quimica-10ml-gotas-g-hypermarcas-1.jpg?v=637790121097870000', desc:'Exemplo educativo de analgésico e antitérmico em solução oral por gotas.' },
-  { title:'Ibuprofeno', category:'dor', strength:'100 mg/5 mL', form:'Suspensão oral · frasco com 100 mL', kind:'liquid', image:'https://www.sociofarma.cl/240-large_default/ibuprofeno-100mg-jarabe-100ml.jpg', desc:'Exemplo educativo de anti-inflamatório não esteroidal disponível em suspensão oral.' },
-  { title:'Ácido acetilsalicílico', category:'dor', strength:'500 mg', form:'Comprimido · embalagem com 10 comprimidos', kind:'tablet', image:'https://www.drogarianovaesperanca.com.br/imagens-complete/1000x1000/acido-acetilsalicilico-500mg-com-20-comprimidos-f699dbfe00.jpg', desc:'Exemplo educativo de medicamento em comprimido, com concentração de 500 mg.' },
-  { title:'Naproxeno', category:'dor', strength:'550 mg', form:'Comprimido revestido · caixa com 10 comprimidos', kind:'tablet', image:'https://drogariavenancio.vtexassets.com/arquivos/ids/3044872/69444_z.jpg?v=639083304528100000', desc:'Exemplo educativo de anti-inflamatório não esteroidal relacionado ao controle de dor e inflamação.' },
-  { title:'Diclofenaco', category:'dor', strength:'50 mg', form:'Comprimido · caixa com 20 comprimidos', kind:'tablet', image:'https://images.tcdn.com.br/img/img_prod/1265393/diclofenaco_sodico_50mg_20_comp_rev_neo_36223_1_6b61e698fc83a0165f98b032431f16a2.jpg', desc:'Exemplo educativo de medicamento em comprimido usado em situações específicas de dor e inflamação.' },
-  { title:'Cetoprofeno', category:'dor', strength:'100 mg', form:'Comprimido revestido · caixa com 20 comprimidos', kind:'tablet', image:'https://cdn.awsli.com.br/2500x2500/2051/2051223/produto/340760745/cetoprofeno-100mg-medley-w3h62dfz6i.png', desc:'Exemplo educativo de anti-inflamatório não esteroidal relacionado a dor e inflamação.' },
-  { title:'Meloxicam', category:'dor', strength:'15 mg', form:'Comprimido · caixa com 20 comprimidos', kind:'tablet', image:'https://farmacialalajita.com/storage/products/mobic-D2nFTEbT.webp', desc:'Exemplo educativo de anti-inflamatório não esteroidal em comprimidos.' },
+  { title:'Paracetamol', category:'dor', strength:'750 mg', form:'Comprimido revestido · caixa com 20 comprimidos (exemplo de referência)', kind:'tablet', image:'https://drogariasp.vteximg.com.br/arquivos/ids/578264-1000-1000/138835---paracetamol-750mg-generico-neo-quimica-20-comprimidos.jpg?v=637835534369900000', desc:'Exemplo educativo de analgésico e antitérmico. A apresentação ilustrada é de comprimidos; confira sempre a embalagem específica.' },
+  { title:'Dipirona', category:'dor', strength:'500 mg/mL · também há apresentações de 1 g', form:'Solução oral em gotas (500 mg/mL) ou comprimido (1 g), conforme a apresentação', kind:'liquid', image:'https://drogariasp.vteximg.com.br/arquivos/ids/529488-1000-1000/768952---dipirona-sodica-500mgml-neo-quimica-10ml-gotas-g-hypermarcas-1.jpg?v=637790121097870000', desc:'Exemplo educativo. Gotas e comprimidos são apresentações diferentes; não confunda concentração com dose.' },
+  { title:'Ibuprofeno', category:'dor', strength:'100 mg/mL', form:'Suspensão oral em gotas · exemplo de frasco com 20 mL', kind:'liquid', image:'https://paguemenos.vtexassets.com/arquivos/ids/641160/ibuprofeno-100mg-gotas-20ml-generico-neoquimica-principal.jpg?v=638008026293230000', desc:'Exemplo educativo de anti-inflamatório não esteroidal. Esta imagem corresponde a ibuprofeno em gotas 100 mg/mL.' },
+  { title:'Ácido acetilsalicílico', category:'dor', strength:'500 mg', form:'Comprimido · apresentações e quantidades variam', kind:'tablet', image:'https://www.drogarianovaesperanca.com.br/imagens-complete/1000x1000/acido-acetilsalicilico-500mg-com-20-comprimidos-f699dbfe00.jpg', desc:'Exemplo educativo de medicamento em comprimidos. A indicação e as precauções dependem do produto e da pessoa.' },
+  { title:'Naproxeno', category:'dor', strength:'550 mg', form:'Comprimido · embalagem varia conforme fabricante', kind:'tablet', image:'https://drogariavenancio.vtexassets.com/arquivos/ids/3044872/69444_z.jpg?v=639083304528100000', desc:'Exemplo educativo de anti-inflamatório não esteroidal relacionado a situações específicas de dor e inflamação.' },
+  { title:'Diclofenaco sódico', category:'dor', strength:'50 mg', form:'Comprimido · apresentação varia conforme fabricante', kind:'tablet', image:'https://images.tcdn.com.br/img/img_prod/1265393/diclofenaco_sodico_50mg_20_comp_rev_neo_36223_1_6b61e698fc83a0165f98b032431f16a2.jpg', desc:'Exemplo educativo de anti-inflamatório. Não deve ser interpretado como recomendação de uso.' },
+  { title:'Cetoprofeno', category:'dor', strength:'100 mg', form:'Forma e quantidade dependem da apresentação comercial', kind:'tablet', image:'https://cdn.awsli.com.br/2500x2500/2051/2051223/produto/340760745/cetoprofeno-100mg-medley-w3h62dfz6i.png', desc:'Exemplo educativo de anti-inflamatório. Confira a forma farmacêutica exata na embalagem fotografada.' },
+  { title:'Meloxicam', category:'dor', strength:'15 mg', form:'Comprimido · apresentação varia conforme fabricante', kind:'tablet', image:'https://farmacialalajita.com/storage/products/mobic-D2nFTEbT.webp', desc:'Exemplo educativo de anti-inflamatório não esteroidal em apresentação sólida.' },
 
-  { title:'Loratadina', category:'alergia', strength:'10 mg', form:'Comprimido · caixa com 12 comprimidos', kind:'tablet', image:'https://product-data.raiadrogasil.io/images/17272306.webp', desc:'Exemplo educativo de anti-histamínico para sintomas alérgicos.' },
-  { title:'Cetirizina', category:'alergia', strength:'10 mg', form:'Cápsula gelatinosa · embalagem com 10 cápsulas', kind:'capsule', image:'https://cdn.ultrafarma.com.br/static/produtos/813581/large-639111642251006825-813581_2.jpg', desc:'Exemplo educativo de anti-histamínico usado em determinadas condições alérgicas.' },
-  { title:'Fexofenadina', category:'alergia', strength:'120 mg', form:'Comprimido revestido · caixa com 10 comprimidos', kind:'tablet', image:'https://drogariavenancio.vtexassets.com/arquivos/ids/2771962/83895_z.jpg?v=639078169434130000', desc:'Exemplo educativo de anti-histamínico para sintomas alérgicos.' },
-  { title:'Desloratadina', category:'alergia', strength:'5 mg', form:'Comprimido revestido · caixa com 10 comprimidos', kind:'tablet', image:'https://drogariasp.vteximg.com.br/arquivos/ids/1635525-1000-1000/267708---Desloratadina-5mg-Generico-Germed-10-Comprimidos-Revestidos-1.jpg?v=639059002432800000', desc:'Exemplo educativo de anti-histamínico.' },
-  { title:'Dexclorfeniramina', category:'alergia', strength:'2 mg', form:'Comprimido · caixa com 20 comprimidos', kind:'tablet', image:'https://farmaconde.vtexassets.com/arquivos/ids/200938/WhatsApp-Image-2023-06-15-at-11.19.03.jpg?v=638224355638570000', desc:'Exemplo educativo de anti-histamínico usado em situações alérgicas específicas.' },
-  { title:'Levocetirizina', category:'alergia', strength:'5 mg', form:'Comprimido revestido · caixa com 10 comprimidos', kind:'tablet', image:'https://cdn.ultrafarma.com.br/static/produtos/817900/medium-638925196736409699-817900.png', desc:'Exemplo educativo de anti-histamínico.' },
-  { title:'Bilastina', category:'alergia', strength:'20 mg', form:'Comprimido · caixa com 30 comprimidos', kind:'tablet', image:'https://drogariacatarinense.vteximg.com.br/arquivos/ids/178839-1000-1000/742260.jpg?v=637828547395770000', desc:'Exemplo educativo de anti-histamínico.' },
-  { title:'Rupatadina', category:'alergia', strength:'10 mg', form:'Comprimido · caixa com 10 comprimidos', kind:'tablet', image:'https://unidrogas.vtexassets.com/arquivos/ids/434987-800-800?aspect=true&height=800&v=638964632582200000&width=800', desc:'Exemplo educativo de anti-histamínico.' },
+  { title:'Loratadina', category:'alergia', strength:'10 mg', form:'Comprimido · apresentações variam conforme fabricante', kind:'tablet', image:'https://product-data.raiadrogasil.io/images/17272306.webp', desc:'Exemplo educativo de anti-histamínico utilizado em situações alérgicas específicas.' },
+  { title:'Reactine', category:'alergia', strength:'10 mg (dicloridrato de cetirizina)', form:'Cápsula mole · caixa com 10 ou 20 cápsulas, conforme apresentação', kind:'capsule', image:'https://images.ctfassets.net/za5qny03n4xo/2g36H56Fg0Z66Uyp9qFDNO/cf34c81d2bd24d937e653a4259861439/REACTINE_LATAM_BR_10CAPS_00000_JPG.Jpg?fm=webp&w=1200', desc:'Exemplo de marca antialérgica cuja substância ativa é o dicloridrato de cetirizina. A imagem é referência de embalagem.' },
+  { title:'Fexofenadina', category:'alergia', strength:'120 mg', form:'Comprimido revestido · quantidade varia por embalagem', kind:'tablet', image:'https://drogariavenancio.vtexassets.com/arquivos/ids/2771962/83895_z.jpg?v=639078169434130000', desc:'Exemplo educativo de anti-histamínico usado para sintomas alérgicos em situações específicas.' },
+  { title:'Desloratadina', category:'alergia', strength:'5 mg', form:'Comprimido revestido · quantidade varia por embalagem', kind:'tablet', image:'https://drogariasp.vteximg.com.br/arquivos/ids/1635525-1000-1000/267708---Desloratadina-5mg-Generico-Germed-10-Comprimidos-Revestidos-1.jpg?v=639059002432800000', desc:'Exemplo educativo de anti-histamínico. Há apresentações diferentes; confira a forma e a bula do produto.' },
+  { title:'Maleato de dexclorfeniramina', category:'alergia', strength:'2 mg (comprimido) · 0,4 mg/mL (solução oral)', form:'Comprimido ou solução oral; a imagem mostra frasco e caixa de 0,4 mg/mL', kind:'liquid', image:'https://product-data.raiadrogasil.io/images/3540362.webp?height=450&quality=85&type=resize&width=450', desc:'Exemplo educativo com duas apresentações distintas. A concentração líquida não é equivalente a um comprimido de 2 mg.' },
+  { title:'Dicloridrato de levocetirizina', category:'alergia', strength:'5 mg', form:'Comprimido revestido · apresentação varia por fabricante', kind:'tablet', image:'https://cdn.ultrafarma.com.br/static/produtos/817900/medium-638925196736409699-817900.png', desc:'Exemplo educativo de anti-histamínico. A embalagem específica deve ser usada para confirmar os detalhes.' },
+  { title:'Bilastina', category:'alergia', strength:'20 mg', form:'Comprimido · quantidade varia por embalagem', kind:'tablet', image:'https://drogariacatarinense.vteximg.com.br/arquivos/ids/178839-1000-1000/742260.jpg?v=637828547395770000', desc:'Exemplo educativo de anti-histamínico indicado para situações alérgicas específicas.' },
+  { title:'Rupatadina', category:'alergia', strength:'10 mg', form:'Comprimido · apresentação varia por fabricante', kind:'tablet', image:'https://unidrogas.vtexassets.com/arquivos/ids/434987-800-800?aspect=true&height=800&v=638964632582200000&width=800', desc:'Exemplo educativo de anti-histamínico. Não use as informações do cartão para decidir tratamento.' },
 
-  { title:'Amoxicilina', category:'infeccao', strength:'500 mg', form:'Cápsula dura · caixa com 21 cápsulas', kind:'capsule', image:'https://portal.zilfarma.com/8730-large_default/amoxicilina-500mg-21caps.webp', desc:'Exemplo educativo de antibiótico para infecções bacterianas específicas; requer orientação profissional.' },
-  { title:'Azitromicina', category:'infeccao', strength:'500 mg', form:'Comprimido revestido · caixa com 5 comprimidos', kind:'tablet', image:'https://imgprd.martinsatacado.com.br/catalogoimg/417991/01_417991_01.jpg?ims=1000x&v=160320264210', desc:'Exemplo educativo de antibiótico que deve ser usado conforme prescrição e orientação profissional.' },
-  { title:'Cefalexina', category:'infeccao', strength:'250 mg/5 mL', form:'Suspensão oral · frasco com 100 mL + copo-medida', kind:'liquid', image:'https://loja.fortvale.com.br/463-large_default/cefalexina-susp-oral-250mg-100ml-cx-48.jpg', desc:'Exemplo educativo de antibiótico em suspensão oral.' },
-  { title:'Fluconazol', category:'infeccao', strength:'150 mg', form:'Cápsula · caixa com 1 cápsula', kind:'capsule', image:'https://d1jgmae0hcnr1i.cloudfront.net/Custom/Content/Products/25/19/251903_fluconazol-150mg-1comprimido-p142078_z1_638352194776427420.png', desc:'Exemplo educativo de antifúngico em cápsula.' },
-  { title:'Aciclovir', category:'infeccao', strength:'200 mg', form:'Comprimido · caixa com 25 comprimidos', kind:'tablet', image:'https://loja.solfarma.com.br/imagens/produto/grande/0000010103_001.png', desc:'Exemplo educativo de antiviral em comprimidos.' },
-  { title:'Clotrimazol', category:'infeccao', strength:'10 mg/g (1%)', form:'Creme dermatológico · bisnaga com 20 g', kind:'cream', image:'https://cdn1.staticpanvel.com.br/produtos/15/403052-15.jpg', desc:'Exemplo educativo de antifúngico de uso tópico.' },
-  { title:'Nistatina', category:'infeccao', strength:'100.000 UI/mL', form:'Suspensão oral · frasco com 50 mL + copo-medida', kind:'liquid', image:'https://imgprd.martinsatacado.com.br/catalogoimg/417617/01_417617_01.jpg?ims=1000x&v=260220263207', desc:'Exemplo educativo de antifúngico em suspensão oral.' },
-  { title:'Metronidazol', category:'infeccao', strength:'250 mg', form:'Comprimido · caixa com 20 comprimidos', kind:'tablet', image:'https://imgprd.martinsatacado.com.br/catalogoimg/414572/01_414572_01.jpg?v=030520242852%3Bims%3D1000x', desc:'Exemplo educativo de medicamento com indicação específica contra determinados microrganismos.' },
+  { title:'Amoxicilina', category:'infeccao', strength:'500 mg', form:'Cápsula dura · quantidade varia por embalagem', kind:'capsule', image:'https://portal.zilfarma.com/8730-large_default/amoxicilina-500mg-21caps.webp', desc:'Exemplo de antibiótico para infecções bacterianas específicas. Uso conforme avaliação e prescrição profissional.' },
+  { title:'Azitromicina', category:'infeccao', strength:'500 mg', form:'Comprimido revestido · quantidade varia por embalagem', kind:'tablet', image:'https://imgprd.martinsatacado.com.br/catalogoimg/417991/01_417991_01.jpg?ims=1000x&v=160320264210', desc:'Exemplo educativo de antibiótico. O uso inadequado pode causar efeitos indesejados e favorecer resistência bacteriana.' },
+  { title:'Cefalexina', category:'infeccao', strength:'250 mg/5 mL (suspensão oral)', form:'Pó para suspensão oral reconstituída · frasco de 60 ou 100 mL em apresentações consultadas', kind:'liquid', image:'https://loja.fortvale.com.br/463-large_default/cefalexina-susp-oral-250mg-100ml-cx-48.jpg', desc:'A concentração 250 mg/5 mL é uma apresentação de suspensão oral encontrada em bula; confirme a embalagem específica. Requer orientação profissional.' },
+  { title:'Fluconazol', category:'infeccao', strength:'150 mg', form:'Cápsula · embalagem varia conforme fabricante', kind:'capsule', image:'https://d1jgmae0hcnr1i.cloudfront.net/Custom/Content/Products/25/19/251903_fluconazol-150mg-1comprimido-p142078_z1_638352194776427420.png', desc:'Exemplo educativo de antifúngico. A indicação depende do tipo de infecção e de avaliação profissional.' },
+  { title:'Aciclovir', category:'infeccao', strength:'200 mg', form:'Comprimido · embalagem varia conforme fabricante', kind:'tablet', image:'https://loja.solfarma.com.br/imagens/produto/grande/0000010103_001.png', desc:'Exemplo educativo de antiviral para situações específicas. A apresentação e o tratamento dependem da avaliação profissional.' },
+  { title:'Clotrimazol', category:'infeccao', strength:'10 mg/g (1%)', form:'Creme dermatológico · bisnaga; quantidade varia por fabricante', kind:'cream', image:'https://cdn1.staticpanvel.com.br/produtos/15/403052-15.jpg', desc:'Exemplo educativo de antifúngico tópico. A forma de uso deve ser conferida na bula da apresentação.' },
+  { title:'Nistatina', category:'infeccao', strength:'100.000 UI/mL', form:'Suspensão oral · volume varia conforme fabricante', kind:'liquid', image:'https://imgprd.martinsatacado.com.br/catalogoimg/417617/01_417617_01.jpg?ims=1000x&v=260220263207', desc:'Exemplo educativo de antifúngico. A imagem é uma referência de apresentação líquida; consulte a bula correspondente.' },
+  { title:'Metronidazol', category:'infeccao', strength:'250 mg', form:'Comprimido · apresentação varia conforme fabricante', kind:'tablet', image:'https://imgprd.martinsatacado.com.br/catalogoimg/414572/01_414572_01.jpg?v=030520242852%3Bims%3D1000x', desc:'Exemplo educativo de medicamento usado contra determinados microrganismos em condições específicas e sob orientação profissional.' },
 
-  { title:'Metformina', category:'cronicos', strength:'850 mg', form:'Comprimido revestido · caixa com 30 comprimidos', kind:'tablet', image:'https://portal.riomeddistribuicao.com.br/11982-large_default/metformina-850mg-30com-geolab.webp', desc:'Exemplo educativo de medicamento usado em tratamentos de longo prazo para controle da glicemia.' },
-  { title:'Losartana', category:'cronicos', strength:'50 mg', form:'Comprimido revestido · caixa com 30 comprimidos', kind:'tablet', image:'https://d1jgmae0hcnr1i.cloudfront.net/Custom/Content/Products/91/32/91326_losartana-potassica-50mg-c-30-cp-rev-p67632_z1_638285764733223909.png', desc:'Exemplo educativo de medicamento usado em tratamentos contínuos relacionados à pressão arterial.' },
-  { title:'Levotiroxina', category:'cronicos', strength:'50 mcg', form:'Comprimido · caixa com 30 comprimidos', kind:'tablet', image:'https://www.drjonatascatunda.com/images/blog/levotiroxina-1.webp', desc:'Exemplo educativo de hormônio tireoidiano usado em terapia de reposição conforme acompanhamento profissional.' },
-  { title:'Sinvastatina', category:'cronicos', strength:'20 mg', form:'Comprimido revestido · caixa com 30 comprimidos', kind:'tablet', image:'https://cdn.awsli.com.br/800x800/2051/2051223/produto/348849329/sinvastatina-20mg-nova-quimica-imv567sv0l.png', desc:'Exemplo educativo de medicamento usado para controle de colesterol em situações indicadas.' },
-  { title:'Enalapril', category:'cronicos', strength:'10 mg', form:'Comprimido · caixa com 30 comprimidos', kind:'tablet', image:'https://storage.googleapis.com/retailon-publico/inteliger/produtos/7896422514248_0_500x500.webp', desc:'Exemplo educativo de medicamento utilizado em tratamentos cardiovasculares sob acompanhamento profissional.' },
-  { title:'Amlodipino', category:'cronicos', strength:'5 mg', form:'Comprimido · caixa com 30 comprimidos', kind:'tablet', image:'https://imgprd.martinsatacado.com.br/catalogoimg/418607/01_418607_01.jpg?ims=1000x&v=170420262720', desc:'Exemplo educativo de medicamento usado em tratamentos contínuos relacionados à pressão arterial.' },
-  { title:'Omeprazol', category:'cronicos', strength:'20 mg', form:'Cápsula · caixa com 30 cápsulas', kind:'capsule', image:'https://santaluciadrogaria.vtexassets.com/arquivos/ids/159851/7898148290093.png?v=637638047999330000', desc:'Exemplo educativo de medicamento que reduz a produção de ácido do estômago em situações específicas.' },
-  { title:'Hidroclorotiazida', category:'cronicos', strength:'25 mg', form:'Comprimido · caixa com 30 comprimidos', kind:'tablet', image:'https://santaluciadrogaria.vtexassets.com/arquivos/ids/176928/7896714211978.png?v=637703571074870000', desc:'Exemplo educativo de diurético utilizado em tratamentos contínuos sob acompanhamento profissional.' }
+  { title:'Cloridrato de metformina', category:'cronicos', strength:'500 mg e 850 mg', form:'Comprimido · as duas concentrações correspondem a apresentações diferentes', kind:'tablet', image:'https://portal.riomeddistribuicao.com.br/11982-large_default/metformina-850mg-30com-geolab.webp', desc:'Exemplo educativo de medicamento usado em acompanhamento de glicemia. A imagem mostra a apresentação de 850 mg; há outras concentrações.' },
+  { title:'Losartana potássica', category:'cronicos', strength:'50 mg', form:'Comprimido revestido · quantidade varia por embalagem', kind:'tablet', image:'https://d1jgmae0hcnr1i.cloudfront.net/Custom/Content/Products/91/32/91326_losartana-potassica-50mg-c-30-cp-rev-p67632_z1_638285764733223909.png', desc:'Exemplo educativo de medicamento utilizado em tratamentos cardiovasculares sob acompanhamento profissional.' },
+  { title:'Levotiroxina', category:'cronicos', strength:'50 mcg', form:'Comprimido · apresentação varia por fabricante', kind:'tablet', image:'https://www.drjonatascatunda.com/images/blog/levotiroxina-1.webp', desc:'Exemplo educativo de hormônio tireoidiano usado em terapia de reposição com acompanhamento profissional.' },
+  { title:'Sinvastatina', category:'cronicos', strength:'20 mg', form:'Comprimido revestido · quantidade varia por embalagem', kind:'tablet', image:'https://cdn.awsli.com.br/800x800/2051/2051223/produto/348849329/sinvastatina-20mg-nova-quimica-imv567sv0l.png', desc:'Exemplo educativo de medicamento usado em situações específicas de controle de colesterol.' },
+  { title:'Maleato de enalapril', category:'cronicos', strength:'10 mg', form:'Comprimido · apresentação varia por fabricante', kind:'tablet', image:'https://storage.googleapis.com/retailon-publico/inteliger/produtos/7896422514248_0_500x500.webp', desc:'Exemplo educativo de medicamento utilizado em tratamentos cardiovasculares sob acompanhamento profissional.' },
+  { title:'Besilato de anlodipino', category:'cronicos', strength:'5 mg', form:'Comprimido · apresentação varia por fabricante', kind:'tablet', image:'https://imgprd.martinsatacado.com.br/catalogoimg/418607/01_418607_01.jpg?ims=1000x&v=170420262720', desc:'Exemplo educativo de medicamento usado em tratamentos cardiovasculares contínuos.' },
+  { title:'Omeprazol', category:'cronicos', strength:'20 mg', form:'Cápsula · apresentação varia conforme fabricante', kind:'capsule', image:'https://santaluciadrogaria.vtexassets.com/arquivos/ids/159851/7898148290093.png?v=637638047999330000', desc:'Exemplo educativo de medicamento que reduz a produção de ácido gástrico em situações específicas.' },
+  { title:'Hidroclorotiazida', category:'cronicos', strength:'25 mg', form:'Comprimido · apresentação varia conforme fabricante', kind:'tablet', image:'https://santaluciadrogaria.vtexassets.com/arquivos/ids/176928/7896714211978.png?v=637703571074870000', desc:'Exemplo educativo de diurético utilizado em tratamentos contínuos sob acompanhamento profissional.' }
 ];
 
 const therapeuticClasses = [
@@ -1628,9 +1711,16 @@ function renderMeds(filter = 'todos') {
           <div class="med-strength"><span>Concentração</span><strong>${m.strength}</strong></div>
           <div class="med-form"><span>Forma farmacêutica / apresentação</span><strong>${m.form}</strong></div>
           <p>${m.desc}</p>
+          <button class="med-detective-toggle" type="button" aria-expanded="false">Explorar as informações <span aria-hidden="true">＋</span></button>
+          <div class="med-detective-details" hidden>
+            <p><strong>Concentração:</strong> é a quantidade declarada do princípio ativo em uma unidade, como um comprimido, ou em um volume, como 1 mL ou 5 mL.</p>
+            <p><strong>Forma farmacêutica:</strong> descreve como o medicamento se apresenta, por exemplo, comprimido, cápsula ou solução oral.</p>
+            <p><strong>Apresentação:</strong> identifica detalhes como volume do frasco e quantidade de unidades. Eles variam entre fabricantes; confira o rótulo do produto real.</p>
+          </div>
         </div>
       </article>`
   ).join('');
+  initLightboxImages(medContainer);
   initViewAnimations(medContainer);
 }
 renderMeds();
@@ -1651,7 +1741,7 @@ initViewAnimations($('#classCards'));
 // ---------- Formas farmacêuticas ----------
 $('#formsCards').innerHTML = forms.map((f,i) => `
   <article class="forms-card view-animate" style="--reveal-delay:${Math.min(i,7)*65}ms">
-    <div class="form-image-wrap"><img src="${f.image}" alt="${f.alt}" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.style.opacity='.25'; this.alt='Imagem de referência temporariamente indisponível';" /></div>
+    <div class="form-image-wrap"><img src="${f.image}" alt="${f.alt}" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='assets/med-visual-tablet.svg'; this.alt='Ilustração de apoio da forma farmacêutica';" /></div>
     <div class="forms-copy"><span class="tag">Forma farmacêutica</span><h3>${f.title}</h3><p>${f.desc}</p></div>
   </article>
 `).join('');
@@ -1684,6 +1774,7 @@ mainNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
 
 // ---------- Preferências ----------
 const increaseText = $('#increaseText');
+const decreaseText = $('#decreaseText');
 const highContrast = $('#highContrast');
 const toggleTheme = $('#toggleTheme');
 const reduceMotion = $('#reduceMotion');
@@ -1691,10 +1782,12 @@ const resetAccess = $('#resetAccess');
 
 function applyPreferenceClasses() {
   const large = document.body.classList.contains('font-large');
+  const small = document.body.classList.contains('font-small');
   const contrast = document.body.classList.contains('high-contrast');
   const dark = document.body.classList.contains('dark');
   const motion = document.body.classList.contains('reduce-motion');
   increaseText.setAttribute('aria-pressed', String(large));
+  decreaseText.setAttribute('aria-pressed', String(small));
   highContrast.setAttribute('aria-pressed', String(contrast));
   toggleTheme.setAttribute('aria-pressed', String(dark));
   reduceMotion.setAttribute('aria-pressed', String(motion));
@@ -1703,6 +1796,7 @@ function applyPreferenceClasses() {
 function savePreferences() {
   localStorage.setItem('farmaciaPrefs', JSON.stringify({
     fontLarge: document.body.classList.contains('font-large'),
+    fontSmall: document.body.classList.contains('font-small'),
     highContrast: document.body.classList.contains('high-contrast'),
     dark: document.body.classList.contains('dark'),
     reduceMotion: document.body.classList.contains('reduce-motion')
@@ -1712,18 +1806,20 @@ function loadPreferences() {
   try {
     const pref = JSON.parse(localStorage.getItem('farmaciaPrefs') || '{}');
     document.body.classList.toggle('font-large', !!pref.fontLarge);
+    document.body.classList.toggle('font-small', !!pref.fontSmall);
     document.body.classList.toggle('high-contrast', !!pref.highContrast);
     document.body.classList.toggle('dark', !!pref.dark);
     document.body.classList.toggle('reduce-motion', !!pref.reduceMotion);
   } catch (_) {}
   applyPreferenceClasses();
 }
-increaseText.addEventListener('click', () => { document.body.classList.toggle('font-large'); savePreferences(); applyPreferenceClasses(); });
+increaseText.addEventListener('click', () => { document.body.classList.toggle('font-large'); document.body.classList.remove('font-small'); savePreferences(); applyPreferenceClasses(); });
+decreaseText.addEventListener('click', () => { document.body.classList.toggle('font-small'); document.body.classList.remove('font-large'); savePreferences(); applyPreferenceClasses(); });
 highContrast.addEventListener('click', () => { document.body.classList.toggle('high-contrast'); savePreferences(); applyPreferenceClasses(); });
 toggleTheme.addEventListener('click', () => { document.body.classList.toggle('dark'); savePreferences(); applyPreferenceClasses(); });
 reduceMotion.addEventListener('click', () => { document.body.classList.toggle('reduce-motion'); savePreferences(); applyPreferenceClasses(); });
 resetAccess.addEventListener('click', () => {
-  document.body.classList.remove('font-large','high-contrast','dark','reduce-motion');
+  document.body.classList.remove('font-large','font-small','high-contrast','dark','reduce-motion');
   localStorage.removeItem('farmaciaPrefs');
   applyPreferenceClasses();
 });
@@ -2237,6 +2333,146 @@ $('#feedbackForm').addEventListener('submit', (event) => {
   $('#feedbackForm').reset();
 });
 
-  </script>
+  
+
+// ===== Melhorias integradas: galeria, passaporte, visita guiada, glossário, descarte e interações =====
+(function initProjectEnhancements(){
+  const safeText = (value) => String(value ?? '').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+
+  // Gallery: photos are displayed with object-fit:contain and black letterboxing—never stretched/cropped.
+  const photoFiles = [
+    'team-01.jpeg','team-02.jpeg','team-03.jpeg','team-04.jpeg','team-05.jpeg','team-06.jpeg',
+    'team-07.jpeg','team-08.jpeg','team-09.jpeg','team-10.jpeg','team-11.jpeg','team-12.jpeg',
+    'team-13.jpeg','team-14.jpeg','team-15.jpeg','team-16.jpeg','team-17.jpeg','team-18.jpeg',
+    'team-19.jpeg','team-20.jpeg','team-21.jpeg','team-22.jpeg'
+  ];
+  const teamTrack = document.getElementById('teamTrack');
+  const teamCarousel = document.getElementById('teamCarousel');
+  const teamCounter = document.getElementById('teamCounter');
+  if (teamTrack && teamCarousel) {
+    teamTrack.innerHTML = photoFiles.map((file,i)=>`<div class="team-photo-card" style="--portrait-delay:${(i%5)*-460}ms" aria-label="Foto do integrante ${i+1}"><div class="team-photo-frame"><img src="assets/project-people/${file}" alt="Foto de integrante do projeto" loading="${i<3?'eager':'lazy'}" decoding="async" draggable="false"></div></div>`).join('');
+    const cards = [...teamTrack.children];
+    const cardStep = () => { const card = cards[0]; return card ? card.getBoundingClientRect().width + parseFloat(getComputedStyle(teamTrack).gap || 15) : 220; };
+    const moveGallery = (direction) => teamCarousel.scrollBy({left:direction*cardStep(),behavior:document.body.classList.contains('reduce-motion')?'auto':'smooth'});
+    document.getElementById('teamPrev')?.addEventListener('click',()=>moveGallery(-1));
+    document.getElementById('teamNext')?.addEventListener('click',()=>moveGallery(1));
+    teamCarousel.addEventListener('keydown',e=>{if(e.key==='ArrowLeft'){e.preventDefault();moveGallery(-1)}if(e.key==='ArrowRight'){e.preventDefault();moveGallery(1)}});
+    let pointerDown=false,startX=0,startScroll=0;
+    teamCarousel.addEventListener('pointerdown',e=>{if(e.pointerType!=='mouse'||e.button!==0)return;pointerDown=true;startX=e.clientX;startScroll=teamCarousel.scrollLeft;});
+    teamCarousel.addEventListener('pointermove',e=>{if(!pointerDown)return; if(Math.abs(e.clientX-startX)>4)teamCarousel.scrollLeft=startScroll-(e.clientX-startX);});
+    ['pointerup','pointercancel','pointerleave'].forEach(name=>teamCarousel.addEventListener(name,()=>{pointerDown=false}));
+    let counterQueued=false;
+    const updatePhotoCounter=()=>{const step=cardStep();const index=Math.min(cards.length,Math.max(1,Math.round(teamCarousel.scrollLeft/step)+1));if(teamCounter)teamCounter.textContent=`Foto ${index} de ${cards.length}`;counterQueued=false};
+    teamCarousel.addEventListener('scroll',()=>{if(!counterQueued){counterQueued=true;requestAnimationFrame(updatePhotoCounter)}});
+    updatePhotoCounter();
+  }
+
+  // Visited sections/passport: saved only in this browser.
+  const visitSections = [
+    ['inicio','Início'],['farmacia','Conheça'],['medicamentos','Aprenda'],['classes','Classes'],['formas','Observe'],['bula','Consulte'],['rotina','Vivências'],['acessibilidade','Acessibilidade'],['sustentabilidade','Sustentabilidade'],['quiz','Quiz'],['feedback','Feedback'],['creditos','Créditos']
+  ];
+  const VISITED_KEY='farmaciaVisitPassportV1';
+  let visited=new Set(['inicio']);
+  try{const saved=JSON.parse(localStorage.getItem(VISITED_KEY)||'[]');if(Array.isArray(saved))saved.filter(id=>visitSections.some(item=>item[0]===id)).forEach(id=>visited.add(id));}catch(_){}
+  const passportDetails=document.getElementById('passportDetails');
+  const passportCount=document.getElementById('passportCount');
+  const passportFill=document.getElementById('passportProgressFill');
+  const passportProgress=document.querySelector('.passport-progress');
+  const passportMessage=document.getElementById('passportMessage');
+  function renderPassport(){
+    const count=Math.min(visitSections.length,visited.size);
+    if(passportCount)passportCount.textContent=`${count} de ${visitSections.length}`;
+    if(passportFill)passportFill.style.width=`${count/visitSections.length*100}%`;
+    if(passportProgress)passportProgress.setAttribute('aria-valuenow',String(count));
+    if(passportMessage)passportMessage.textContent=count===visitSections.length?'Visita concluída! Você explorou todas as áreas.':`${visitSections.length-count} ${visitSections.length-count===1?'seção restante':'seções restantes'} para completar sua visita.`;
+    if(passportDetails)passportDetails.innerHTML=visitSections.map(([id,label])=>`<a class="passport-stop ${visited.has(id)?'done':''}" href="#${id}">${safeText(label)}</a>`).join('');
+    try{localStorage.setItem(VISITED_KEY,JSON.stringify([...visited]));}catch(_){}
+  }
+  renderPassport();
+  document.getElementById('togglePassportDetails')?.addEventListener('click',e=>{const btn=e.currentTarget;const isOpen=btn.getAttribute('aria-expanded')==='true';btn.setAttribute('aria-expanded',String(!isOpen));passportDetails.hidden=isOpen;btn.textContent=isOpen?'Ver percurso':'Ocultar percurso';});
+  const passportObserver=('IntersectionObserver' in window)?new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){visited.add(entry.target.id);renderPassport()}})},{threshold:.18,rootMargin:'-15% 0px -15% 0px'}):null;
+  if(passportObserver)visitSections.forEach(([id])=>{const el=document.getElementById(id);if(el)passportObserver.observe(el)});
+  else visitSections.forEach(([id])=>{if(document.getElementById(id))visited.add(id)});
+
+  // Guided tour with section focus, clear progress, skip/close, and keyboard escape.
+  const tourSteps = [
+    ['inicio','Início','Aqui começa a experiência. Use o menu ou a visita guiada para encontrar as áreas do projeto.'],
+    ['farmacia','Conheça a Farmácia','Escolha os setores e leia a explicação para entender a função de cada área.'],
+    ['medicamentos','Aprenda sobre medicamentos','Compare nome, concentração, forma farmacêutica e apresentação. Abra “Explorar as informações” nos cartões.'],
+    ['classes','Classes terapêuticas e glossário','Veja como os medicamentos são agrupados e pesquise termos no glossário.'],
+    ['formas','Observe as formas farmacêuticas','Explore as imagens e amplie as fotos para observar melhor os detalhes.'],
+    ['bula','Consulte o medicamento em 3D','Gire o objeto, avance pelas etapas e abra a bula interativa.'],
+    ['rotina','Vivências na farmácia','Escolha uma das três fases e observe como a rotina muda.'],
+    ['acessibilidade','Acessibilidade','Veja recursos que ajudam diferentes pessoas a navegar e compreender as informações.'],
+    ['sustentabilidade','Sustentabilidade','Conheça os destinos dos resíduos e experimente o desafio interativo de descarte.'],
+    ['quiz','Quiz','Responda às perguntas fáceis, médias e difíceis para testar o que aprendeu.'],
+    ['feedback','Feedback','Registre sua opinião, dúvida ou sugestão para a apresentação.'],
+    ['creditos','Créditos','Confira os participantes e as referências do projeto.']
+  ];
+  const tourCard=document.getElementById('guidedTourCard');let tourIndex=0;let tourActive=false;let tourLastFocus=null;let tourHighlighted=null;
+  const tourTitle=document.getElementById('guidedTourTitle'),tourText=document.getElementById('guidedTourText'),tourCounter=document.getElementById('guidedTourCounter'),tourNext=document.getElementById('guidedTourNext'),tourPrev=document.getElementById('guidedTourPrev');
+  function closeTour(completed=false){tourActive=false;tourCard?.classList.remove('open');tourCard?.setAttribute('aria-hidden','true');if(tourHighlighted)tourHighlighted.classList.remove('tour-highlight');tourHighlighted=null;if(completed){try{localStorage.setItem('farmaciaGuidedTourComplete','1')}catch(_){}}if(tourLastFocus?.focus)tourLastFocus.focus();}
+  function showTourStep(){const step=tourSteps[tourIndex];if(!step)return; if(tourHighlighted)tourHighlighted.classList.remove('tour-highlight');const target=document.getElementById(step[0]);tourHighlighted=target;if(target){target.classList.add('tour-highlight');target.scrollIntoView({behavior:document.body.classList.contains('reduce-motion')?'auto':'smooth',block:'start'});visited.add(step[0]);renderPassport()}tourTitle.textContent=step[1];tourText.textContent=step[2];tourCounter.textContent=`VISITA GUIADA · ${tourIndex+1}/${tourSteps.length}`;tourPrev.disabled=tourIndex===0;tourNext.textContent=tourIndex===tourSteps.length-1?'Concluir visita':'Próxima etapa';}
+  function startTour(){tourLastFocus=document.activeElement;tourIndex=0;tourActive=true;tourCard.classList.add('open');tourCard.setAttribute('aria-hidden','false');showTourStep();document.getElementById('guidedTourClose')?.focus();}
+  document.getElementById('launchTour')?.addEventListener('click',startTour);
+  document.getElementById('guidedTourClose')?.addEventListener('click',()=>closeTour(false));
+  tourPrev?.addEventListener('click',()=>{if(tourIndex>0){tourIndex--;showTourStep()}});
+  tourNext?.addEventListener('click',()=>{if(tourIndex<tourSteps.length-1){tourIndex++;showTourStep()}else closeTour(true)});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&tourActive){e.preventDefault();closeTour(false)}});
+  document.querySelectorAll('#mainNav a').forEach(a=>a.addEventListener('click',()=>{if(tourActive){const idx=tourSteps.findIndex(step=>'#'+step[0]===a.getAttribute('href'));if(idx>=0){tourIndex=idx;showTourStep()}}}));
+
+  // Animated active navigation marker tracks the section in view.
+  if('IntersectionObserver' in window){const navObserver=new IntersectionObserver(entries=>{const visible=entries.filter(e=>e.isIntersecting).sort((a,b)=>b.intersectionRatio-a.intersectionRatio)[0];if(!visible)return;document.querySelectorAll('#mainNav a[href^="#"]').forEach(link=>link.classList.toggle('nav-active',link.getAttribute('href')==='#'+visible.target.id));},{rootMargin:'-22% 0px -62% 0px',threshold:[0,.1,.25,.45]});visitSections.forEach(([id])=>{const el=document.getElementById(id);if(el)navObserver.observe(el)})}
+
+  // Detetive dos medicamentos: delegated handler works after category filtering/re-rendering.
+  document.getElementById('medicationCards')?.addEventListener('click',e=>{const btn=e.target.closest('.med-detective-toggle');if(!btn)return;const detail=btn.nextElementSibling;const opening=btn.getAttribute('aria-expanded')!=='true';btn.setAttribute('aria-expanded',String(opening));detail.hidden=!opening;btn.querySelector('span').textContent=opening?'−':'＋';btn.firstChild.textContent=opening?'Ocultar explicação ':'Explorar as informações ';});
+
+  // Searchable, accessible glossary.
+  const glossaryTerms=[
+    ['Princípio ativo','Substância responsável pela ação farmacológica do medicamento.'],
+    ['Concentração','Quantidade de princípio ativo indicada em uma unidade ou em determinado volume, como mg/mL ou mg/5 mL.'],
+    ['Dose','Quantidade de medicamento administrada em uma ocasião. Não é sinônimo de concentração.'],
+    ['Forma farmacêutica','Forma física em que o medicamento é apresentado, como comprimido, cápsula, creme ou solução oral.'],
+    ['Apresentação','Conjunto de características da embalagem, como concentração, forma e quantidade de unidades ou volume.'],
+    ['Suspensão oral','Preparação líquida em que partículas do princípio ativo ficam dispersas; siga as instruções específicas da bula, inclusive sobre agitação quando indicada.'],
+    ['Dispensação','Processo de entrega do medicamento acompanhado das orientações pertinentes.'],
+    ['Contraindicação','Situação em que determinado medicamento não deve ser utilizado, conforme sua bula e avaliação profissional.'],
+    ['Interação medicamentosa','Alteração do efeito de um medicamento causada por outro medicamento, alimento ou substância.'],
+    ['Bula','Documento oficial que reúne informações sobre composição, indicações, advertências, uso, reações adversas e conservação.'],
+    ['Medicamento genérico','Medicamento identificado pelo princípio ativo e regulado para demonstrar equivalência com o medicamento de referência.'],
+    ['Validade','Prazo dentro do qual o produto mantém as especificações, quando armazenado nas condições indicadas.']
+  ];
+  const glossarySearch=document.getElementById('glossarySearch'),glossaryResults=document.getElementById('glossaryResults');
+  function renderGlossary(query=''){const q=query.trim().toLocaleLowerCase('pt-BR');const matches=glossaryTerms.filter(([term,desc])=>(term+' '+desc).toLocaleLowerCase('pt-BR').includes(q));glossaryResults.innerHTML=matches.length?matches.map(([term,desc])=>`<details class="glossary-result"><summary>${safeText(term)}</summary><p>${safeText(desc)}</p></details>`).join(''):'<p class="glossary-empty">Nenhum termo encontrado. Tente outra palavra.</p>'}
+  renderGlossary();glossarySearch?.addEventListener('input',()=>renderGlossary(glossarySearch.value));
+
+  // Waste sorting mini-game: five scenarios, explanation after each choice, local-only score.
+  const wasteQuestions=[
+    {title:'Agulha usada',desc:'Qual destino é apropriado para uma agulha ou outro objeto perfurocortante?',img:'assets/sust_01.jpg',alt:'Coletor de perfurocortantes',options:['Recipiente rígido próprio para perfurocortantes','Lixeira comum','Caixa de papelão aberta','Recipiente de reciclagem de vidro'],correct:0,explain:'Correto: objetos perfurocortantes precisam de recipiente resistente e apropriado. Nunca os coloque soltos no lixo.'},
+    {title:'Medicamento vencido',desc:'O que fazer com medicamentos vencidos ou que não serão mais utilizados?',img:'assets/sust_02.jpg',alt:'Ponto de coleta para medicamentos',options:['Descartar na pia','Levar a ponto de coleta adequado','Misturar com papel reciclável','Jogar no vaso sanitário'],correct:1,explain:'Correto: procure um ponto de coleta que receba medicamentos e siga as orientações locais. Não despeje medicamentos no ralo ou vaso sanitário.'},
+    {title:'Caixa de papelão limpa',desc:'Qual destinação pode ser apropriada para uma caixa limpa e seca, separada do medicamento?',img:'assets/sust_04.jpg',alt:'Caixas de papelão para reciclagem',options:['Reciclagem de papel e papelão, quando aceita localmente','Coletor de perfurocortantes','Ponto de coleta de líquidos','Ralo'],correct:0,explain:'Correto: papel e papelão limpos e secos podem seguir a coleta seletiva quando o serviço local aceita esse material.'},
+    {title:'Frasco de vidro vazio',desc:'Qual é a atitude mais adequada para um frasco de vidro vazio?',img:'assets/sust_03.jpg',alt:'Frascos de vidro',options:['Quebrar antes de jogar no lixo','Seguir a orientação local para vidro e embalagem','Colocar solto no coletor de agulhas','Sempre reutilizar para guardar alimentos'],correct:1,explain:'Correto: siga a orientação de descarte local. Não quebre o vidro nem reutilize embalagens de medicamentos para outros fins.'},
+    {title:'Material reaproveitável da maquete',desc:'Uma peça limpa de papelão pode ser usada na construção da maquete. O que priorizar?',img:'assets/sust_06.jpg',alt:'Maquete construída com materiais reaproveitados',options:['Reutilizar com segurança antes de descartar','Misturar com resíduos contaminados','Queimar o material','Descartar sempre sem avaliar reaproveitamento'],correct:0,explain:'Correto: quando o material está limpo e adequado ao uso, o reaproveitamento pode reduzir desperdício. Materiais contaminados não devem ser reutilizados.'}
+  ];
+  const wasteBody=document.getElementById('wasteChallengeBody'),wasteScoreBadge=document.getElementById('wasteScoreBadge');let wasteIndex=0,wasteScore=0,wasteAnswered=false;
+  function renderWasteQuestion(){const item=wasteQuestions[wasteIndex];if(!item)return;wasteAnswered=false;wasteScoreBadge.textContent=`${wasteScore} / ${wasteQuestions.length}`;wasteBody.innerHTML=`<div class="waste-round"><div class="waste-round-photo"><img src="${item.img}" alt="${safeText(item.alt)}" loading="lazy" onerror="this.onerror=null;this.src='assets/med-visual-tablet.svg';"></div><div class="waste-round-copy"><span class="waste-round-kicker">SITUAÇÃO ${wasteIndex+1} DE ${wasteQuestions.length}</span><h4>${safeText(item.title)}</h4><p>${safeText(item.desc)}</p><div class="waste-options">${item.options.map((option,i)=>`<button type="button" class="waste-option" data-waste-answer="${i}">${safeText(option)}</button>`).join('')}</div><p class="waste-feedback" id="wasteFeedback" hidden></p><div class="waste-controls"><p>Escolhas corretas: ${wasteScore} de ${wasteQuestions.length}</p><button type="button" class="btn primary small" id="wasteNext" disabled>${wasteIndex===wasteQuestions.length-1?'Ver resultado':'Próxima situação'}</button></div></div></div>`;}
+  function finishWaste(){wasteScoreBadge.textContent=`${wasteScore} / ${wasteQuestions.length}`;const message=wasteScore===wasteQuestions.length?'Excelente! Você identificou todos os destinos.':wasteScore>=3?'Bom trabalho! Revise as explicações para fixar os cuidados.':'Continue praticando e consulte as orientações de coleta da sua região.';wasteBody.innerHTML=`<div class="waste-finish"><div class="waste-finish-score">${wasteScore}/${wasteQuestions.length}</div><h4>${message}</h4><p>O desafio é educativo. A destinação pode depender das regras do serviço de coleta local.</p><button type="button" class="btn primary" id="restartWaste">Tentar novamente</button></div>`;document.getElementById('restartWaste').addEventListener('click',()=>{wasteIndex=0;wasteScore=0;renderWasteQuestion()})}
+  wasteBody?.addEventListener('click',e=>{const option=e.target.closest('[data-waste-answer]');if(option){if(wasteAnswered)return;wasteAnswered=true;const item=wasteQuestions[wasteIndex],chosen=Number(option.dataset.wasteAnswer),correct=chosen===item.correct;if(correct)wasteScore++;wasteBody.querySelectorAll('.waste-option').forEach(btn=>{btn.disabled=true;const idx=Number(btn.dataset.wasteAnswer);if(idx===item.correct)btn.classList.add('correct');else if(idx===chosen)btn.classList.add('incorrect')});const feedback=document.getElementById('wasteFeedback');feedback.hidden=false;feedback.textContent=(correct?'Resposta correta. ':'Vamos revisar. ')+item.explain;wasteScoreBadge.textContent=`${wasteScore} / ${wasteQuestions.length}`;document.getElementById('wasteNext').disabled=false;return;}if(e.target.closest('#wasteNext')){if(!wasteAnswered)return;if(wasteIndex<wasteQuestions.length-1){wasteIndex++;renderWasteQuestion()}else finishWaste()}});
+  renderWasteQuestion();
+
+  // Functional three-phase timeline replaces decorative square/scanline animation in Vivências.
+  function updateRoutineTimeline(index){document.querySelectorAll('.routine-phase-btn').forEach(btn=>{const start=Number(btn.dataset.phaseStart);const active=(start===0&&index<3)||(start===3&&index>=3&&index<5)||(start===5&&index===5);btn.classList.toggle('active',active);btn.setAttribute('aria-pressed',String(active))})}
+  const originalShowRoutine=window.showRoutine;
+  // The project routine function is lexical, so use a wrapped click handler for the phase controls and timeline state.
+  document.querySelectorAll('.routine-step').forEach(btn=>btn.addEventListener('click',()=>updateRoutineTimeline(Number(btn.dataset.routine))));
+  document.querySelectorAll('.routine-phase-btn').forEach(btn=>btn.addEventListener('click',()=>{const start=Number(btn.dataset.phaseStart);const trigger=document.querySelector(`.routine-step[data-routine="${start}"]`);if(trigger)trigger.click();updateRoutineTimeline(start)}));
+  updateRoutineTimeline(0);
+
+  // Reveal section headings and new interactive blocks on scroll without slowing their content.
+  document.querySelectorAll('.section-head,.notice,.visitor-passport,.glossary-panel,.waste-challenge').forEach((el,i)=>{el.classList.add('view-animate');if(!el.style.getPropertyValue('--reveal-delay'))el.style.setProperty('--reveal-delay',`${(i%4)*55}ms`)});
+  if(typeof initViewAnimations==='function')initViewAnimations(document);
+})();
+
+</script>
 </body>
 </html>
