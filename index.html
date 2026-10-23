@@ -3,6 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="64x64" href="assets/favicon.png" />
+  <link rel="shortcut icon" href="assets/favicon.ico" />
+  <meta name="theme-color" content="#ffffff" />
   <meta name="description" content="Entre. Explore. Escaneie. Aprender. — extensão digital da Farmácia-Escola." />
   <title>Entre. Explore. Escaneie. Aprender.</title>
   <style>
@@ -848,7 +852,7 @@ body.reduce-motion .image-expand-btn{transform:none !important}
 .hero-gallery-kicker{font-size:.72rem;font-weight:950;letter-spacing:.18em}
 .hero-gallery-hint{font-size:.74rem;color:rgba(237,255,249,.7)}
 .team-carousel{position:relative;z-index:3;flex:1;min-height:0;width:100%;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scroll-behavior:smooth;overscroll-behavior-x:contain;scrollbar-width:none;cursor:grab;touch-action:pan-x;outline-offset:4px}
-.team-carousel::-webkit-scrollbar{display:none}.team-carousel:active{cursor:grabbing}.team-track{display:flex;gap:15px;align-items:center;height:100%;padding:10px 5px 15px;width:max-content;min-width:100%}
+.team-carousel::-webkit-scrollbar{display:none}.team-carousel:active{cursor:grabbing}.team-carousel.loop-reset{scroll-behavior:auto!important}.team-track{display:flex;gap:15px;align-items:center;height:100%;padding:10px 5px 15px;width:max-content;min-width:100%}
 .team-photo-card{flex:0 0 clamp(190px,46%,245px);height:100%;min-height:300px;max-height:355px;display:grid;place-items:center;scroll-snap-align:center;padding:10px;border-radius:28px;background:rgba(3,17,15,.48);border:1px solid rgba(225,255,246,.18);box-shadow:0 22px 48px rgba(0,0,0,.18);transform:translateY(var(--float-offset,0));animation:portraitFloat 5.6s ease-in-out infinite;animation-delay:var(--portrait-delay,0ms)}
 .team-photo-frame{width:100%;height:100%;min-height:275px;overflow:hidden;border-radius:19px;background:#050505;display:grid;place-items:center;border:1px solid rgba(255,255,255,.12)}
 .team-photo-frame img{width:100%;height:100%;object-fit:contain;object-position:center;background:#050505;display:block;max-width:100%;max-height:100%;user-select:none;-webkit-user-drag:none}
@@ -869,8 +873,11 @@ body.reduce-motion .image-expand-btn{transform:none !important}
 .guided-tour-card{position:fixed;z-index:150;top:92px;right:20px;width:min(370px,calc(100vw - 28px));padding:19px;border:1px solid rgba(133,223,202,.35);border-radius:21px;background:color-mix(in srgb,#0d3028 94%,transparent);color:#effff9;box-shadow:0 28px 80px rgba(0,0,0,.28);backdrop-filter:blur(16px);opacity:0;visibility:hidden;transform:translateY(-8px) scale(.985);transition:opacity .25s ease,transform .25s ease,visibility .25s}.guided-tour-card.open{opacity:1;visibility:visible;transform:none}.guided-tour-card[aria-hidden="true"]{pointer-events:none}.guided-tour-top{display:flex;justify-content:space-between;align-items:center;gap:10px;color:#8debd3;font-size:.68rem;font-weight:950;letter-spacing:.1em}.guided-tour-top button{border:1px solid rgba(255,255,255,.2);border-radius:9px;background:rgba(255,255,255,.08);color:white;width:32px;height:32px;font-size:1.3rem}.guided-tour-card h3{font-size:1.3rem;margin:12px 0 8px;color:white}.guided-tour-card p{font-size:.9rem;color:rgba(239,255,249,.78);margin:0}.guided-tour-actions{display:flex;justify-content:space-between;gap:10px;margin-top:16px}.guided-tour-actions .btn.ghost{color:#effff9;border-color:rgba(255,255,255,.22)}.tour-highlight{outline:4px solid rgba(66,182,158,.8)!important;outline-offset:-4px;box-shadow:0 0 0 10px rgba(66,182,158,.08)!important;transition:outline-color .2s ease,box-shadow .2s ease;scroll-margin-top:92px;position:relative;z-index:2}
 .main-nav>a.nav-active{position:relative;background:var(--secondary);color:var(--primary-dark)}.main-nav>a.nav-active::after{content:'';position:absolute;left:10px;right:10px;bottom:3px;height:2px;border-radius:99px;background:var(--primary);animation:navIndicator .28s ease both}@keyframes navIndicator{from{transform:scaleX(.2);opacity:.3}to{transform:scaleX(1);opacity:1}}
 .glossary-panel{display:grid;grid-template-columns:minmax(0,1fr) minmax(250px,.8fr);gap:12px 28px;margin-top:34px;padding:26px;border:1px solid var(--line);border-radius:24px;background:var(--surface);box-shadow:var(--shadow)}.glossary-intro{grid-row:span 2}.glossary-intro .eyebrow{font-size:.65rem}.glossary-intro h3{font-size:1.55rem;margin:2px 0 7px}.glossary-intro p{color:var(--muted);max-width:440px;margin:0}.glossary-search-label{align-self:end;font-weight:850;font-size:.82rem}.glossary-search-wrap{display:flex;align-items:center;gap:9px;border:1px solid var(--line);border-radius:13px;background:var(--bg);padding:0 13px}.glossary-search-wrap svg{width:19px;height:19px;fill:none;stroke:var(--muted);stroke-width:2;flex:0 0 auto}.glossary-search-wrap input{width:100%;min-width:0;border:0;outline:none;background:transparent;color:var(--text);padding:12px 0}.glossary-results{grid-column:1/-1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin-top:8px}.glossary-result{border:1px solid var(--line);border-radius:13px;background:var(--surface-2);padding:13px 14px}.glossary-result summary{cursor:pointer;font-weight:900;color:var(--text)}.glossary-result p{margin:7px 0 0;color:var(--muted);font-size:.9rem}.glossary-empty{grid-column:1/-1;color:var(--muted);padding:9px 0}
+.form-image-missing{display:grid;place-items:center;background:var(--surface-2)!important}.form-image-unavailable{padding:20px;color:var(--muted);font-size:.82rem;font-weight:800;text-align:center}
+.med-image-missing{background:var(--surface-2)!important}.med-image-unavailable{min-height:220px;width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9px;padding:24px;text-align:center;color:var(--muted);font-size:.82rem;font-weight:800;background:var(--surface-2)}.med-image-unavailable-icon{font-size:2.1rem;line-height:1;color:var(--primary);opacity:.8}
 .med-detective-toggle{display:flex;align-items:center;justify-content:space-between;gap:10px;width:100%;margin-top:13px;padding:10px 12px;border:1px solid var(--line);border-radius:12px;background:var(--surface-2);color:var(--primary-dark);font-size:.83rem;font-weight:900;text-align:left;transition:background .2s ease,transform .2s ease}.med-detective-toggle:hover{transform:translateY(-1px);background:var(--secondary)}.med-detective-toggle span{font-size:1.1rem}.med-detective-details{margin-top:10px;padding:12px 13px;border-radius:13px;border:1px solid var(--line);background:var(--surface-2);animation:sectionReveal .28s ease both}.med-detective-details[hidden]{display:none}.med-detective-details p{font-size:.85rem;color:var(--muted);margin:0 0 9px}.med-detective-details p:last-child{margin-bottom:0}.med-detective-details strong{color:var(--text)}
-.waste-challenge{margin-top:32px;padding:clamp(18px,3vw,28px);border:1px solid var(--line);border-radius:25px;background:linear-gradient(140deg,var(--surface),var(--surface-2));box-shadow:var(--shadow)}.waste-challenge-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;margin-bottom:18px}.waste-challenge-heading h3{font-size:1.7rem;margin:2px 0 8px}.waste-challenge-heading p{max-width:710px;color:var(--muted);margin:0}.waste-score{flex:0 0 auto;padding:9px 13px;border:1px solid var(--line);background:var(--surface);color:var(--primary-dark);font-weight:950;border-radius:12px;font-variant-numeric:tabular-nums}.waste-round{display:grid;grid-template-columns:minmax(180px,.65fr) minmax(0,1.35fr);gap:18px;align-items:stretch}.waste-round-photo{min-height:230px;border-radius:18px;overflow:hidden;background:#fff;border:1px solid var(--line)}.waste-round-photo img{width:100%;height:100%;min-height:230px;object-fit:contain;background:#fff}.waste-round-copy{border:1px solid var(--line);background:var(--surface);border-radius:18px;padding:19px}.waste-round-kicker{font-size:.7rem;color:var(--primary);font-weight:950;letter-spacing:.11em}.waste-round-copy h4{font-size:1.25rem;margin:7px 0}.waste-round-copy p{color:var(--muted);margin:0 0 14px}.waste-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.waste-option{min-height:48px;border:1px solid var(--line);border-radius:12px;background:var(--surface-2);color:var(--text);font-weight:800;text-align:left;padding:10px 12px;transition:transform .16s ease,border-color .16s ease,background .16s ease}.waste-option:hover:not(:disabled){transform:translateY(-2px);border-color:var(--primary)}.waste-option.correct{border-color:#228656;background:#dff6e9;color:#145334}.waste-option.incorrect{border-color:#c75b52;background:#ffebe8;color:#762e28}.waste-feedback{margin:12px 0 0;padding:10px 12px;border-radius:11px;background:var(--surface-2);color:var(--text);font-size:.88rem}.waste-controls{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:13px}.waste-controls p{margin:0;color:var(--muted);font-size:.82rem}.waste-finish{text-align:center;padding:22px}.waste-finish-score{font-size:3.2rem;font-weight:950;color:var(--primary);line-height:1.1}.waste-finish h4{font-size:1.45rem;margin:12px 0 7px}.waste-finish p{color:var(--muted)}
+.waste-challenge{margin-top:32px;padding:clamp(18px,3vw,28px);border:1px solid var(--line);border-radius:25px;background:linear-gradient(140deg,var(--surface),var(--surface-2));box-shadow:var(--shadow)}.waste-challenge-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;margin-bottom:18px}.waste-challenge-heading h3{font-size:1.7rem;margin:2px 0 8px}.waste-challenge-heading p{max-width:710px;color:var(--muted);margin:0}.waste-score{flex:0 0 auto;padding:9px 13px;border:1px solid var(--line);background:var(--surface);color:var(--primary-dark);font-weight:950;border-radius:12px;font-variant-numeric:tabular-nums}.waste-round{display:grid;grid-template-columns:minmax(180px,.65fr) minmax(0,1.35fr);gap:18px;align-items:stretch}.waste-image-unavailable{display:grid;place-items:center;min-height:230px;padding:18px;text-align:center;color:var(--muted);font-size:.82rem;font-weight:800;background:var(--surface-2)}
+.waste-round-photo{min-height:230px;border-radius:18px;overflow:hidden;background:#fff;border:1px solid var(--line)}.waste-round-photo img{width:100%;height:100%;min-height:230px;object-fit:contain;background:#fff}.waste-round-copy{border:1px solid var(--line);background:var(--surface);border-radius:18px;padding:19px}.waste-round-kicker{font-size:.7rem;color:var(--primary);font-weight:950;letter-spacing:.11em}.waste-round-copy h4{font-size:1.25rem;margin:7px 0}.waste-round-copy p{color:var(--muted);margin:0 0 14px}.waste-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.waste-option{min-height:48px;border:1px solid var(--line);border-radius:12px;background:var(--surface-2);color:var(--text);font-weight:800;text-align:left;padding:10px 12px;transition:transform .16s ease,border-color .16s ease,background .16s ease}.waste-option:hover:not(:disabled){transform:translateY(-2px);border-color:var(--primary)}.waste-option.correct{border-color:#228656;background:#dff6e9;color:#145334}.waste-option.incorrect{border-color:#c75b52;background:#ffebe8;color:#762e28}.waste-feedback{margin:12px 0 0;padding:10px 12px;border-radius:11px;background:var(--surface-2);color:var(--text);font-size:.88rem}.waste-controls{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:13px}.waste-controls p{margin:0;color:var(--muted);font-size:.82rem}.waste-finish{text-align:center;padding:22px}.waste-finish-score{font-size:3.2rem;font-weight:950;color:var(--primary);line-height:1.1}.waste-finish h4{font-size:1.45rem;margin:12px 0 7px}.waste-finish p{color:var(--muted)}
 .routine-timeline{display:flex;align-items:center;gap:8px;margin:13px 0 3px}.routine-phase-btn{min-width:0;flex:1;display:grid;grid-template-columns:28px 1fr;align-items:center;gap:6px;text-align:left;padding:8px;border:1px solid rgba(255,255,255,.10);border-radius:12px;background:rgba(255,255,255,.045);color:#cde5dd;font-size:.72rem}.routine-phase-btn span{width:26px;height:26px;display:grid;place-items:center;border-radius:50%;background:rgba(255,255,255,.09);font-weight:950}.routine-phase-btn strong{font-size:.69rem;line-height:1.1}.routine-phase-btn.active{background:rgba(70,202,172,.14);border-color:rgba(117,235,209,.42);color:#fff}.routine-phase-btn.active span{background:#43b99d;color:#082d24}.routine-phase-connector{width:8px;height:1px;background:rgba(160,235,215,.35);flex:0 0 auto}.routine-scanline,.routine-corner{display:none!important}
 .section-head.view-animate,.notice.view-animate,.visitor-passport.view-animate,.glossary-panel.view-animate,.waste-challenge.view-animate{opacity:0;transform:translateY(18px);filter:blur(2px);transition:opacity .65s ease,transform .65s cubic-bezier(.2,.8,.2,1),filter .65s ease;transition-delay:var(--reveal-delay,0ms)}.section-head.view-animate.in-view,.notice.view-animate.in-view,.visitor-passport.view-animate.in-view,.glossary-panel.view-animate.in-view,.waste-challenge.view-animate.in-view{opacity:1;transform:none;filter:none}
 body.dark .waste-option.correct{background:#173d2b;color:#c8f9d9}body.dark .waste-option.incorrect{background:#492421;color:#ffe0dc}body.dark .glossary-result{background:#142923}
@@ -1434,25 +1441,25 @@ const sectors = [
 ];
 
 const medications = [
-  { title:'Paracetamol', category:'dor', strength:'750 mg', form:'Comprimido revestido · caixa com 20 comprimidos (exemplo de referência)', kind:'tablet', image:'https://drogariasp.vteximg.com.br/arquivos/ids/578264-1000-1000/138835---paracetamol-750mg-generico-neo-quimica-20-comprimidos.jpg?v=637835534369900000', desc:'Exemplo educativo de analgésico e antitérmico. A apresentação ilustrada é de comprimidos; confira sempre a embalagem específica.' },
-  { title:'Dipirona', category:'dor', strength:'500 mg/mL · também há apresentações de 1 g', form:'Solução oral em gotas (500 mg/mL) ou comprimido (1 g), conforme a apresentação', kind:'liquid', image:'https://drogariasp.vteximg.com.br/arquivos/ids/529488-1000-1000/768952---dipirona-sodica-500mgml-neo-quimica-10ml-gotas-g-hypermarcas-1.jpg?v=637790121097870000', desc:'Exemplo educativo. Gotas e comprimidos são apresentações diferentes; não confunda concentração com dose.' },
+  { title:'Paracetamol', category:'dor', strength:'750 mg', form:'Comprimido revestido · caixa com 20 comprimidos (exemplo de referência)', kind:'tablet', image:'https://drogariasp.vteximg.com.br/arquivos/ids/546773-1000-1000/138835---paracetamol-750mg-generico-Neo-Quimica-20-comprimidos-1.jpg?v=637808180458700000', desc:'Exemplo educativo de analgésico e antitérmico. A apresentação ilustrada é de comprimidos; confira sempre a embalagem específica.' },
+  { title:'Dipirona', category:'dor', strength:'500 mg/mL · também há apresentações de 1 g', form:'Solução oral em gotas (500 mg/mL) ou comprimido (1 g), conforme a apresentação', kind:'liquid', image:'https://nexodata.vtexassets.com/arquivos/ids/206858-700-700/7896422506236_IR.webp?v=638253338108030000', desc:'Exemplo educativo. Gotas e comprimidos são apresentações diferentes; não confunda concentração com dose.' },
   { title:'Ibuprofeno', category:'dor', strength:'100 mg/mL', form:'Suspensão oral em gotas · exemplo de frasco com 20 mL', kind:'liquid', image:'https://paguemenos.vtexassets.com/arquivos/ids/641160/ibuprofeno-100mg-gotas-20ml-generico-neoquimica-principal.jpg?v=638008026293230000', desc:'Exemplo educativo de anti-inflamatório não esteroidal. Esta imagem corresponde a ibuprofeno em gotas 100 mg/mL.' },
   { title:'Ácido acetilsalicílico', category:'dor', strength:'500 mg', form:'Comprimido · apresentações e quantidades variam', kind:'tablet', image:'https://www.drogarianovaesperanca.com.br/imagens-complete/1000x1000/acido-acetilsalicilico-500mg-com-20-comprimidos-f699dbfe00.jpg', desc:'Exemplo educativo de medicamento em comprimidos. A indicação e as precauções dependem do produto e da pessoa.' },
-  { title:'Naproxeno', category:'dor', strength:'550 mg', form:'Comprimido · embalagem varia conforme fabricante', kind:'tablet', image:'https://drogariavenancio.vtexassets.com/arquivos/ids/3044872/69444_z.jpg?v=639083304528100000', desc:'Exemplo educativo de anti-inflamatório não esteroidal relacionado a situações específicas de dor e inflamação.' },
+  { title:'Naproxeno', category:'dor', strength:'550 mg', form:'Comprimido · embalagem varia conforme fabricante', kind:'tablet', image:'https://cdn.awsli.com.br/2500x2500/2145/2145192/produto/386284044/4e2d6a95d839e2681358170357f38cbe-yf3nlkc84g.jpg', desc:'Exemplo educativo de anti-inflamatório não esteroidal relacionado a situações específicas de dor e inflamação.' },
   { title:'Diclofenaco sódico', category:'dor', strength:'50 mg', form:'Comprimido · apresentação varia conforme fabricante', kind:'tablet', image:'https://images.tcdn.com.br/img/img_prod/1265393/diclofenaco_sodico_50mg_20_comp_rev_neo_36223_1_6b61e698fc83a0165f98b032431f16a2.jpg', desc:'Exemplo educativo de anti-inflamatório. Não deve ser interpretado como recomendação de uso.' },
   { title:'Cetoprofeno', category:'dor', strength:'100 mg', form:'Forma e quantidade dependem da apresentação comercial', kind:'tablet', image:'https://cdn.awsli.com.br/2500x2500/2051/2051223/produto/340760745/cetoprofeno-100mg-medley-w3h62dfz6i.png', desc:'Exemplo educativo de anti-inflamatório. Confira a forma farmacêutica exata na embalagem fotografada.' },
-  { title:'Meloxicam', category:'dor', strength:'15 mg', form:'Comprimido · apresentação varia conforme fabricante', kind:'tablet', image:'https://farmacialalajita.com/storage/products/mobic-D2nFTEbT.webp', desc:'Exemplo educativo de anti-inflamatório não esteroidal em apresentação sólida.' },
+  { title:'Meloxicam', category:'dor', strength:'15 mg', form:'Comprimido · apresentação varia conforme fabricante', kind:'tablet', image:'https://portal.riomeddistribuicao.com.br/15375-large_default/meloxicam-15mg-10com-geolab.webp', desc:'Exemplo educativo de anti-inflamatório não esteroidal em apresentação sólida.' },
 
   { title:'Loratadina', category:'alergia', strength:'10 mg', form:'Comprimido · apresentações variam conforme fabricante', kind:'tablet', image:'https://product-data.raiadrogasil.io/images/17272306.webp', desc:'Exemplo educativo de anti-histamínico utilizado em situações alérgicas específicas.' },
   { title:'Reactine', category:'alergia', strength:'10 mg (dicloridrato de cetirizina)', form:'Cápsula mole · caixa com 10 ou 20 cápsulas, conforme apresentação', kind:'capsule', image:'https://images.ctfassets.net/za5qny03n4xo/2g36H56Fg0Z66Uyp9qFDNO/cf34c81d2bd24d937e653a4259861439/REACTINE_LATAM_BR_10CAPS_00000_JPG.Jpg?fm=webp&w=1200', desc:'Exemplo de marca antialérgica cuja substância ativa é o dicloridrato de cetirizina. A imagem é referência de embalagem.' },
-  { title:'Fexofenadina', category:'alergia', strength:'120 mg', form:'Comprimido revestido · quantidade varia por embalagem', kind:'tablet', image:'https://drogariavenancio.vtexassets.com/arquivos/ids/2771962/83895_z.jpg?v=639078169434130000', desc:'Exemplo educativo de anti-histamínico usado para sintomas alérgicos em situações específicas.' },
-  { title:'Desloratadina', category:'alergia', strength:'5 mg', form:'Comprimido revestido · quantidade varia por embalagem', kind:'tablet', image:'https://drogariasp.vteximg.com.br/arquivos/ids/1635525-1000-1000/267708---Desloratadina-5mg-Generico-Germed-10-Comprimidos-Revestidos-1.jpg?v=639059002432800000', desc:'Exemplo educativo de anti-histamínico. Há apresentações diferentes; confira a forma e a bula do produto.' },
+  { title:'Fexofenadina', category:'alergia', strength:'120 mg', form:'Comprimido revestido · quantidade varia por embalagem', kind:'tablet', image:'https://cdn.ultrafarma.com.br/static/produtos/23549/large-638681557704896378-23549_2.png', desc:'Exemplo educativo de anti-histamínico usado para sintomas alérgicos em situações específicas.' },
+  { title:'Desloratadina', category:'alergia', strength:'5 mg', form:'Comprimido revestido · quantidade varia por embalagem', kind:'tablet', image:'https://www.drogariavenancio.com.br/arquivos/ids/1053778-400-400/84868_z.jpg?v=638223654966700000', desc:'Exemplo educativo de anti-histamínico. Há apresentações diferentes; confira a forma e a bula do produto.' },
   { title:'Maleato de dexclorfeniramina', category:'alergia', strength:'2 mg (comprimido) · 0,4 mg/mL (solução oral)', form:'Comprimido ou solução oral; a imagem mostra frasco e caixa de 0,4 mg/mL', kind:'liquid', image:'https://product-data.raiadrogasil.io/images/3540362.webp?height=450&quality=85&type=resize&width=450', desc:'Exemplo educativo com duas apresentações distintas. A concentração líquida não é equivalente a um comprimido de 2 mg.' },
-  { title:'Dicloridrato de levocetirizina', category:'alergia', strength:'5 mg', form:'Comprimido revestido · apresentação varia por fabricante', kind:'tablet', image:'https://cdn.ultrafarma.com.br/static/produtos/817900/medium-638925196736409699-817900.png', desc:'Exemplo educativo de anti-histamínico. A embalagem específica deve ser usada para confirmar os detalhes.' },
+  { title:'Dicloridrato de levocetirizina', category:'alergia', strength:'5 mg', form:'Comprimido revestido · apresentação varia por fabricante', kind:'tablet', image:'https://images.tcdn.com.br/img/img_prod/1170916/levocetirizina_ems_5mg_10_comprimidos_10096280_1_33def07e51a54316da64346cedd2ddb7.png', desc:'Exemplo educativo de anti-histamínico. A embalagem específica deve ser usada para confirmar os detalhes.' },
   { title:'Bilastina', category:'alergia', strength:'20 mg', form:'Comprimido · quantidade varia por embalagem', kind:'tablet', image:'https://drogariacatarinense.vteximg.com.br/arquivos/ids/178839-1000-1000/742260.jpg?v=637828547395770000', desc:'Exemplo educativo de anti-histamínico indicado para situações alérgicas específicas.' },
   { title:'Rupatadina', category:'alergia', strength:'10 mg', form:'Comprimido · apresentação varia por fabricante', kind:'tablet', image:'https://unidrogas.vtexassets.com/arquivos/ids/434987-800-800?aspect=true&height=800&v=638964632582200000&width=800', desc:'Exemplo educativo de anti-histamínico. Não use as informações do cartão para decidir tratamento.' },
 
-  { title:'Amoxicilina', category:'infeccao', strength:'500 mg', form:'Cápsula dura · quantidade varia por embalagem', kind:'capsule', image:'https://portal.zilfarma.com/8730-large_default/amoxicilina-500mg-21caps.webp', desc:'Exemplo de antibiótico para infecções bacterianas específicas. Uso conforme avaliação e prescrição profissional.' },
+  { title:'Amoxicilina', category:'infeccao', strength:'500 mg', form:'Cápsula dura · quantidade varia por embalagem', kind:'capsule', image:'https://www.nortesulreal.com.br/ccstore/v1/images/?height=475&outputFormat=JPEG&quality=0.8&source=%2Ffile%2Fv8830888858030578812%2Fproducts%2FNSM_81243.jpg&width=475', desc:'Exemplo de antibiótico para infecções bacterianas específicas. Uso conforme avaliação e prescrição profissional.' },
   { title:'Azitromicina', category:'infeccao', strength:'500 mg', form:'Comprimido revestido · quantidade varia por embalagem', kind:'tablet', image:'https://imgprd.martinsatacado.com.br/catalogoimg/417991/01_417991_01.jpg?ims=1000x&v=160320264210', desc:'Exemplo educativo de antibiótico. O uso inadequado pode causar efeitos indesejados e favorecer resistência bacteriana.' },
   { title:'Cefalexina', category:'infeccao', strength:'250 mg/5 mL (suspensão oral)', form:'Pó para suspensão oral reconstituída · frasco de 60 ou 100 mL em apresentações consultadas', kind:'liquid', image:'https://loja.fortvale.com.br/463-large_default/cefalexina-susp-oral-250mg-100ml-cx-48.jpg', desc:'A concentração 250 mg/5 mL é uma apresentação de suspensão oral encontrada em bula; confirme a embalagem específica. Requer orientação profissional.' },
   { title:'Fluconazol', category:'infeccao', strength:'150 mg', form:'Cápsula · embalagem varia conforme fabricante', kind:'capsule', image:'https://d1jgmae0hcnr1i.cloudfront.net/Custom/Content/Products/25/19/251903_fluconazol-150mg-1comprimido-p142078_z1_638352194776427420.png', desc:'Exemplo educativo de antifúngico. A indicação depende do tipo de infecção e de avaliação profissional.' },
@@ -1461,10 +1468,10 @@ const medications = [
   { title:'Nistatina', category:'infeccao', strength:'100.000 UI/mL', form:'Suspensão oral · volume varia conforme fabricante', kind:'liquid', image:'https://imgprd.martinsatacado.com.br/catalogoimg/417617/01_417617_01.jpg?ims=1000x&v=260220263207', desc:'Exemplo educativo de antifúngico. A imagem é uma referência de apresentação líquida; consulte a bula correspondente.' },
   { title:'Metronidazol', category:'infeccao', strength:'250 mg', form:'Comprimido · apresentação varia conforme fabricante', kind:'tablet', image:'https://imgprd.martinsatacado.com.br/catalogoimg/414572/01_414572_01.jpg?v=030520242852%3Bims%3D1000x', desc:'Exemplo educativo de medicamento usado contra determinados microrganismos em condições específicas e sob orientação profissional.' },
 
-  { title:'Cloridrato de metformina', category:'cronicos', strength:'500 mg e 850 mg', form:'Comprimido · as duas concentrações correspondem a apresentações diferentes', kind:'tablet', image:'https://portal.riomeddistribuicao.com.br/11982-large_default/metformina-850mg-30com-geolab.webp', desc:'Exemplo educativo de medicamento usado em acompanhamento de glicemia. A imagem mostra a apresentação de 850 mg; há outras concentrações.' },
-  { title:'Losartana potássica', category:'cronicos', strength:'50 mg', form:'Comprimido revestido · quantidade varia por embalagem', kind:'tablet', image:'https://d1jgmae0hcnr1i.cloudfront.net/Custom/Content/Products/91/32/91326_losartana-potassica-50mg-c-30-cp-rev-p67632_z1_638285764733223909.png', desc:'Exemplo educativo de medicamento utilizado em tratamentos cardiovasculares sob acompanhamento profissional.' },
-  { title:'Levotiroxina', category:'cronicos', strength:'50 mcg', form:'Comprimido · apresentação varia por fabricante', kind:'tablet', image:'https://www.drjonatascatunda.com/images/blog/levotiroxina-1.webp', desc:'Exemplo educativo de hormônio tireoidiano usado em terapia de reposição com acompanhamento profissional.' },
-  { title:'Sinvastatina', category:'cronicos', strength:'20 mg', form:'Comprimido revestido · quantidade varia por embalagem', kind:'tablet', image:'https://cdn.awsli.com.br/800x800/2051/2051223/produto/348849329/sinvastatina-20mg-nova-quimica-imv567sv0l.png', desc:'Exemplo educativo de medicamento usado em situações específicas de controle de colesterol.' },
+  { title:'Cloridrato de metformina', category:'cronicos', strength:'500 mg e 850 mg', form:'Comprimido · as duas concentrações correspondem a apresentações diferentes', kind:'tablet', image:'https://imgprd.martinsatacado.com.br/catalogoimg/416439/01_416439_01.jpg?ims=1000x&v=130520263121', desc:'Exemplo educativo de medicamento usado em acompanhamento de glicemia. A imagem mostra a apresentação de 850 mg; há outras concentrações.' },
+  { title:'Losartana potássica', category:'cronicos', strength:'50 mg', form:'Comprimido revestido · quantidade varia por embalagem', kind:'tablet', image:'https://images.tcdn.com.br/img/img_prod/1170916/losartana_potassica_prati_50mg_30_comprimidos_10098894_1_bad1fa482087149fb1c81a2b0ae89d17.jpg', desc:'Exemplo educativo de medicamento utilizado em tratamentos cardiovasculares sob acompanhamento profissional.' },
+  { title:'Levotiroxina', category:'cronicos', strength:'50 mcg', form:'Comprimido · apresentação varia por fabricante', kind:'tablet', image:'https://www.drogariaminasbrasil.com.br/media/webp/catalog/product/cache/74c1057f7991b4edb2bc7bdaa94de933/image/174096f61/levotiroxina-sodica-50mcg-30-comprimidos-generico-merck_jpg.webp', desc:'Exemplo educativo de hormônio tireoidiano usado em terapia de reposição com acompanhamento profissional.' },
+  { title:'Sinvastatina', category:'cronicos', strength:'20 mg', form:'Comprimido revestido · quantidade varia por embalagem', kind:'tablet', image:'https://imgprd.martinsatacado.com.br/catalogoimg/294431/01_294431_01.jpg?v=100920221711%3Bims%3D1000x', desc:'Exemplo educativo de medicamento usado em situações específicas de controle de colesterol.' },
   { title:'Maleato de enalapril', category:'cronicos', strength:'10 mg', form:'Comprimido · apresentação varia por fabricante', kind:'tablet', image:'https://storage.googleapis.com/retailon-publico/inteliger/produtos/7896422514248_0_500x500.webp', desc:'Exemplo educativo de medicamento utilizado em tratamentos cardiovasculares sob acompanhamento profissional.' },
   { title:'Besilato de anlodipino', category:'cronicos', strength:'5 mg', form:'Comprimido · apresentação varia por fabricante', kind:'tablet', image:'https://imgprd.martinsatacado.com.br/catalogoimg/418607/01_418607_01.jpg?ims=1000x&v=170420262720', desc:'Exemplo educativo de medicamento usado em tratamentos cardiovasculares contínuos.' },
   { title:'Omeprazol', category:'cronicos', strength:'20 mg', form:'Cápsula · apresentação varia conforme fabricante', kind:'capsule', image:'https://santaluciadrogaria.vtexassets.com/arquivos/ids/159851/7898148290093.png?v=637638047999330000', desc:'Exemplo educativo de medicamento que reduz a produção de ácido gástrico em situações específicas.' },
@@ -1655,54 +1662,37 @@ function initViewAnimations(root = document) {
   });
 }
 
-function medFallbackSvg({title, strength, form, kind}) {
-  const colors = {
-    tablet: ['#eef3f8','#1f5276'], liquid: ['#eef8f1','#16624f'], capsule: ['#f7f1fb','#69468c'], cream: ['#fff4eb','#a85b2d']
-  };
-  const [bg, accent] = colors[kind] || colors.tablet;
-  const safe = (v='') => String(v).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
-  const label = kind === 'liquid' ? 'SUSPENSÃO ORAL' : kind === 'cream' ? 'CREME' : kind === 'capsule' ? 'CÁPSULAS' : 'COMPRIMIDOS';
-  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 430">
-    <rect width="520" height="430" rx="30" fill="${bg}"/>
-    <g transform="translate(118 28)">
-      <polygon points="210,0 250,24 250,340 210,364" fill="#d5dbe2"/>
-      <rect x="0" y="24" width="210" height="340" rx="10" fill="#ffffff" stroke="#c6cdd5" stroke-width="2"/>
-      <rect x="0" y="24" width="210" height="64" rx="10" fill="${accent}"/>
-      <text x="18" y="62" font-family="Arial, sans-serif" font-size="21" font-weight="700" fill="#ffffff">${safe(title).slice(0,24)}</text>
-      <text x="18" y="124" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#18322b">${safe(strength)}</text>
-      <text x="18" y="156" font-family="Arial, sans-serif" font-size="15" fill="#53625d">${safe(label)}</text>
-      <rect x="18" y="188" width="174" height="66" rx="12" fill="#f1f5f7"/>
-      <text x="32" y="214" font-family="Arial, sans-serif" font-size="12" fill="#6a7773">FORMA / APRESENTAÇÃO</text>
-      <text x="32" y="238" font-family="Arial, sans-serif" font-size="12" font-weight="700" fill="#1d332e">${safe(form).slice(0,34)}</text>
-      <rect x="18" y="280" width="62" height="48" rx="8" fill="${accent}" opacity=".13"/>
-      <text x="49" y="310" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="700" fill="${accent}">REFERÊNCIA</text>
-    </g>
-  </svg>`;
-  return 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent(svg);
+function handleMedImageError(img) {
+  if (!img || img.dataset.fallbackApplied === '1') return;
+  const backup = img.dataset.backupImage;
+  if (backup && img.dataset.backupTried !== '1' && backup !== img.src) {
+    img.dataset.backupTried = '1';
+    img.src = backup;
+    return;
+  }
+  img.dataset.fallbackApplied = '1';
+  const cardImage = img.closest('.med-card-image');
+  const imageWrap = img.closest('.image-lightbox-wrap');
+  if (imageWrap) imageWrap.remove(); else img.remove();
+  if (cardImage && !cardImage.querySelector('.med-image-unavailable')) {
+    cardImage.classList.add('med-image-missing');
+    const status = document.createElement('div');
+    status.className = 'med-image-unavailable';
+    status.setAttribute('role','img');
+    status.setAttribute('aria-label',`Foto real de ${img.dataset.title || 'medicamento'} temporariamente indisponível`);
+    status.innerHTML = '<span class="med-image-unavailable-icon" aria-hidden="true">▧</span><span>Foto real indisponível nesta fonte</span>';
+    cardImage.appendChild(status);
+  }
 }
 
-function handleMedImageError(img) {
-  if (img.dataset.fallbackApplied === '1') return;
-  img.dataset.fallbackApplied = '1';
-  const data = { title: img.dataset.title, strength: img.dataset.strength, form: img.dataset.form, kind: img.dataset.kind };
-  const wrap = document.createElement('div');
-  wrap.className = 'med-fallback-photo';
-  const svgImg = document.createElement('img');
-  svgImg.src = medFallbackSvg(data);
-  svgImg.alt = `Ilustração de apoio de ${data.title}, ${data.strength}, ${data.form}`;
-  svgImg.removeAttribute('onerror');
-  wrap.appendChild(svgImg);
-  img.replaceWith(wrap);
-  const fallbackImg = wrap.querySelector('img');
-  createLightboxTrigger(fallbackImg);
-}
+const medicationBackupImages = {"Paracetamol":"https://drogariasp.vteximg.com.br/arquivos/ids/578264-1000-1000/138835---paracetamol-750mg-generico-neo-quimica-20-comprimidos.jpg?v=637835534369900000","Dipirona":"https://drogariasp.vteximg.com.br/arquivos/ids/529488-1000-1000/768952---dipirona-sodica-500mgml-neo-quimica-10ml-gotas-g-hypermarcas-1.jpg?v=637790121097870000","Naproxeno":"https://drogariavenancio.vtexassets.com/arquivos/ids/3044872/69444_z.jpg?v=639083304528100000","Meloxicam":"https://farmacialalajita.com/storage/products/mobic-D2nFTEbT.webp","Fexofenadina":"https://drogariavenancio.vtexassets.com/arquivos/ids/2771962/83895_z.jpg?v=639078169434130000","Desloratadina":"https://drogariasp.vteximg.com.br/arquivos/ids/1635525-1000-1000/267708---Desloratadina-5mg-Generico-Germed-10-Comprimidos-Revestidos-1.jpg?v=639059002432800000","Dicloridrato de levocetirizina":"https://cdn.ultrafarma.com.br/static/produtos/817900/medium-638925196736409699-817900.png","Amoxicilina":"https://portal.zilfarma.com/8730-large_default/amoxicilina-500mg-21caps.webp","Cloridrato de metformina":"https://portal.riomeddistribuicao.com.br/11982-large_default/metformina-850mg-30com-geolab.webp","Losartana potássica":"https://d1jgmae0hcnr1i.cloudfront.net/Custom/Content/Products/91/32/91326_losartana-potassica-50mg-c-30-cp-rev-p67632_z1_638285764733223909.png","Sinvastatina":"https://cdn.awsli.com.br/800x800/2051/2051223/produto/348849329/sinvastatina-20mg-nova-quimica-imv567sv0l.png"};
 
 function renderMeds(filter = 'todos') {
   const items = filter === 'todos' ? medications : medications.filter(x => x.category === filter);
   medContainer.innerHTML = items.map((m, index) => `
       <article class="card medication-card view-animate" style="--med-delay:${Math.min(index,7)*70}ms;--reveal-delay:${Math.min(index,7)*70}ms">
         <div class="med-card-image">
-          <img src="${m.image}" alt="Foto de referência de ${m.title}, ${m.strength}, ${m.form}" data-title="${m.title.replace(/"/g,'&quot;')}" data-strength="${m.strength.replace(/"/g,'&quot;')}" data-form="${m.form.replace(/"/g,'&quot;')}" data-kind="${m.kind}" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="handleMedImageError(this)" />
+          <img src="${m.image}" alt="Foto de referência de ${m.title}, ${m.strength}, ${m.form}" data-title="${m.title.replace(/"/g,'&quot;')}" data-strength="${m.strength.replace(/"/g,'&quot;')}" data-form="${m.form.replace(/"/g,'&quot;')}" data-kind="${m.kind}" data-backup-image="${(medicationBackupImages[m.title] || '').replace(/&/g, '&amp;').replace(/"/g, '&quot;')}" loading="lazy" decoding="async" referrerpolicy="strict-origin-when-cross-origin" onerror="handleMedImageError(this)" />
           <span class="med-photo-badge">FOTO DE REFERÊNCIA</span>
         </div>
         <div class="med-card-body">
@@ -1738,10 +1728,26 @@ $('#classCards').innerHTML = therapeuticClasses.map((c,i) => `
 `).join('');
 initViewAnimations($('#classCards'));
 
+function handleFormImageError(img) {
+  if (!img || img.dataset.errorHandled === '1') return;
+  img.dataset.errorHandled = '1';
+  const wrap = img.closest('.form-image-wrap');
+  const lightboxWrap = img.closest('.image-lightbox-wrap');
+  if (!wrap) { if (lightboxWrap) lightboxWrap.remove(); else img.remove(); return; }
+  wrap.classList.add('form-image-missing');
+  if (lightboxWrap) lightboxWrap.remove(); else img.remove();
+  if (!wrap.querySelector('.form-image-unavailable')) {
+    const status = document.createElement('span');
+    status.className = 'form-image-unavailable';
+    status.textContent = 'Imagem fotográfica indisponível nesta fonte';
+    wrap.appendChild(status);
+  }
+}
+
 // ---------- Formas farmacêuticas ----------
 $('#formsCards').innerHTML = forms.map((f,i) => `
   <article class="forms-card view-animate" style="--reveal-delay:${Math.min(i,7)*65}ms">
-    <div class="form-image-wrap"><img src="${f.image}" alt="${f.alt}" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='assets/med-visual-tablet.svg'; this.alt='Ilustração de apoio da forma farmacêutica';" /></div>
+    <div class="form-image-wrap"><img src="${f.image}" alt="${f.alt}" loading="lazy" decoding="async" referrerpolicy="strict-origin-when-cross-origin" onerror="handleFormImageError(this)" /></div>
     <div class="forms-copy"><span class="tag">Forma farmacêutica</span><h3>${f.title}</h3><p>${f.desc}</p></div>
   </article>
 `).join('');
@@ -2350,21 +2356,58 @@ $('#feedbackForm').addEventListener('submit', (event) => {
   const teamCarousel = document.getElementById('teamCarousel');
   const teamCounter = document.getElementById('teamCounter');
   if (teamTrack && teamCarousel) {
-    teamTrack.innerHTML = photoFiles.map((file,i)=>`<div class="team-photo-card" style="--portrait-delay:${(i%5)*-460}ms" aria-label="Foto do integrante ${i+1}"><div class="team-photo-frame"><img src="assets/project-people/${file}" alt="Foto de integrante do projeto" loading="${i<3?'eager':'lazy'}" decoding="async" draggable="false"></div></div>`).join('');
-    const cards = [...teamTrack.children];
-    const cardStep = () => { const card = cards[0]; return card ? card.getBoundingClientRect().width + parseFloat(getComputedStyle(teamTrack).gap || 15) : 220; };
-    const moveGallery = (direction) => teamCarousel.scrollBy({left:direction*cardStep(),behavior:document.body.classList.contains('reduce-motion')?'auto':'smooth'});
+    const copies = 3;
+    teamTrack.innerHTML = Array.from({length:copies},(_,copy)=>photoFiles.map((file,i)=>`<div class="team-photo-card" data-photo-index="${i}" data-photo-copy="${copy}" style="--portrait-delay:${(i%5)*-460}ms" aria-label="Foto do integrante ${i+1}" ${copy===1?'':'aria-hidden="true"'}><div class="team-photo-frame"><img src="assets/project-people/${file}" alt="Foto de integrante do projeto" loading="${copy===1&&i<3?'eager':'lazy'}" decoding="async" draggable="false" ${copy===1?'':'tabindex="-1"'}></div></div>`).join('')).join('');
+    let cards = [...teamTrack.children];
+    const total = photoFiles.length;
+    let loopOrigin = 0, loopWidth = 0, step = 220, loopAdjusting = false, counterQueued = false;
+    const contentLeft = (card) => card.getBoundingClientRect().left - teamCarousel.getBoundingClientRect().left + teamCarousel.scrollLeft;
+    const measureLoop = () => {
+      cards = [...teamTrack.children];
+      const cardWidth = cards[total]?.getBoundingClientRect().width || cards[0]?.getBoundingClientRect().width || 220;
+      step = cards[1] ? contentLeft(cards[1])-contentLeft(cards[0]) : cardWidth+15;
+      const middleFirst = cards[total];
+      const lastCopyFirst = cards[total*2];
+      loopWidth = lastCopyFirst && middleFirst ? contentLeft(lastCopyFirst)-contentLeft(middleFirst) : total*step;
+      loopOrigin = middleFirst ? contentLeft(middleFirst) - (teamCarousel.clientWidth-cardWidth)/2 : 0;
+    };
+    const setScrollInstant = (left) => {
+      loopAdjusting=true;
+      teamCarousel.classList.add('loop-reset');
+      teamCarousel.scrollLeft=left;
+      requestAnimationFrame(()=>requestAnimationFrame(()=>{
+        teamCarousel.classList.remove('loop-reset');
+        loopAdjusting=false;
+      }));
+    };
+    const normalizeLoop = () => {
+      if (loopAdjusting || !loopWidth) return;
+      const left=teamCarousel.scrollLeft;
+      if(left < loopOrigin-step*.72) setScrollInstant(left+loopWidth);
+      else if(left > loopOrigin+loopWidth-step*.72) setScrollInstant(left-loopWidth);
+    };
+    const moveGallery = (direction) => teamCarousel.scrollBy({left:direction*step,behavior:document.body.classList.contains('reduce-motion')?'auto':'smooth'});
     document.getElementById('teamPrev')?.addEventListener('click',()=>moveGallery(-1));
     document.getElementById('teamNext')?.addEventListener('click',()=>moveGallery(1));
     teamCarousel.addEventListener('keydown',e=>{if(e.key==='ArrowLeft'){e.preventDefault();moveGallery(-1)}if(e.key==='ArrowRight'){e.preventDefault();moveGallery(1)}});
     let pointerDown=false,startX=0,startScroll=0;
     teamCarousel.addEventListener('pointerdown',e=>{if(e.pointerType!=='mouse'||e.button!==0)return;pointerDown=true;startX=e.clientX;startScroll=teamCarousel.scrollLeft;});
-    teamCarousel.addEventListener('pointermove',e=>{if(!pointerDown)return; if(Math.abs(e.clientX-startX)>4)teamCarousel.scrollLeft=startScroll-(e.clientX-startX);});
+    teamCarousel.addEventListener('pointermove',e=>{if(!pointerDown)return;if(Math.abs(e.clientX-startX)>4)teamCarousel.scrollLeft=startScroll-(e.clientX-startX);});
     ['pointerup','pointercancel','pointerleave'].forEach(name=>teamCarousel.addEventListener(name,()=>{pointerDown=false}));
-    let counterQueued=false;
-    const updatePhotoCounter=()=>{const step=cardStep();const index=Math.min(cards.length,Math.max(1,Math.round(teamCarousel.scrollLeft/step)+1));if(teamCounter)teamCounter.textContent=`Foto ${index} de ${cards.length}`;counterQueued=false};
-    teamCarousel.addEventListener('scroll',()=>{if(!counterQueued){counterQueued=true;requestAnimationFrame(updatePhotoCounter)}});
-    updatePhotoCounter();
+    const updatePhotoCounter=()=>{
+      const center=teamCarousel.getBoundingClientRect().left+teamCarousel.clientWidth/2;
+      let nearest=null,dist=Infinity;
+      cards.forEach(card=>{const r=card.getBoundingClientRect();const d=Math.abs((r.left+r.width/2)-center);if(d<dist){dist=d;nearest=card;}});
+      const index=nearest?Number(nearest.dataset.photoIndex)%total+1:1;
+      if(teamCounter)teamCounter.textContent=`Foto ${index} de ${total}`;
+      counterQueued=false;
+    };
+    teamCarousel.addEventListener('scroll',()=>{
+      normalizeLoop();
+      if(!counterQueued){counterQueued=true;requestAnimationFrame(updatePhotoCounter)}
+    });
+    requestAnimationFrame(()=>{measureLoop();setScrollInstant(loopOrigin);updatePhotoCounter()});
+    window.addEventListener('resize',()=>{const visibleIndex=(()=>{const center=teamCarousel.getBoundingClientRect().left+teamCarousel.clientWidth/2;let nearest=cards[total],dist=Infinity;cards.forEach(card=>{const r=card.getBoundingClientRect(),d=Math.abs(r.left+r.width/2-center);if(d<dist){dist=d;nearest=card;}});return Number(nearest?.dataset.photoIndex)||0})();measureLoop();setScrollInstant(loopOrigin+visibleIndex*step);updatePhotoCounter();},{passive:true});
   }
 
   // Visited sections/passport: saved only in this browser.
@@ -2429,22 +2472,62 @@ $('#feedbackForm').addEventListener('submit', (event) => {
 
   // Searchable, accessible glossary.
   const glossaryTerms=[
-    ['Princípio ativo','Substância responsável pela ação farmacológica do medicamento.'],
-    ['Concentração','Quantidade de princípio ativo indicada em uma unidade ou em determinado volume, como mg/mL ou mg/5 mL.'],
-    ['Dose','Quantidade de medicamento administrada em uma ocasião. Não é sinônimo de concentração.'],
-    ['Forma farmacêutica','Forma física em que o medicamento é apresentado, como comprimido, cápsula, creme ou solução oral.'],
-    ['Apresentação','Conjunto de características da embalagem, como concentração, forma e quantidade de unidades ou volume.'],
-    ['Suspensão oral','Preparação líquida em que partículas do princípio ativo ficam dispersas; siga as instruções específicas da bula, inclusive sobre agitação quando indicada.'],
-    ['Dispensação','Processo de entrega do medicamento acompanhado das orientações pertinentes.'],
-    ['Contraindicação','Situação em que determinado medicamento não deve ser utilizado, conforme sua bula e avaliação profissional.'],
-    ['Interação medicamentosa','Alteração do efeito de um medicamento causada por outro medicamento, alimento ou substância.'],
-    ['Bula','Documento oficial que reúne informações sobre composição, indicações, advertências, uso, reações adversas e conservação.'],
-    ['Medicamento genérico','Medicamento identificado pelo princípio ativo e regulado para demonstrar equivalência com o medicamento de referência.'],
-    ['Validade','Prazo dentro do qual o produto mantém as especificações, quando armazenado nas condições indicadas.']
+    ["Princípio ativo", "É a substância do medicamento responsável pelo efeito farmacológico esperado. O nome do princípio ativo ajuda a identificar o que está presente no produto, mesmo quando fabricantes e marcas são diferentes. Um mesmo princípio ativo pode existir em formas, concentrações e apresentações distintas."],
+    ["Excipiente", "É um componente da formulação que acompanha o princípio ativo e ajuda a dar forma, estabilidade, sabor, volume ou outras características ao produto. Excipientes não são todos iguais e algumas pessoas podem ter restrições a ingredientes específicos; consulte a composição e um profissional em caso de dúvida."],
+    ["Concentração", "Indica quanto de uma substância está presente em uma unidade ou em um volume da preparação. Por exemplo, 100 mg/mL informa a quantidade de princípio ativo em cada mililitro, enquanto 250 mg/5 mL relaciona a quantidade a cinco mililitros. Concentração não significa, por si só, quanto uma pessoa deve tomar."],
+    ["Dose", "É a quantidade de medicamento administrada em uma ocasião ou dentro de um período definido. A dose não é a mesma coisa que a concentração: para saber a dose efetivamente administrada, também importam a apresentação e a quantidade utilizada. A dose apropriada depende do medicamento e da orientação individual de um profissional habilitado."],
+    ["Posologia", "É o conjunto de orientações que descreve dose, intervalos entre administrações e duração do tratamento, conforme a prescrição ou a bula aplicável. Não se deve copiar a posologia de uma embalagem para outra apresentação ou para outra pessoa. Em caso de dúvida, confirme a orientação com médico ou farmacêutico."],
+    ["Forma farmacêutica", "É a forma física e tecnológica na qual o medicamento é preparado, como comprimido, cápsula, solução oral, suspensão, creme ou pomada. Ela influencia a maneira de administrar e pode alterar os cuidados de uso e conservação. A forma deve ser conferida na embalagem e na bula."],
+    ["Apresentação", "É a combinação específica de características comerciais de um produto, como princípio ativo, concentração, forma farmacêutica, volume ou número de unidades por embalagem. Um mesmo medicamento pode ter várias apresentações. Por isso, a informação de um cartão educativo precisa corresponder à apresentação descrita e não deve ser generalizada para todas as versões."],
+    ["Via de administração", "É o caminho pelo qual um medicamento é introduzido no organismo, como via oral, tópica, oftálmica ou injetável. Nem todo produto pode ser usado por qualquer via. A via correta é aquela indicada para a apresentação específica na embalagem, na bula e na orientação profissional."],
+    ["Solução oral", "É uma preparação líquida em que os componentes estão dissolvidos de maneira homogênea. A concentração costuma ser expressa em unidades como mg/mL. Mesmo sendo líquida, uma solução não é automaticamente equivalente a gotas, suspensão, xarope ou outra apresentação; confira o nome farmacêutico exato."],
+    ["Suspensão oral", "É uma preparação líquida em que partículas do princípio ativo ficam dispersas no líquido, em vez de totalmente dissolvidas. A embalagem ou bula pode trazer instruções específicas, como agitar antes de usar ou preparar o produto com água após a compra. Siga somente as instruções destinadas àquela apresentação."],
+    ["Comprimido", "É uma forma sólida produzida ao compactar ingredientes da formulação. Pode ser simples, revestido, mastigável, dispersível, de liberação modificada ou de outros tipos. Não esmague, parta ou mastigue um comprimido sem confirmar se isso é apropriado para aquela apresentação."],
+    ["Comprimido revestido", "É um comprimido que recebe uma camada externa para ajudar a proteger o conteúdo, facilitar a deglutição, melhorar características sensoriais ou cumprir uma função tecnológica. O revestimento não significa que todos os comprimidos podem ser partidos ou triturados. As instruções dependem do produto específico."],
+    ["Cápsula", "É uma forma sólida cujo conteúdo fica dentro de um invólucro, geralmente de gelatina ou material semelhante. Há cápsulas duras e moles, com conteúdos que podem ser pós, grânulos ou líquidos. Abrir, mastigar ou modificar uma cápsula pode alterar seu uso e só deve ser feito quando houver orientação específica."],
+    ["Creme", "É uma preparação semissólida, normalmente usada sobre a pele ou em outras superfícies corporais conforme a indicação do produto. Cremes podem ter composições e usos diferentes, inclusive quanto ao local de aplicação. A indicação, a quantidade e a duração devem seguir a bula ou orientação profissional."],
+    ["Pomada", "É uma preparação semissólida destinada principalmente ao uso local. Em geral, sua composição e textura diferem das de um creme, o que pode afetar a permanência na pele e a sensação ao aplicar. Pomadas de produtos diferentes não são intercambiáveis apenas por parecerem semelhantes."],
+    ["Gotas", "É uma maneira de apresentar ou administrar pequenas quantidades de um líquido com um conta-gotas ou dispositivo dosador. O número de gotas por mililitro pode variar de acordo com a formulação e o dispositivo. Não converta gotas em mililitros sem utilizar a informação específica da bula ou orientação profissional."],
+    ["Dispensação", "É o processo pelo qual o medicamento é entregue ao usuário, acompanhado das orientações pertinentes para favorecer uso correto e seguro. Na farmácia, a dispensação pode envolver a conferência da prescrição, a identificação do produto e a explicação de cuidados importantes. Não é simplesmente entregar uma caixa no balcão."],
+    ["Indicação", "Descreve para quais condições, sintomas ou objetivos um medicamento foi aprovado ou recomendado na bula da apresentação. A indicação não permite concluir automaticamente que o produto seja adequado para qualquer pessoa com sintomas parecidos. Diagnóstico, contraindicações e outros fatores precisam ser considerados por um profissional."],
+    ["Contraindicação", "É uma condição ou situação em que o medicamento não deve ser usado conforme as informações oficiais. Pode estar relacionada, por exemplo, a alergias a componentes ou a condições clínicas específicas. A lista deve ser consultada na bula do produto exato; este glossário não substitui a avaliação profissional."],
+    ["Advertências e precauções", "São avisos sobre situações em que é necessário evitar o medicamento, ter cuidado especial, informar o profissional sobre outras condições ou monitorar possíveis problemas. Podem incluir orientações relacionadas a idade, gravidez, doenças, outros medicamentos ou conservação. Leia a seção correspondente da bula antes de utilizar qualquer produto."],
+    ["Reação adversa", "É um efeito indesejado que pode acontecer durante o uso de um medicamento. A frequência e a gravidade variam conforme o produto e a pessoa. Uma reação preocupante deve ser discutida com um profissional; sinais graves ou súbitos exigem atendimento de urgência."],
+    ["Interação medicamentosa", "Acontece quando um medicamento altera o efeito de outro, ou quando alimentos, bebidas ou outras substâncias interferem em sua ação. Algumas interações podem aumentar efeitos indesejados ou reduzir a eficácia. Por isso, é importante informar ao médico ou farmacêutico tudo o que estiver utilizando, inclusive produtos sem receita."],
+    ["Bula", "É o documento oficial que reúne informações do medicamento para pacientes e profissionais de saúde. Pode incluir composição, indicações, contraindicações, modo de uso, advertências, reações adversas, interações e conservação. A bula deve corresponder ao nome, concentração, forma e fabricante da apresentação consultada."],
+    ["Medicamento de referência", "É o produto inovador usado como referência regulatória para comparação com determinados medicamentos genéricos e similares. Ele possui registro e documentação próprios, incluindo informações de qualidade, segurança e eficácia. A identificação como referência não significa que seja sempre a melhor opção para todas as pessoas."],
+    ["Medicamento genérico", "É identificado pelo nome do princípio ativo e segue regras regulatórias específicas de qualidade e equivalência em relação ao medicamento de referência. Em geral, a embalagem traz uma faixa amarela com a letra G e a expressão medicamento genérico. A equivalência não elimina a necessidade de conferir a concentração, a forma farmacêutica e a apresentação."],
+    ["Medicamento similar", "É um medicamento que contém o mesmo princípio ativo, concentração, forma farmacêutica, via e indicação de um produto de referência, dentro das regras e características aprovadas. Pode ter marca e diferenças permitidas em aspectos como excipientes ou embalagem. A intercambialidade depende das regras regulatórias aplicáveis; não deve ser presumida apenas pelo nome."],
+    ["Lote", "É um código que identifica um conjunto de unidades fabricadas em condições relacionadas. Ele permite rastrear informações de fabricação e controle de qualidade. O lote costuma aparecer na embalagem e pode ser necessário em situações de investigação, reclamação ou recolhimento do produto."],
+    ["Validade", "É a data limite estabelecida para que o medicamento mantenha suas especificações quando armazenado conforme as condições indicadas. Não utilize produtos vencidos nem aqueles cuja embalagem ou conservação apresente problemas. A aparência normal não garante que um produto fora da validade continue adequado."],
+    ["Armazenamento", "É o conjunto de condições para conservar o produto, incluindo temperatura, umidade, luz e segurança do local. As recomendações variam: nem todo medicamento deve ser refrigerado e alguns precisam de proteção contra calor ou umidade. Siga o rótulo e a bula e mantenha os produtos fora do alcance de crianças."],
+    ["Automedicação", "É utilizar um medicamento por iniciativa própria sem avaliação adequada para a situação. Pode provocar efeitos adversos, interações, atrasar o diagnóstico ou levar ao uso de apresentação ou quantidade inadequada. Informação educativa ajuda a entender os rótulos, mas não substitui orientação médica ou farmacêutica."],
+    ["Antibiótico", "É um medicamento usado contra determinadas infecções causadas por bactérias. Não trata infecções virais como resfriados comuns. O uso inadequado pode favorecer resistência bacteriana, por isso deve seguir a avaliação e a prescrição profissional quando exigidas."],
+    ["Antifúngico", "É uma substância ou medicamento utilizada para tratar determinadas infecções causadas por fungos. A forma farmacêutica pode ser oral, tópica ou outra, conforme o produto e o tipo de infecção. Não escolha um antifúngico apenas com base na semelhança dos sintomas."],
+    ["Antiviral", "É um medicamento que atua contra determinados vírus em condições específicas. Os antivirais diferem entre si quanto aos vírus-alvo, indicação, momento de uso e precauções. A escolha depende de avaliação profissional e das informações do produto."],
+    ["Anti-histamínico / antialérgico", "É uma classe de medicamentos que reduz os efeitos da histamina em situações alérgicas específicas. Produtos diferentes podem apresentar duração, efeitos indesejados e restrições distintos; alguns podem causar sonolência. Não combine produtos nem escolha a apresentação sem orientação adequada."],
+    ["Anti-inflamatório", "É uma categoria de medicamentos que pode reduzir processos inflamatórios e, em algumas situações, dor ou febre. Existem classes diferentes, com riscos e contraindicações que não são iguais para todos. O fato de dois produtos serem anti-inflamatórios não significa que possam ser usados juntos ou trocados livremente."],
+    ["Analgésico", "É um medicamento ou substância utilizado para aliviar a dor. Analgésicos não são todos iguais: alguns também reduzem a febre, enquanto outros possuem riscos e indicações específicas. A escolha depende da causa da dor, da apresentação e da avaliação profissional."],
+    ["Antitérmico / antiperético", "É um termo usado para medicamentos que ajudam a reduzir a febre. A febre pode ter várias causas e nem sempre o objetivo é apenas diminuir a temperatura. Idade, duração, sintomas associados e condição da pessoa podem exigir avaliação profissional."],
+    ["mg (miligrama)", "É uma unidade de massa equivalente a um milésimo de grama. Nas embalagens, pode indicar a quantidade de princípio ativo em cada comprimido ou cápsula. A unidade precisa ser lida junto com o número e com a apresentação para ser interpretada corretamente."],
+    ["mcg ou µg (micrograma)", "É uma unidade de massa equivalente a um milionésimo de grama, ou a um milésimo de miligrama. Aparece em apresentações de substâncias que são descritas nessa escala, como alguns hormônios. Não confunda microgramas com miligramas, pois são unidades diferentes."],
+    ["mg/mL", "É uma forma de expressar concentração: quantos miligramas de uma substância existem em cada mililitro da preparação. Por exemplo, a notação 100 mg/mL descreve uma concentração de 100 miligramas por mililitro, não a quantidade que uma pessoa deve administrar. Para interpretar a dose, é necessário considerar a apresentação e orientação correta."],
+    ["mg/5 mL", "Indica quantos miligramas de princípio ativo estão presentes em cinco mililitros da preparação. Por exemplo, 250 mg/5 mL é uma forma de descrever uma suspensão oral. Não compare diretamente esse número com mg/mL sem converter corretamente e confirmar que se trata da mesma substância e formulação."],
+    ["UI/mL", "Significa unidades internacionais por mililitro e é usado para expressar a atividade ou quantidade de algumas substâncias por volume. A unidade internacional não é equivalente automaticamente a miligramas, porque a conversão depende da substância. Leia a concentração tal como está registrada na apresentação específica."]
   ];
   const glossarySearch=document.getElementById('glossarySearch'),glossaryResults=document.getElementById('glossaryResults');
   function renderGlossary(query=''){const q=query.trim().toLocaleLowerCase('pt-BR');const matches=glossaryTerms.filter(([term,desc])=>(term+' '+desc).toLocaleLowerCase('pt-BR').includes(q));glossaryResults.innerHTML=matches.length?matches.map(([term,desc])=>`<details class="glossary-result"><summary>${safeText(term)}</summary><p>${safeText(desc)}</p></details>`).join(''):'<p class="glossary-empty">Nenhum termo encontrado. Tente outra palavra.</p>'}
   renderGlossary();glossarySearch?.addEventListener('input',()=>renderGlossary(glossarySearch.value));
+
+  window.handleWasteImageError = function handleWasteImageError(img){
+    if(!img||img.dataset.errorHandled==='1')return;
+    img.dataset.errorHandled='1';
+    const wrap=img.closest('.waste-round-photo');
+    img.remove();
+    if(wrap&&!wrap.querySelector('.waste-image-unavailable')){
+      const status=document.createElement('span');status.className='waste-image-unavailable';status.textContent='Imagem de referência indisponível nesta fonte';wrap.appendChild(status);
+    }
+  };
 
   // Waste sorting mini-game: five scenarios, explanation after each choice, local-only score.
   const wasteQuestions=[
@@ -2455,7 +2538,7 @@ $('#feedbackForm').addEventListener('submit', (event) => {
     {title:'Material reaproveitável da maquete',desc:'Uma peça limpa de papelão pode ser usada na construção da maquete. O que priorizar?',img:'assets/sust_06.jpg',alt:'Maquete construída com materiais reaproveitados',options:['Reutilizar com segurança antes de descartar','Misturar com resíduos contaminados','Queimar o material','Descartar sempre sem avaliar reaproveitamento'],correct:0,explain:'Correto: quando o material está limpo e adequado ao uso, o reaproveitamento pode reduzir desperdício. Materiais contaminados não devem ser reutilizados.'}
   ];
   const wasteBody=document.getElementById('wasteChallengeBody'),wasteScoreBadge=document.getElementById('wasteScoreBadge');let wasteIndex=0,wasteScore=0,wasteAnswered=false;
-  function renderWasteQuestion(){const item=wasteQuestions[wasteIndex];if(!item)return;wasteAnswered=false;wasteScoreBadge.textContent=`${wasteScore} / ${wasteQuestions.length}`;wasteBody.innerHTML=`<div class="waste-round"><div class="waste-round-photo"><img src="${item.img}" alt="${safeText(item.alt)}" loading="lazy" onerror="this.onerror=null;this.src='assets/med-visual-tablet.svg';"></div><div class="waste-round-copy"><span class="waste-round-kicker">SITUAÇÃO ${wasteIndex+1} DE ${wasteQuestions.length}</span><h4>${safeText(item.title)}</h4><p>${safeText(item.desc)}</p><div class="waste-options">${item.options.map((option,i)=>`<button type="button" class="waste-option" data-waste-answer="${i}">${safeText(option)}</button>`).join('')}</div><p class="waste-feedback" id="wasteFeedback" hidden></p><div class="waste-controls"><p>Escolhas corretas: ${wasteScore} de ${wasteQuestions.length}</p><button type="button" class="btn primary small" id="wasteNext" disabled>${wasteIndex===wasteQuestions.length-1?'Ver resultado':'Próxima situação'}</button></div></div></div>`;}
+  function renderWasteQuestion(){const item=wasteQuestions[wasteIndex];if(!item)return;wasteAnswered=false;wasteScoreBadge.textContent=`${wasteScore} / ${wasteQuestions.length}`;wasteBody.innerHTML=`<div class="waste-round"><div class="waste-round-photo"><img src="${item.img}" alt="${safeText(item.alt)}" loading="lazy" onerror="handleWasteImageError(this)"></div><div class="waste-round-copy"><span class="waste-round-kicker">SITUAÇÃO ${wasteIndex+1} DE ${wasteQuestions.length}</span><h4>${safeText(item.title)}</h4><p>${safeText(item.desc)}</p><div class="waste-options">${item.options.map((option,i)=>`<button type="button" class="waste-option" data-waste-answer="${i}">${safeText(option)}</button>`).join('')}</div><p class="waste-feedback" id="wasteFeedback" hidden></p><div class="waste-controls"><p>Escolhas corretas: ${wasteScore} de ${wasteQuestions.length}</p><button type="button" class="btn primary small" id="wasteNext" disabled>${wasteIndex===wasteQuestions.length-1?'Ver resultado':'Próxima situação'}</button></div></div></div>`;}
   function finishWaste(){wasteScoreBadge.textContent=`${wasteScore} / ${wasteQuestions.length}`;const message=wasteScore===wasteQuestions.length?'Excelente! Você identificou todos os destinos.':wasteScore>=3?'Bom trabalho! Revise as explicações para fixar os cuidados.':'Continue praticando e consulte as orientações de coleta da sua região.';wasteBody.innerHTML=`<div class="waste-finish"><div class="waste-finish-score">${wasteScore}/${wasteQuestions.length}</div><h4>${message}</h4><p>O desafio é educativo. A destinação pode depender das regras do serviço de coleta local.</p><button type="button" class="btn primary" id="restartWaste">Tentar novamente</button></div>`;document.getElementById('restartWaste').addEventListener('click',()=>{wasteIndex=0;wasteScore=0;renderWasteQuestion()})}
   wasteBody?.addEventListener('click',e=>{const option=e.target.closest('[data-waste-answer]');if(option){if(wasteAnswered)return;wasteAnswered=true;const item=wasteQuestions[wasteIndex],chosen=Number(option.dataset.wasteAnswer),correct=chosen===item.correct;if(correct)wasteScore++;wasteBody.querySelectorAll('.waste-option').forEach(btn=>{btn.disabled=true;const idx=Number(btn.dataset.wasteAnswer);if(idx===item.correct)btn.classList.add('correct');else if(idx===chosen)btn.classList.add('incorrect')});const feedback=document.getElementById('wasteFeedback');feedback.hidden=false;feedback.textContent=(correct?'Resposta correta. ':'Vamos revisar. ')+item.explain;wasteScoreBadge.textContent=`${wasteScore} / ${wasteQuestions.length}`;document.getElementById('wasteNext').disabled=false;return;}if(e.target.closest('#wasteNext')){if(!wasteAnswered)return;if(wasteIndex<wasteQuestions.length-1){wasteIndex++;renderWasteQuestion()}else finishWaste()}});
   renderWasteQuestion();
