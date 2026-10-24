@@ -54,6 +54,19 @@ Os cartões priorizam fotografias de embalagens comerciais em fontes de farmáci
 - A seção Feedback incorpora o formulário publicado da equipe por meio de um `iframe` e mantém um botão para abri-lo em uma nova aba.
 - Respostas enviadas pelo formulário embutido são registradas no Google Forms associado ao link configurado em `index.html`.
 - O formulário local original continua disponível no painel recolhível “Usar o formulário local de alternativa”. Ele guarda respostas apenas no navegador/dispositivo e não envia dados à equipe.
-- O quiz e o histórico de tentativas permanecem como estavam; os resultados ainda não são enviados ao Google Forms nesta etapa.
+- O quiz e o histórico local foram preservados. A versão atual também encaminha o resumo da tentativa ao Google Planilhas por Apps Script, conforme a seção “Histórico online do quiz” abaixo.
 - Se o formulário incorporado não aparecer ou pedir acesso, confirme que ele está publicado para participantes com o link. Também é possível usar o botão “Abrir formulário em nova aba”.
 
+
+## Histórico online do quiz (24/10/2026)
+- Ao concluir as 20 perguntas, o site continua salvando a tentativa no histórico local do navegador e também encaminha o resumo ao Google Apps Script publicado pela equipe.
+- O envio utiliza o endpoint `/exec` configurado em `index.html`, por meio de uma requisição `POST` com o campo `payload` em formato `application/x-www-form-urlencoded`, compatível com `e.parameter.payload` no Apps Script.
+- A planilha registra data/hora, nome do participante, acertos, total de perguntas e aproveitamento. O histórico local segue independente por navegador; a planilha é o histórico central entre visitantes.
+- Por segurança e privacidade, o site envia apenas os dados necessários ao resumo e 20 marcadores de acerto/erro para cumprir a validação do serviço. As alternativas selecionadas não são guardadas na planilha.
+- Como o endpoint é público e a requisição usa `no-cors`, o navegador não permite ler a confirmação do Apps Script. A interface informa que o envio foi encaminhado e orienta conferir a planilha. Se houver falha de rede, oferece uma tentativa de reenvio.
+- Após publicar uma nova versão, faça um teste real: conclua uma tentativa no site, verifique se apareceu uma nova linha na aba `Histórico do Quiz` e apague os registros de teste, se houver. Se não aparecer, confira se o Apps Script está implantado como aplicativo da Web, executa como o proprietário e permite acesso aos visitantes; depois atualize a implantação existente para usar a versão atual do código.
+- O endpoint publicado é acessível publicamente. Não use o formulário para dados sensíveis; como qualquer serviço público, pode receber envios falsos. A validação atual limita a estrutura e a pontuação, mas não autentica a identidade do participante.
+
+## Correção do loop da galeria (24/10/2026)
+- Ajustado o limite de normalização no sentido horário do carrossel. O ponto anterior fazia a rolagem reiniciar cedo demais por causa do `scroll-snap`, podendo devolver o visitante à foto 22 em vez de chegar à foto 1.
+- As setas, o arraste e a navegação por teclado continuam usando o mesmo carrossel de 22 fotos, com imagens inteiras e fundo preto quando sobra espaço.

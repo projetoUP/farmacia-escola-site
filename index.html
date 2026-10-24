@@ -318,6 +318,11 @@ body.dark .medication-card .med-strength, body.dark .medication-card .med-form {
 .history-score { color: var(--primary-dark); font-weight: 950; }
 .history-date { color: var(--muted); font-size: .82rem; }
 .history-empty { color: var(--muted); padding: 10px 0; }
+.quiz-cloud-status { max-width: 660px; margin: 12px auto 14px; font-size: .91rem; color: var(--muted); line-height: 1.55; }
+.quiz-cloud-status[data-state="sent"] { color: var(--primary-dark); }
+.quiz-cloud-status[data-state="error"] { color: #a33333; }
+.quiz-cloud-status[data-state="pending"] { color: var(--muted); }
+#retryQuizSync[hidden] { display: none !important; }
 
 .feedback-form { display: grid; gap: 15px; background: var(--surface); border: 1px solid var(--line); border-radius: 24px; padding: 22px; box-shadow: var(--shadow); }
 .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
@@ -1307,7 +1312,7 @@ body.dark .waste-option.correct{background:#173d2b;color:#c8f9d9}body.dark .wast
             <p class="eyebrow">09 · TESTE</p>
             <h2>Quiz da Farmácia-Escola</h2>
           </div>
-          <p>Digite seu nome, responda às 20 perguntas em três níveis e confira sua pontuação. As tentativas ficam salvas no histórico deste navegador.</p>
+          <p>Digite seu nome, responda às 20 perguntas em três níveis e confira sua pontuação. Cada tentativa fica salva neste navegador e o site também tenta registrá-la no histórico geral da equipe.</p>
         </div>
         <div id="quizBox" class="quiz-box"></div>
         <div class="history-box">
@@ -1875,10 +1880,15 @@ resetAccess.addEventListener('click', () => {
 });
 loadPreferences();
 
-// ---------- Quiz ----------
+// ---------- Quiz + histórico online ----------
+// O Apps Script recebe dados como campo URL-encoded chamado "payload".
+// Em modo no-cors o navegador não expõe a resposta do Google; por isso,
+// a interface informa que o envio foi encaminhado e pede conferência na planilha.
+const QUIZ_HISTORY_ENDPOINT = 'https://script.google.com/macros/s/AKfycbwbe_DO0ebs0lFroeAndcSbs_uuIxl77z0_03LTFY4OKH4mM_roRTX88NjoT5tDpJ96TQ/exec';
 let quizIndex = 0;
 let quizScore = 0;
 let quizName = '';
+let quizAnswers = [];
 let answered = false;
 const quizBox = $('#quizBox');
 const quizHistory = $('#quizHistory');
@@ -1935,6 +1945,7 @@ function startQuiz() {
   quizName = value;
   quizIndex = 0;
   quizScore = 0;
+  quizAnswers = [];
   answered = false;
   renderQuizQuestion();
 }
@@ -1959,6 +1970,14 @@ function renderQuizQuestion() {
     answered = true;
     const chosen = Number(btn.dataset.index);
     const correct = item.correct;
+    // Guardamos uma marca por questão para cumprir a validação do endpoint.
+    // A planilha recebe apenas o histórico final (nome, nota e data), não as alternativas.
+    quizAnswers[quizIndex] = {
+      pergunta: quizIndex + 1,
+      nivelCodigo: item.level,
+      nivel: item.difficulty,
+      correta: chosen === correct
+    };
     answerButtons.forEach(b => b.disabled = true);
     if (chosen === correct) {
       btn.classList.add('correct');
@@ -1978,6 +1997,56 @@ function renderQuizQuestion() {
     else renderQuizQuestion();
   });
 }
+function buildQuizSyncPayload(record) {
+  const answers = Array.from({ length: quizQuestions.length }, (_, index) => quizAnswers[index] || {
+    pergunta: index + 1,
+    nivelCodigo: quizQuestions[index].level,
+    nivel: quizQuestions[index].difficulty,
+    correta: false
+  });
+  return {
+    nome: record.name,
+    acertos: record.score,
+    total: record.total,
+    percentual: Math.round((record.score / record.total) * 100),
+    acertosFacil: answers.filter(item => item.nivelCodigo === 'easy' && item.correta).length,
+    acertosMedio: answers.filter(item => item.nivelCodigo === 'medium' && item.correta).length,
+    acertosDificil: answers.filter(item => item.nivelCodigo === 'hard' && item.correta).length,
+    // O Apps Script atual exige 20 entradas, mas grava só o resumo final na planilha.
+    respostas: answers.map(item => Boolean(item.correta))
+  };
+}
+
+function sendQuizResultToOnlineHistory(record) {
+  const status = $('#quizSyncStatus');
+  const retryButton = $('#retryQuizSync');
+  if (!status || !retryButton) return;
+
+  status.dataset.state = 'pending';
+  status.textContent = 'Enviando resultado para o histórico geral…';
+  retryButton.hidden = true;
+  retryButton.disabled = true;
+
+  const formBody = new URLSearchParams();
+  formBody.set('payload', JSON.stringify(buildQuizSyncPayload(record)));
+
+  fetch(QUIZ_HISTORY_ENDPOINT, {
+    method: 'POST',
+    mode: 'no-cors',
+    body: formBody,
+    keepalive: true
+  }).then(() => {
+    status.dataset.state = 'sent';
+    status.textContent = 'Envio encaminhado ao histórico online. Confira a planilha para confirmar que a nova linha apareceu.';
+  }).catch(() => {
+    status.dataset.state = 'error';
+    status.textContent = 'Não foi possível enviar agora. Seu resultado continua salvo neste navegador; tente enviar novamente quando a conexão voltar.';
+    retryButton.hidden = false;
+  }).finally(() => {
+    retryButton.disabled = false;
+  });
+}
+
 function finishQuiz() {
   const record = {
     name: quizName,
@@ -1992,10 +2061,14 @@ function finishQuiz() {
       <p class="eyebrow">RESULTADO DE ${escapeHtml(quizName)}</p>
       <div class="result-score">${quizScore}/${quizQuestions.length}</div>
       <h3>${quizScore >= 18 ? 'Excelente desempenho!' : quizScore >= 14 ? 'Muito bom!' : quizScore >= 10 ? 'Bom trabalho!' : 'Continue explorando e aprendendo!'}</h3>
-      <p>Você acertou ${quizScore} de ${quizQuestions.length} perguntas. O resultado já foi registrado no histórico deste navegador.</p>
+      <p>Você acertou ${quizScore} de ${quizQuestions.length} perguntas. O resultado foi salvo neste navegador.</p>
+      <p id="quizSyncStatus" class="quiz-cloud-status" role="status" aria-live="polite">Preparando envio para o histórico online…</p>
+      <button class="btn ghost small" id="retryQuizSync" type="button" hidden>Tentar enviar novamente</button>
       <button class="btn primary" id="restartQuiz" type="button">Tentar novamente</button>
     </div>`;
   $('#restartQuiz').addEventListener('click', () => renderQuizStart('Digite seu nome novamente ou use o mesmo nome.'));
+  $('#retryQuizSync').addEventListener('click', () => sendQuizResultToOnlineHistory(record));
+  sendQuizResultToOnlineHistory(record);
 }
 $('#clearHistory').addEventListener('click', () => {
   localStorage.removeItem(HISTORY_KEY);
@@ -2440,8 +2513,12 @@ $('#feedbackForm').addEventListener('submit', (event) => {
     const normalizeLoop = () => {
       if (loopAdjusting || !loopWidth) return;
       const left=teamCarousel.scrollLeft;
+      // Os limites são assimétricos por causa do scroll-snap: ao voltar
+      // da primeira foto, compensamos depois de avançar ~72% do passo;
+      // ao sair da 22ª para a 1ª, esperamos ~72% do passo no sentido oposto.
+      // Isso evita o snap devolver o carrossel à foto 22 antes de chegar à 1.
       if(left < loopOrigin-step*.72) setScrollInstant(left+loopWidth);
-      else if(left > loopOrigin+loopWidth-step*.72) setScrollInstant(left-loopWidth);
+      else if(left > loopOrigin+loopWidth-step*.28) setScrollInstant(left-loopWidth);
     };
     const moveGallery = (direction) => teamCarousel.scrollBy({left:direction*step,behavior:document.body.classList.contains('reduce-motion')?'auto':'smooth'});
     document.getElementById('teamPrev')?.addEventListener('click',()=>moveGallery(-1));
