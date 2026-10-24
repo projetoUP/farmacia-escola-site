@@ -49,3 +49,11 @@ Os cartões priorizam fotografias de embalagens comerciais em fontes de farmáci
 - A etapa **Organização** usa uma fotografia real de armazenamento farmacêutico de Abdul Batin, publicada no Pexels: https://www.pexels.com/photo/professional-pharmacist-in-modern-drugstore-space-for-text-13119976/. A página identifica a foto como gratuita sob a licença Pexels. A imagem é carregada diretamente da CDN do Pexels; requer internet.
 - Se a fotografia externa não carregar, o site informa isso e utiliza temporariamente `assets/rotina_05.jpg` como imagem ilustrativa local. A interface explicita quando está usando essa alternativa.
 - A etapa **Conservação e localização** permanece com imagem ilustrativa local e recebeu texto que explica controle de validade e condições de conservação sem presumir que todo medicamento deve ser refrigerado.
+
+## Feedback via Google Forms (23/10/2026)
+- A seção Feedback incorpora o formulário publicado da equipe por meio de um `iframe` e mantém um botão para abri-lo em uma nova aba.
+- Respostas enviadas pelo formulário embutido são registradas no Google Forms associado ao link configurado em `index.html`.
+- O formulário local original continua disponível no painel recolhível “Usar o formulário local de alternativa”. Ele guarda respostas apenas no navegador/dispositivo e não envia dados à equipe.
+- O quiz e o histórico de tentativas permanecem como estavam; os resultados ainda não são enviados ao Google Forms nesta etapa.
+- Se o formulário incorporado não aparecer ou pedir acesso, confirme que ele está publicado para participantes com o link. Também é possível usar o botão “Abrir formulário em nova aba”.
+

@@ -889,6 +889,22 @@ body.dark .waste-option.correct{background:#173d2b;color:#c8f9d9}body.dark .wast
 @media(prefers-reduced-motion:reduce){.hero-title-green,.hero-orb-field i,.hero-bubble-dock i,.team-photo-card,.scan-beam,.guided-tour-card{animation:none!important;transition:none!important}.team-carousel{scroll-behavior:auto}}
 
 @media(min-width:861px){h1{font-size:clamp(2.9rem,3.7vw,4.1rem)}}
+
+/* Google Forms integration — primary feedback path */
+.google-forms-card{margin:0 0 18px;background:var(--surface);border:1px solid var(--line);border-radius:24px;overflow:hidden;box-shadow:var(--shadow)}
+.google-forms-heading{display:flex;align-items:center;justify-content:space-between;gap:22px;padding:22px 24px;background:var(--surface-2);border-bottom:1px solid var(--line)}
+.google-forms-heading h3{margin:5px 0 6px;color:var(--text);font-size:1.35rem}
+.google-forms-heading p{margin:0;color:var(--muted);max-width:600px}
+.google-forms-kicker{font-size:.72rem;font-weight:950;letter-spacing:.12em;color:var(--primary)}
+.google-forms-open{flex-shrink:0;text-align:center}
+.google-forms-frame-wrap{background:#fff;padding:8px 10px 0;overflow:hidden}
+.google-forms-frame{display:block;width:100%;height:1180px;border:0;background:#fff;border-radius:12px}
+.google-forms-note{margin:0;padding:13px 20px 18px;background:var(--surface-2);border-top:1px solid var(--line);color:var(--muted);font-size:.86rem}
+.feedback-local-fallback{margin-top:16px;border:1px dashed var(--line);border-radius:16px;background:var(--surface);padding:15px 18px}
+.feedback-local-fallback summary{cursor:pointer;color:var(--text);font-weight:850}
+.feedback-local-help{margin:12px 0;color:var(--muted);font-size:.9rem}
+.feedback-local-fallback .feedback-form{margin-top:12px}
+@media(max-width:680px){.google-forms-heading{align-items:flex-start;flex-direction:column;padding:19px}.google-forms-open{width:100%}.google-forms-frame{height:1320px}.google-forms-note{padding:13px 16px}.feedback-local-fallback{padding:13px}}
 </style>
 </head>
 <body>
@@ -1317,40 +1333,65 @@ body.dark .waste-option.correct{background:#173d2b;color:#c8f9d9}body.dark .wast
           <p>Deixe uma opinião, registre uma dúvida ou ajude a equipe a avaliar se a experiência foi realmente autoexplicativa.</p>
         </div>
 
-        <form id="feedbackForm" class="feedback-form">
-          <div class="form-grid">
-            <label>Seu nome (opcional)
-              <input id="feedbackName" name="name" type="text" maxlength="60" placeholder="Como podemos chamar você?" />
-            </label>
-            <label>Tipo de comentário
-              <select id="feedbackType" name="type">
-                <option value="opinião">Opinião sobre o site</option>
-                <option value="dúvida">Tenho uma dúvida</option>
-                <option value="sugestão">Tenho uma sugestão</option>
-              </select>
-            </label>
+        <div class="google-forms-card">
+          <div class="google-forms-heading">
+            <div>
+              <span class="google-forms-kicker">FORMULÁRIO DE AVALIAÇÃO</span>
+              <h3>Compartilhe sua experiência</h3>
+              <p>As respostas enviadas aqui ficam registradas no Google Forms da equipe da Farmácia-Escola.</p>
+            </div>
+            <a class="btn primary google-forms-open" href="https://docs.google.com/forms/d/e/1FAIpQLSfQZ6NecuG9_S3oeSOnHIy76tc-rYWEnv57pK9fxi7Od4bpng/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer">Abrir formulário em nova aba <span aria-hidden="true">↗</span></a>
           </div>
-
-          <label>Mensagem
-            <textarea id="feedbackMessage" name="message" rows="5" maxlength="500" required placeholder="Escreva sua opinião, dúvida ou sugestão..."></textarea>
-          </label>
-
-          <div class="feedback-checks">
-            <p><strong>Como foi sua experiência?</strong></p>
-            <label><input type="checkbox" name="evaluation" value="setores" /> Consegui identificar os setores.</label>
-            <label><input type="checkbox" name="evaluation" value="objetivo" /> Entendi o objetivo da maquete.</label>
-            <label><input type="checkbox" name="evaluation" value="informações" /> Consegui localizar as informações.</label>
-            <label><input type="checkbox" name="evaluation" value="clareza" /> As explicações estavam claras.</label>
-            <label><input type="checkbox" name="evaluation" value="navegação" /> A navegação foi simples.</label>
-            <label><input type="checkbox" name="evaluation" value="acessibilidade" /> Os elementos estavam acessíveis.</label>
-            <label><input type="checkbox" name="evaluation" value="aprendizado" /> Aprendi alguma informação nova.</label>
+          <div class="google-forms-frame-wrap">
+            <iframe
+              class="google-forms-frame"
+              title="Formulário de feedback da Farmácia-Escola — Google Forms"
+              src="https://docs.google.com/forms/d/e/1FAIpQLSfQZ6NecuG9_S3oeSOnHIy76tc-rYWEnv57pK9fxi7Od4bpng/viewform?embedded=true"
+              loading="lazy"
+              referrerpolicy="strict-origin-when-cross-origin">
+              Seu navegador não conseguiu incorporar o formulário. Use o botão “Abrir formulário em nova aba”.
+            </iframe>
           </div>
+          <p class="google-forms-note"><strong>Privacidade:</strong> o formulário é administrado pela equipe do projeto. Não envie dados pessoais sensíveis ou informações médicas particulares.</p>
+        </div>
 
-          <button class="btn primary" type="submit">Enviar feedback</button>
-          <p class="feedback-status" id="feedbackStatus" aria-live="polite"></p>
-        </form>
+        <details class="feedback-local-fallback">
+          <summary>O formulário externo não abriu? Usar o formulário local de alternativa</summary>
+          <p class="feedback-local-help">Esta alternativa salva a resposta somente neste navegador/dispositivo; ela não envia dados para a equipe.</p>
+          <form id="feedbackForm" class="feedback-form">
+            <div class="form-grid">
+              <label>Seu nome (opcional)
+                <input id="feedbackName" name="name" type="text" maxlength="60" placeholder="Como podemos chamar você?" />
+              </label>
+              <label>Tipo de comentário
+                <select id="feedbackType" name="type">
+                  <option value="opinião">Opinião sobre o site</option>
+                  <option value="dúvida">Tenho uma dúvida</option>
+                  <option value="sugestão">Tenho uma sugestão</option>
+                </select>
+              </label>
+            </div>
 
-        <div class="feedback-local-note"><strong>Sobre o envio:</strong> nesta versão gratuita, o feedback é armazenado somente no navegador do dispositivo. Para a turma receber as respostas de todos os visitantes, depois podemos conectar este formulário a um Google Forms, Formspree ou outro serviço gratuito.</div>
+            <label>Mensagem
+              <textarea id="feedbackMessage" name="message" rows="5" maxlength="500" required placeholder="Escreva sua opinião, dúvida ou sugestão..."></textarea>
+            </label>
+
+            <div class="feedback-checks">
+              <p><strong>Como foi sua experiência?</strong></p>
+              <label><input type="checkbox" name="evaluation" value="setores" /> Consegui identificar os setores.</label>
+              <label><input type="checkbox" name="evaluation" value="objetivo" /> Entendi o objetivo da maquete.</label>
+              <label><input type="checkbox" name="evaluation" value="informações" /> Consegui localizar as informações.</label>
+              <label><input type="checkbox" name="evaluation" value="clareza" /> As explicações estavam claras.</label>
+              <label><input type="checkbox" name="evaluation" value="navegação" /> A navegação foi simples.</label>
+              <label><input type="checkbox" name="evaluation" value="acessibilidade" /> Os elementos estavam acessíveis.</label>
+              <label><input type="checkbox" name="evaluation" value="aprendizado" /> Aprendi alguma informação nova.</label>
+            </div>
+
+            <button class="btn primary" type="submit">Enviar feedback</button>
+            <p class="feedback-status" id="feedbackStatus" aria-live="polite"></p>
+          </form>
+          <div class="feedback-local-note"><strong>Armazenamento local:</strong> respostas enviadas nesta alternativa ficam neste dispositivo. Para participar da avaliação coletiva, prefira o formulário Google acima.</div>
+        </details>
       </div>
     </section>
 
