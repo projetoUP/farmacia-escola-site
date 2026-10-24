@@ -627,6 +627,9 @@ body.dark .medication-card .med-strength, body.dark .medication-card .med-form {
 .routine-image-frame{height:430px;background:#0a1a16;display:grid;place-items:center}
 .routine-image-bg{position:absolute;inset:0;background:radial-gradient(circle at center,rgba(77,218,184,.07),transparent 55%)}
 .routine-image-frame img{position:relative;z-index:1;width:100%;height:100%;object-fit:contain;background:#0d211c;padding:0}
+.routine-photo-credit{margin:7px 4px 0;text-align:right;color:#a8c5bc;font-size:.72rem;line-height:1.45}
+.routine-photo-credit a{color:#75e6ca;text-decoration:underline;text-underline-offset:2px}
+.routine-photo-credit[hidden]{display:none}
 
 .access-strip{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;overflow:visible;padding:4px 0 8px;scroll-snap-type:none}
 .access-card{width:auto;min-height:355px;padding:0;overflow:hidden;display:flex;flex-direction:column}
@@ -1211,9 +1214,9 @@ body.dark .waste-option.correct{background:#173d2b;color:#c8f9d9}body.dark .wast
             </div>
             <div class="routine-image-frame">
               <div class="routine-image-bg"></div>
-              <img id="routineImage" src="assets/rotina_01.jpg" alt="Atendente acolhendo uma pessoa no balcão da farmácia" />
-
+              <img id="routineImage" src="assets/rotina_01.jpg" alt="Atendente acolhendo uma pessoa no balcão da farmácia" referrerpolicy="strict-origin-when-cross-origin" />
             </div>
+            <p class="routine-photo-credit" id="routinePhotoCredit" aria-live="polite" hidden></p>
             <div class="routine-copy">
               <div class="routine-action" id="routineAction">Escuta e acolhimento</div>
               <p id="routineDescription">Escuta, acolhimento, identificação da necessidade e orientação adequada. O primeiro passo é ouvir com atenção e receber a pessoa de forma respeitosa.</p>
@@ -1363,7 +1366,7 @@ body.dark .waste-option.correct{background:#173d2b;color:#c8f9d9}body.dark .wast
           <p><strong>Projeto:</strong> Extensão digital da Farmácia-Escola</p>
           <hr />
           <p class="credit-small"><strong>Imagem do medicamento interativo:</strong> Referência visual de embalagem e frasco fornecida para esta versão educativa; a apresentação líquida consultada é 200 mg/mL em frasco de 15 mL.</p>
-          <p class="credit-small"><strong>Fotos dos medicamentos:</strong> referências visuais vinculadas a páginas de produtos e bulas de fabricantes/drogarias consultadas para conferir concentração, apresentação e forma farmacêutica. A versão do site usa carregamento remoto dessas fotos e mantém ilustrações locais como fallback.</p><p class="credit-small"><strong>Referências específicas de apresentação:</strong> <a href="https://www.kenvuebrands.com/br/reactine/antialergico-reactine" target="_blank" rel="noopener noreferrer">Reactine 10 mg — Kenvue Brasil</a>; <a href="https://www.extrafarma.com.br/ibuprofeno-100mg-gotas-20ml-generico-neoquimica/p" target="_blank" rel="noopener noreferrer">Ibuprofeno gotas 100 mg/mL — Extrafarma</a>; <a href="https://www.paguemenos.com.br/maleato-de-dexclorfeniramina-0-4mg-solucao-oral-100ml-generico-prati-donaduzzi/p" target="_blank" rel="noopener noreferrer">Dexclorfeniramina solução oral 0,4 mg/mL — Pague Menos</a>; <a href="https://www.ablbrasil.com.br/cefalexina-monoidratada-suspensao/" target="_blank" rel="noopener noreferrer">Cefalexina suspensão 250 mg/5 mL — ABL Brasil</a>. As embalagens podem variar entre fabricantes e lotes.</p><p class="credit-small"><strong>Outras imagens educativas:</strong> Wikimedia Commons — <em>Comprimidos.jpg</em> (Abinoam Jr., CC BY-SA 3.0); <em>Capsule medicine.png</em> (Joseph Hemê, CC BY-SA 4.0); <em>Cough medicine.jpg</em> (Mysid, domínio público); <em>Tube of hydrocortisone cream.jpg</em> (Father Goose, CC BY-SA 4.0); <em>Diprosalic ointment tube.jpeg</em> (Cnbrb, CC BY-SA 4.0); <em>Eye Drops - eye lubricant.jpg</em> (Dineshkumar Nallaveerappan, CC BY-SA 4.0).</p>
+          <p class="credit-small"><strong>Fotos dos medicamentos:</strong> referências visuais vinculadas a páginas de produtos e bulas de fabricantes/drogarias consultadas para conferir concentração, apresentação e forma farmacêutica. Para algumas apresentações há uma segunda fotografia real cadastrada; se as imagens não carregarem, o cartão informa a indisponibilidade em vez de inventar uma embalagem.</p><p class="credit-small"><strong>Referências específicas de apresentação:</strong> <a href="https://www.kenvuebrands.com/br/reactine/antialergico-reactine" target="_blank" rel="noopener noreferrer">Reactine 10 mg — Kenvue Brasil</a>; <a href="https://www.extrafarma.com.br/ibuprofeno-100mg-gotas-20ml-generico-neoquimica/p" target="_blank" rel="noopener noreferrer">Ibuprofeno gotas 100 mg/mL — Extrafarma</a>; <a href="https://www.paguemenos.com.br/maleato-de-dexclorfeniramina-0-4mg-solucao-oral-100ml-generico-prati-donaduzzi/p" target="_blank" rel="noopener noreferrer">Dexclorfeniramina solução oral 0,4 mg/mL — Pague Menos</a>; <a href="https://www.ablbrasil.com.br/cefalexina-monoidratada-suspensao/" target="_blank" rel="noopener noreferrer">Cefalexina suspensão 250 mg/5 mL — ABL Brasil</a>. As embalagens podem variar entre fabricantes e lotes.</p><p class="credit-small"><strong>Outras imagens educativas:</strong> Wikimedia Commons — <em>Comprimidos.jpg</em> (Abinoam Jr., CC BY-SA 3.0); <em>Capsule medicine.png</em> (Joseph Hemê, CC BY-SA 4.0); <em>Cough medicine.jpg</em> (Mysid, domínio público); <em>Tube of hydrocortisone cream.jpg</em> (Father Goose, CC BY-SA 4.0); <em>Diprosalic ointment tube.jpeg</em> (Cnbrb, CC BY-SA 4.0); <em>Eye Drops - eye lubricant.jpg</em> (Dineshkumar Nallaveerappan, CC BY-SA 4.0).</p>
         </div>
       </div>
     </section>
@@ -2307,16 +2310,29 @@ document.querySelectorAll('[data-leaflet]').forEach(btn=>btn.addEventListener('c
 resetMedicine();
 
 // ---------- Rotina em formato de jogo ----------
+const routinePhotoUrl='https://images.pexels.com/photos/13119976/pexels-photo-13119976.jpeg?cs=srgb&dl=pexels-abdul-batin-235375905-13119976.jpg&fm=jpg';
 const routineData = [
   { phase:'FASE 1 · ATENDIMENTO', action:'Escuta e acolhimento', img:'assets/rotina_01.jpg', alt:'Atendente acolhendo uma pessoa no balcão', desc:'Escuta, acolhimento, identificação da necessidade e orientação adequada. O primeiro passo é ouvir com atenção e receber a pessoa de forma respeitosa.' },
   { phase:'FASE 1 · ATENDIMENTO', action:'Identificação e orientação', img:'assets/rotina_02.jpg', alt:'Profissional conversando com um visitante e registrando informações', desc:'Depois de entender a necessidade, o atendente reúne as informações importantes e orienta o visitante de forma clara.' },
-  { phase:'FASE 1 · ATENDIMENTO', action:'Encaminhamento', img:'assets/rotina_03.jpg', alt:'Profissionais encaminhando uma pessoa para avaliação', desc:'Quando necessário, o atendimento também ajuda a encaminhar a pessoa para um profissional adequado, sem substituir a avaliação especializada.' },
-  { phase:'FASE 2 · ARMAZENAMENTO', action:'Organização', img:'assets/rotina_04.jpg', alt:'Profissional organizando produtos nas prateleiras de uma farmácia', desc:'Os produtos precisam estar identificados e organizados para facilitar a localização e apoiar uma rotina mais segura.' },
-  { phase:'FASE 2 · ARMAZENAMENTO', action:'Conservação e localização', img:'assets/rotina_05.jpg', alt:'Profissional conferindo medicamentos organizados em prateleiras', desc:'A organização também contribui para conservação, conferência de validade e localização rápida dos itens quando necessário.' },
+  { phase:'FASE 1 · ATENDIMENTO', action:'Encaminhamento', img:'assets/rotina_04.jpg', alt:'Profissional de saúde conversando com visitantes e ajudando no encaminhamento para atendimento adequado', desc:'Quando necessário, o atendimento também ajuda a encaminhar a pessoa para um profissional adequado, sem substituir a avaliação especializada.' },
+  { phase:'FASE 2 · ARMAZENAMENTO', action:'Organização', img:routinePhotoUrl, fallback:'assets/rotina_05.jpg', credit:'Foto: Abdul Batin / Pexels (imagem de um farmacêutico organizando medicamentos nas prateleiras).', creditUrl:'https://www.pexels.com/photo/professional-pharmacist-in-modern-drugstore-space-for-text-13119976/', alt:'Fotografia de um profissional organizando embalagens identificadas de medicamentos em prateleiras de uma farmácia', desc:'Os medicamentos devem ficar organizados e identificados em prateleiras ou armários limpos e secos. A separação por categoria e apresentação facilita a localização e ajuda a manter o estoque organizado.' },
+  { phase:'FASE 2 · ARMAZENAMENTO', action:'Conservação e localização', img:'assets/rotina_05.jpg', alt:'Imagem ilustrativa de um profissional conferindo medicamentos organizados em prateleiras', desc:'A conservação também exige acompanhar validade e condições indicadas pelo fabricante, como temperatura, umidade e proteção contra luz quando aplicável. Nem todo medicamento deve ser refrigerado: siga sempre o rótulo e a bula.' },
   { phase:'FASE 3 · CAIXA', action:'Conferência e finalização', img:'assets/rotina_06.jpg', alt:'Atendente passando um produto no caixa de uma farmácia', desc:'No caixa acontece a conferência dos produtos e a finalização da compra, com atenção ao pedido e às informações do atendimento.' }
 ];
-const routineImage=document.getElementById('routineImage'), routinePhase=document.getElementById('routinePhase'), routineCounter=document.getElementById('routineCounter'), routineAction=document.getElementById('routineAction'), routineDescription=document.getElementById('routineDescription');
-function showRoutine(i){ const item=routineData[i]; if(!item) return; document.querySelectorAll('.routine-step').forEach(b=>b.classList.toggle('active', Number(b.dataset.routine)===i)); routineImage.classList.remove('changing'); void routineImage.offsetWidth; routineImage.src=item.img; routineImage.alt=item.alt; routineImage.classList.add('changing'); routinePhase.textContent=item.phase; routineCounter.textContent=String(i+1).padStart(2,'0')+'/06'; routineAction.textContent=item.action; routineDescription.textContent=item.desc; }
+const routineImage=document.getElementById('routineImage'), routinePhase=document.getElementById('routinePhase'), routineCounter=document.getElementById('routineCounter'), routineAction=document.getElementById('routineAction'), routineDescription=document.getElementById('routineDescription'), routinePhotoCredit=document.getElementById('routinePhotoCredit');
+routineImage?.addEventListener('error',()=>{
+  const fallback=routineImage.dataset.fallbackSrc;
+  if(fallback && routineImage.dataset.fallbackUsed!=='1' && routineImage.src.includes('images.pexels.com')){
+    routineImage.dataset.fallbackUsed='1';
+    routineImage.src=fallback;
+    routineImage.alt='Imagem local ilustrativa de organização de medicamentos em prateleiras. A fotografia externa não carregou.';
+    if(routinePhotoCredit){routinePhotoCredit.textContent='A fotografia do Pexels não carregou; esta imagem local é apenas ilustrativa.';routinePhotoCredit.hidden=false;}
+    return;
+  }
+  routineImage.style.display='none';
+  if(routinePhotoCredit){routinePhotoCredit.textContent='Imagem indisponível. Confira a conexão e os arquivos da pasta assets.';routinePhotoCredit.hidden=false;}
+});
+function showRoutine(i){ const item=routineData[i]; if(!item) return; document.querySelectorAll('.routine-step').forEach(b=>b.classList.toggle('active', Number(b.dataset.routine)===i)); routineImage.classList.remove('changing'); void routineImage.offsetWidth; routineImage.style.display=''; routineImage.dataset.fallbackSrc=item.fallback||''; routineImage.dataset.fallbackUsed='0'; routineImage.src=item.img; routineImage.alt=item.alt; routineImage.classList.add('changing'); routinePhase.textContent=item.phase; routineCounter.textContent=String(i+1).padStart(2,'0')+'/06'; routineAction.textContent=item.action; routineDescription.textContent=item.desc; if(routinePhotoCredit){routinePhotoCredit.replaceChildren();routinePhotoCredit.hidden=true;if(item.creditUrl){const a=document.createElement('a');a.href=item.creditUrl;a.target='_blank';a.rel='noopener noreferrer';a.textContent=item.credit;routinePhotoCredit.appendChild(a);routinePhotoCredit.hidden=false;}} }
 document.querySelectorAll('.routine-step').forEach(btn=>btn.addEventListener('click',()=>showRoutine(Number(btn.dataset.routine))));
 
 // ---------- Feedback ----------

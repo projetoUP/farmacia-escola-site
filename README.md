@@ -16,7 +16,7 @@
 - A expansão das imagens é inicializada depois que os cartões de medicamentos são renderizados.
 
 ## Medicamentos
-As fotos dos produtos são referências visuais externas. Se um endereço remoto falhar, o cartão usa uma ilustração local para não ficar vazio. Concentração, forma e volume variam por fabricante; o site é educativo, não orienta automedicação e não substitui bula ou profissional de saúde.
+As fotos dos produtos são referências visuais externas. O cartão tenta a imagem principal e, quando cadastrada, uma segunda fotografia real. Se nenhuma carregar, mostra um aviso de indisponibilidade — não cria uma embalagem fictícia. Concentração, forma e volume variam por fabricante; o site é educativo, não orienta automedicação e não substitui bula ou profissional de saúde.
 
 ## Dependências
 A cena tridimensional da seção Consulte usa Three.js carregado por CDN. Para essa parte funcionar, o navegador precisa ter acesso à internet. As demais seções usam HTML, CSS e JavaScript.
@@ -37,8 +37,15 @@ Os cartões priorizam fotografias de embalagens comerciais em fontes de farmáci
 ## Revisão de imagens, galeria e glossário (23/10/2026)
 - A galeria inicial percorre as 22 fotos em loop contínuo, com avanço/retorno por setas, teclado e arraste.
 - As fotos da equipe usam `object-fit: contain` e fundo preto para manter a proporção sem esticar ou cortar o conteúdo.
-- A lista de Aprenda contém 32 medicamentos. As fontes de imagem foram revisadas e várias URLs foram trocadas por imagens de embalagens publicadas em catálogos de farmácias. Em caso de falha, o código tenta uma foto alternativa real quando disponível; se nenhuma carregar, mostra um aviso em vez de desenhar uma embalagem fictícia.
+- A lista de Aprenda contém 32 medicamentos. As fontes de imagem são páginas de catálogos de farmácias. Em caso de falha, o código tenta uma foto alternativa real quando disponível; se nenhuma carregar, mostra um aviso em vez de desenhar uma embalagem fictícia.
 - O glossário foi ampliado para 42 termos com explicações mais detalhadas.
 - O ícone da aba do navegador está em `assets/favicon.svg`, com versões alternativas `assets/favicon.png` e `assets/favicon.ico`: fundo branco quadrado e cruz vermelha central.
 
 **Nota sobre imagens externas:** as fotografias dos medicamentos usam endereços de catálogos online e, portanto, precisam de conexão com a internet para carregar. O restante do site continua organizado como uma página estática para GitHub Pages.
+
+
+## Correção da etapa Armazenamento (23/10/2026)
+- A etapa **Encaminhamento** agora usa a foto local `assets/rotina_04.jpg`, que corresponde à conversa com um profissional.
+- A etapa **Organização** usa uma fotografia real de armazenamento farmacêutico de Abdul Batin, publicada no Pexels: https://www.pexels.com/photo/professional-pharmacist-in-modern-drugstore-space-for-text-13119976/. A página identifica a foto como gratuita sob a licença Pexels. A imagem é carregada diretamente da CDN do Pexels; requer internet.
+- Se a fotografia externa não carregar, o site informa isso e utiliza temporariamente `assets/rotina_05.jpg` como imagem ilustrativa local. A interface explicita quando está usando essa alternativa.
+- A etapa **Conservação e localização** permanece com imagem ilustrativa local e recebeu texto que explica controle de validade e condições de conservação sem presumir que todo medicamento deve ser refrigerado.
