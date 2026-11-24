@@ -1012,6 +1012,67 @@ main section[id], #glossario { scroll-margin-top: 88px; }
 .inventory-review-body p{margin:10px 0 0}
 .inventory-review-body strong{color:var(--text)}
 @media(max-width:640px){.inventory-review summary{padding:13px 14px}.inventory-review-body{padding:0 14px 14px;font-size:.9rem}}
+/* ===== Homenagem à professora Aline Oliveira ===== */
+.tribute-section{padding:56px 0 8px;position:relative}
+.tribute-panel{position:relative;isolation:isolate;overflow:hidden;display:grid;grid-template-columns:minmax(240px,320px) minmax(0,1fr);gap:clamp(28px,5vw,64px);align-items:center;padding:clamp(26px,4.5vw,54px);border-radius:34px;color:#f3fffb;background:radial-gradient(circle at 12% 18%,rgba(233,196,106,.16),transparent 38%),radial-gradient(circle at 92% 88%,rgba(116,230,200,.14),transparent 40%),linear-gradient(150deg,#0f6e5d 0%,#14574c 52%,#102f2a 100%);border:1px solid rgba(233,196,106,.55);box-shadow:var(--shadow),inset 0 0 0 6px rgba(7,32,27,.55),inset 0 0 0 7px rgba(233,196,106,.28)}
+.tribute-glow{position:absolute;z-index:-1;width:360px;height:360px;left:-60px;top:-80px;border-radius:50%;background:rgba(233,196,106,.16);filter:blur(46px);animation:breathe 6s ease-in-out infinite}
+.tribute-frame{margin:0;justify-self:center;width:100%;max-width:320px}
+.tribute-frame-outer{padding:10px;border-radius:26px;background:linear-gradient(145deg,#f6e3a3,#c9972f 45%,#f1d98a 70%,#a87a1f);box-shadow:0 22px 50px rgba(0,0,0,.35),0 0 40px rgba(233,196,106,.22)}
+.tribute-frame-inner{padding:8px;border-radius:18px;background:#0a2420}
+.tribute-photo-slot,.tribute-photo{display:block;width:100%;aspect-ratio:3/4;border-radius:12px}
+.tribute-photo{object-fit:cover;object-position:center top}
+.tribute-photo-slot{display:grid;place-items:center;text-align:center;padding:18px;background:repeating-linear-gradient(135deg,rgba(255,255,255,.035) 0 12px,transparent 12px 24px),#0d2b26;border:1px dashed rgba(233,196,106,.6);color:rgba(243,255,251,.86)}
+.tribute-photo-slot svg{display:block;margin:0 auto 12px;color:#e9c46a}
+.tribute-photo-slot strong{display:block;font-size:.92rem;line-height:1.35}
+.tribute-photo-slot span{display:block;margin-top:6px;font-size:.8rem;color:rgba(243,255,251,.72)}
+.tribute-copy{min-width:0}
+.tribute-kicker{margin:0 0 14px;font-size:.74rem;font-weight:900;letter-spacing:.2em;color:#e9c46a}
+.tribute-lead{margin:0;max-width:34ch;font-size:clamp(1.15rem,2.2vw,1.55rem);line-height:1.45;font-weight:600;color:#f3fffb;text-wrap:balance}
+.tribute-divider{display:flex;align-items:center;gap:14px;margin:24px 0 20px;max-width:380px}
+.tribute-divider span{flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(233,196,106,.85))}
+.tribute-divider span:last-child{background:linear-gradient(270deg,transparent,rgba(233,196,106,.85))}
+.tribute-divider i{font-style:normal;color:#e9c46a;font-size:1rem}
+.tribute-name{margin:0;font-family:"Playfair Display",Georgia,"Times New Roman",serif;font-weight:700;font-size:clamp(2.1rem,5vw,3.8rem);line-height:1.08;letter-spacing:.06em;color:#e9c46a;text-wrap:balance}
+@supports ((-webkit-background-clip:text) or (background-clip:text)){
+  .tribute-name{background:linear-gradient(100deg,#b8841f 0%,#f6e3a3 28%,#e9c46a 48%,#fff1bd 62%,#c9972f 100%);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;filter:drop-shadow(0 2px 10px rgba(0,0,0,.35));animation:tributeShine 8s ease-in-out infinite}
+}
+@keyframes tributeShine{0%,100%{background-position:100% 0}50%{background-position:0 0}}
+.tribute-thanks{margin:16px 0 0;font-size:1rem;font-style:italic;color:rgba(243,255,251,.82)}
+body.high-contrast .tribute-panel{background:#000;border:3px solid #ffd84a;box-shadow:none;color:#fff}
+body.high-contrast .tribute-glow{display:none}
+body.high-contrast .tribute-frame-outer{background:#ffd84a;box-shadow:none}
+body.high-contrast .tribute-frame-inner,body.high-contrast .tribute-photo-slot{background:#000}
+body.high-contrast .tribute-photo-slot{border-color:#ffd84a;color:#fff}
+body.high-contrast .tribute-photo-slot span,body.high-contrast .tribute-thanks{color:#fff}
+body.high-contrast .tribute-kicker,body.high-contrast .tribute-divider i{color:#ffd84a}
+body.high-contrast .tribute-divider span,body.high-contrast .tribute-divider span:last-child{background:#ffd84a}
+body.high-contrast .tribute-name{background:none;-webkit-text-fill-color:#ffd84a;color:#ffd84a;filter:none;animation:none}
+body.reduce-motion .tribute-name,body.reduce-motion .tribute-glow{animation:none!important}
+@media (prefers-reduced-motion:reduce){.tribute-name,.tribute-glow{animation:none!important}}
+@media (max-width:760px){
+  .tribute-section{padding:40px 0 4px}
+  .tribute-panel{grid-template-columns:1fr;text-align:center;border-radius:26px;gap:28px}
+  .tribute-frame{max-width:min(78vw,300px)}
+  .tribute-lead{margin-inline:auto}
+  .tribute-divider{margin-inline:auto}
+  .tribute-name{font-size:clamp(2rem,10vw,2.7rem);letter-spacing:.05em}
+}
+
+/* ===== Galeria dos integrantes: cartões maiores ===== */
+.hero-card{min-height:670px}
+.team-photo-card{flex:0 0 clamp(270px,66%,350px);min-height:480px;max-height:560px;padding:12px;border-radius:30px}
+.team-photo-frame{min-height:440px;border-radius:20px}
+@media (min-width:861px){.hero-grid{grid-template-columns:.92fr 1.08fr;gap:44px}}
+@media (max-width:860px){
+  .hero-card{min-height:600px}
+  .team-photo-card{flex-basis:clamp(270px,58vw,350px);max-height:520px}
+}
+@media (max-width:620px){
+  .hero-card{min-height:565px;padding:17px 12px 14px}
+  .team-photo-card{flex-basis:min(84vw,340px);min-height:440px;max-height:500px;padding:9px}
+  .team-photo-frame{min-height:410px}
+  .team-track{gap:12px}
+}
 </style>
 </head>
 <body>
@@ -1100,6 +1161,36 @@ main section[id], #glossario { scroll-margin-top: 88px; }
             <button class="team-carousel-btn" id="teamNext" type="button" aria-label="Ver próximas fotos">→</button>
           </div>
           <div class="hero-bubble-dock" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOMENAGEM À PROFESSORA ALINE OLIVEIRA -->
+    <section id="homenagem" class="tribute-section" aria-labelledby="tributeTitle">
+      <div class="container">
+        <div class="tribute-panel">
+          <div class="tribute-glow" aria-hidden="true"></div>
+          <figure class="tribute-frame">
+            <div class="tribute-frame-outer">
+              <div class="tribute-frame-inner">
+                <!-- COMO INSERIR A FOTO DA PROFESSORA: salve a foto na pasta assets/ e substitua a <div class="tribute-photo-slot"> abaixo por uma tag <img class="tribute-photo"> apontando para essa foto (com alt="Professora Aline Oliveira"). Veja o passo a passo no README.md. -->
+                <div class="tribute-photo-slot" role="img" aria-label="Espaço reservado para a fotografia da professora Aline Oliveira. A foto será adicionada em breve.">
+                  <div>
+                    <svg viewBox="0 0 64 64" width="54" height="54" aria-hidden="true" focusable="false"><path d="M12 22h10l4-6h12l4 6h10a4 4 0 0 1 4 4v24a4 4 0 0 1-4 4H12a4 4 0 0 1-4-4V26a4 4 0 0 1 4-4z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/><circle cx="32" cy="38" r="9" fill="none" stroke="currentColor" stroke-width="2.4"/></svg>
+                    <strong>Espaço reservado para a fotografia</strong>
+                    <span>A foto será adicionada em breve.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </figure>
+          <div class="tribute-copy">
+            <p class="tribute-kicker">HOMENAGEM ESPECIAL</p>
+            <p class="tribute-lead">Um agradecimento especial à nossa professora e responsável pela Farmácia Integrativa.</p>
+            <div class="tribute-divider" aria-hidden="true"><span></span><i>✚</i><span></span></div>
+            <h2 class="tribute-name" id="tributeTitle">ALINE OLIVEIRA</h2>
+            <p class="tribute-thanks">Com respeito, reconhecimento e gratidão.</p>
+          </div>
         </div>
       </div>
     </section>

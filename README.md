@@ -174,3 +174,15 @@ Os cartões priorizam fotografias de embalagens comerciais em fontes de farmáci
 Esta versão utiliza um nome de arquivo exclusivo para a fotografia 09 da galeria inicial: `assets/project-people/equipe-inicio-foto09-cache-v3-20261124.jpeg`. O `index.html` já aponta para esse nome novo, evitando que o navegador reutilize a imagem antiga armazenada em cache.
 
 Ao publicar, envie o `index.html` e a pasta `assets/` extraídos deste ZIP para a raiz do repositório GitHub Pages e confirme o commit. Se a versão antiga continuar aparecendo, abra o endereço em uma aba anônima ou faça uma atualização forçada (Ctrl+F5 no computador). No iPhone, feche a aba e abra novamente; se necessário, limpe os dados do site no navegador.
+
+
+## Homenagem à professora e galeria ampliada (24/11/2026)
+- Nova seção `#homenagem`, logo após a apresentação inicial: agradecimento à professora e responsável pela Farmácia Integrativa, **ALINE OLIVEIRA** em dourado, moldura dourada para a fotografia e detalhes discretos. Funciona nos modos claro, escuro e alto contraste, e respeita "Menos animação".
+- O espaço da fotografia está **reservado e vazio** ("A foto será adicionada em breve"). Nenhuma imagem fictícia ou gerada por IA foi usada.
+- As fotos dos integrantes ficaram maiores (cartões até ~350 px de largura e ~560 px de altura no computador; ~84% da largura no celular), mantendo `object-fit: contain` (sem cortes ou deformações), as 22 fotos, o loop, as setas, o arraste e o teclado.
+
+### Como inserir a foto da professora depois
+1. Copie a foto para a pasta `assets/` (ex.: `assets/professora-aline-oliveira.jpg`).
+2. No `index.html`, procure `tribute-photo-slot` e substitua a `<div class="tribute-photo-slot" ...> ... </div>` inteira por:
+   `<img class="tribute-photo" src="assets/professora-aline-oliveira.jpg" alt="Professora Aline Oliveira" loading="lazy" decoding="async">`
+   A moldura é vertical (proporção 3:4); a foto é ajustada ao quadro, com foco na parte superior.
