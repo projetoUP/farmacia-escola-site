@@ -37,7 +37,7 @@ Os cartões priorizam fotografias de embalagens comerciais em fontes de farmáci
 ## Revisão de imagens, galeria e glossário (23/10/2026)
 - A galeria inicial percorre as 22 fotos em loop contínuo, com avanço/retorno por setas, teclado e arraste.
 - As fotos da equipe usam `object-fit: contain` e fundo preto para manter a proporção sem esticar ou cortar o conteúdo.
-- A lista de Aprenda contém 38 fichas visuais: 32 medicamentos originais mais 6 produtos distintos adicionados. A azitromicina já existia e foi atualizada, sem duplicação. Inclui filtros Uso único e Suplementos; o cartão de vitamina B12 identifica explicitamente o produto como suplemento alimentar, não medicamento. As fontes de imagem são páginas de catálogos de farmácias. Em caso de falha, o código tenta uma foto alternativa real quando disponível; se nenhuma carregar, mostra um aviso em vez de desenhar uma embalagem fictícia.
+- A lista de Aprenda contém 67 fichas visuais na revisão de 24/11/2026, incluindo apresentações distintas e suplementos identificados corretamente. A azitromicina já existia e foi atualizada, sem duplicação. Inclui filtros Uso único e Suplementos; o cartão de vitamina B12 identifica explicitamente o produto como suplemento alimentar, não medicamento. As fontes de imagem são páginas de catálogos de farmácias. Em caso de falha, o código tenta uma foto alternativa real quando disponível; se nenhuma carregar, mostra um aviso em vez de desenhar uma embalagem fictícia.
 - O glossário foi ampliado para 42 termos com explicações mais detalhadas.
 - O ícone da aba do navegador está em `assets/favicon.svg`, com versões alternativas `assets/favicon.png` e `assets/favicon.ico`: fundo branco quadrado e cruz vermelha central.
 
@@ -109,3 +109,68 @@ Os cartões priorizam fotografias de embalagens comerciais em fontes de farmáci
 - A face frontal foi deslocada ligeiramente para a frente da caixa para se manter visível por cima do núcleo, sem alterar o modelo do frasco/xarope, a tampa, as laterais ou a bula.
 - Incluída textura de contingência gerada em canvas caso a imagem frontal local falhe ao carregar, mantendo o nome e as informações principais visíveis.
 - A arte frontal é uma representação educativa da embalagem; a fotografia original enviada continua preservada como arquivo separado.
+
+
+## Atualização do catálogo conforme a relação física recebida (24/11/2026)
+- O catálogo contém 67 fichas nesta revisão. A comparação foi refeita e a ficha genérica “Vitamina C 1 g — Neo Química” foi separada da ficha Aceviton, pois a relação do usuário cita os dois itens.
+- Filtros acrescentados: **Saúde mental** e **Outros**. Foram mantidos **Uso único** e **Suplementos**.
+- Duplicatas consolidadas sem repetir cartões: espironolactona 25 mg, sinvastatina 20 mg, quetiapina 25 mg, tansulosina 0,4 mg e tenoxicam 20 mg. Aceviton e vitamina C 1 g estão em fichas separadas; metilcobalamina permanece no cartão da vitamina B12 Maxinutri, que é identificado como suplemento alimentar.
+- Apresentações diferentes permanecem em cartões separados: dipirona gotas 10 mL e dipirona 1 g em comprimidos; azitromicina 500 mg e azitromicina di-hidratada 1 g; metronidazol 250 mg em comprimidos e metronidazol gel vaginal 100 mg/g.
+- A relação não informa a concentração do cloridrato de venlafaxina. O cartão usa foto real de referência de 75 mg e informa explicitamente que ela não confirma a concentração do produto em estoque.
+- O cartão de acetato de abiraterona usa foto real de referência de uma embalagem de 250 mg/120 comprimidos de outro mercado; o desenho/embalagem podem diferir do produto brasileiro que a equipe tem.
+- **Perfenol:** a consulta pública realizada localizou um registro antigo em situação inativa, com vencimento indicado em 05/2007. O item foi mantido no comparativo porque consta da relação fornecida, mas sua apresentação e regularidade devem ser confirmadas com o farmacêutico responsável e na Anvisa antes de ser tratado como produto regular.
+- “Uso único” é uma classificação de organização visual para apresentações unitárias; uma embalagem contendo uma unidade não determina, por si só, que o esquema de tratamento seja sempre dose única.
+
+### Produtos e imagens reais consultados para as novas fichas
+- Maxidex 1 mg/mL / 5 mL — bula do fabricante Novartis: https://portal.novartis.com.br/medicamentos/wp-content/uploads/2021/10/Bula-MAXIDEX-Suspensao-Oftalmica-Esteril-Medico.pdf
+- Prednisona 20 mg — imagem comercial da embalagem União Química: https://www.domifarma.com.br/prednisona-20mg-20-mg-c-10-cp-p64135-p89447
+- Volig 4 mg — imagem comercial: https://farmagora.vteximg.com.br/arquivos/ids/211195-1000-1000/747297.jpg?v=638416344887030000
+- Imosec 2 mg — bula de referência: https://bulas-ecommerce.s3.sa-east-1.amazonaws.com/imosec-c1_5488ab344661623f650c2c00_cd1f3591-b20e-4dd5-8f50-5ebbb4d837d2.pdf
+- Nimesulida 100 mg — foto de embalagem: https://images.webfarmas.com.br/7896714223841.jpg
+- Glibenclamida 5 mg — foto de embalagem: https://e.drogasul.med.br/7139-large_default/gglibenclamida-5-mg-30-cpr.webp
+- Acetato de abiraterona 250 mg/120 comprimidos — referência de apresentação: https://www.pharmed.com.br/produto/acetato-de-abiraterona-250mg-caixa-com-120-comprimidos-revestidos-doctor-reddys/
+- Tenoxicam 20 mg — foto de embalagem Geolab: https://oestepharma.com.br/img/produtos/001/22563.jpg
+- Tropinal — bula e composição: https://bula.com.br/original/tropinal
+- Aceviton vitamina C 1 g — embalagem de suplemento alimentar: https://www.anossadrogaria.com.br/aceviton-1g-com-10-comprimidos-efervescentes/p
+- Tansulosina 0,4 mg — produto e apresentação Eurofarma: https://eurofarma.com.br/produtos/tansulosina
+- Levofloxacino 500 mg — foto de embalagem Eurofarma: https://oestepharma.com.br/img/produtos/001/23974.jpg
+- Azitromicina di-hidratada 1 g — referência de caixa com 1 comprimido: https://cliniguia.com/bulas-de-remedios/aparelho-respiratorio/azi-1g-1-comprimidos-7894916500586/
+- Clonazepam 2 mg — imagem de caixa Geolab: https://portal.riomeddistribuicao.com.br/11606/clonazepam-2mg-30com-b1-geolab.webp
+- Venlafaxina — imagem de referência 75 mg: https://www.santaluciadrogarias.com.br/clo-venlafaxina-75mg-30-caps---c1---eur-g-/p
+- Lyberdia 30 mg — produto e apresentação EMS: https://www.coopdrogaria.com.br/lyberdia-30mg-ems-30-capsulas/p
+- Carbolitium 300 mg — foto de embalagem: https://farmacorp.com/cdn/shop/files/7891317033118_1400x1400.jpg?v=1769024971
+- Quetiapina 25 mg — embalagem genérica de 30 comprimidos: https://e.drogasul.med.br/antipsicotico/gquetiapina-25mg-30cpr-p344-zydus-3845
+- Sertralina 50 mg — foto de embalagem: https://imgprd.martinsatacado.com.br/catalogoimg/263987/01_263987_01.jpg?ims=1000x&v=100920221634
+- Dipropionato de beclometasona 250 mcg/dose — bula do fabricante Clenil HFA: https://www.chiesi.com.br/clenil-hfa/bula-profissional
+- Enantato de noretisterona + valerato de estradiol — apresentação 50 mg/mL + 5 mg/mL: https://www.drogasmil.com.br/noretisterona--estr-50-5mg-sol-inj/p
+- Dipirona 1 g em comprimidos — foto de embalagem: https://d3lj4yiwot58ix.cloudfront.net/Custom/Content/Products/03/72/0372_dipirona-sodica-1g-10-cpr-gen-neo-quimica-p1202_m1_638205233141186003.jpg
+- Metronidazol gel vaginal 100 mg/g — foto de embalagem: https://portal.zilfarma.com/1587-large_default/metronidazol-gel-100mgg-50g-60.jpg
+- Dorflex DIP 1 g — foto de embalagem: https://www.saluvifarma.com.br/dorflex-dip-1g-cx-10-comp
+- Perfenol — fotografia da embalagem: https://www.qualidoc.com.br/perfenol-20-capsulas/product/1017187/ ; situação do registro público consultado: https://consultaanvisa.com.br/produto/perfenol
+- Rosuvastatina cálcica 10 mg — referência comercial: https://www.nortesulreal.com.br/ccstore/v1/images/?height=475&outputFormat=JPEG&quality=0.8&source=%2Ffile%2Fv5732122444758062126%2Fproducts%2FNSM_86558.jpg&width=475
+- Dordente 3 mL — bula do paciente: https://uploads.consultaremedios.com.br/drug_leaflet/Bula-Dordente-Paciente-Consulta-Remedios.pdf
+- Expec xarope 120 mL — bula/apresentação: https://www.panvel.com/panvel/expec-xarope-120-ml/579240/bula
+
+## Remoção da seção Créditos (24/11/2026)
+- Removido o item “Créditos” do menu, a seção final e suas entradas na visita guiada e no passaporte.
+- As referências de imagens e apresentações permanecem documentadas neste README; não ocupam mais uma seção do site.
+
+## Substituição da foto 9 da galeria (24/11/2026)
+- A foto 9 foi substituída pela imagem enviada nesta conversa e salva como `assets/project-people/team-09-atualizada-20261124.jpeg`.
+- A lista de 22 posições da galeria continua com 22 fotos; o novo nome de arquivo evita que o navegador reutilize a foto antiga em cache.
+- Nenhum reconhecimento de identidade foi realizado; a alteração é apenas a substituição da imagem solicitada pela posição da galeria.
+
+
+## Revisão corretiva adicional (24/11/2026)
+- O comparativo da relação de medicamentos agora abre expandido, para que a conferência não fique escondida.
+- Foi acrescentado um aviso visível de catálogo revisado com 67 fichas.
+- Aceviton e Vitamina C 1 g foram separados em cartões distintos. A embalagem da Vitamina C Neo Química é referenciada na página oficial do fabricante: https://www.neoquimica.com.br/vitaminas/vitamina-c-neo-quimica-1g.
+- A foto 9 da galeria aponta para `assets/project-people/team-09-atualizada-20261124.jpeg`, que corresponde à fotografia enviada pelo usuário.
+- A seção e as referências de Créditos permanecem removidas.
+
+
+## Atualização de cache — fotografia 09 da página inicial
+
+Esta versão utiliza um nome de arquivo exclusivo para a fotografia 09 da galeria inicial: `assets/project-people/equipe-inicio-foto09-cache-v3-20261124.jpeg`. O `index.html` já aponta para esse nome novo, evitando que o navegador reutilize a imagem antiga armazenada em cache.
+
+Ao publicar, envie o `index.html` e a pasta `assets/` extraídos deste ZIP para a raiz do repositório GitHub Pages e confirme o commit. Se a versão antiga continuar aparecendo, abra o endereço em uma aba anônima ou faça uma atualização forçada (Ctrl+F5 no computador). No iPhone, feche a aba e abra novamente; se necessário, limpe os dados do site no navegador.
